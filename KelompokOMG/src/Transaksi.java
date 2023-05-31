@@ -9,3 +9,8 @@
 // sesuai yang terjual. 
 
 // upload lagi karena yang sebelumnya kosong huhu
+
+public class Transaksi {
+
+    
+}
