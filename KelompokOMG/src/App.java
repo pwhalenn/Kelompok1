@@ -64,14 +64,27 @@ public class App {
         // kategori
         Kategori pakaian = new Kategori("PA02", "Non-Fragile");
         Kategori makanan = new Kategori("MA01", "Fragile");
-        Kategori minuman = new Kategori("Mi03", "Fragile");
+        Kategori minuman = new Kategori("MI03", "Fragile");
+
         // rak
         // buat dari sini
 
-        // stock
         // buat dari sini
 
+        //rak
+        Rak R1 = new Rak("KO01", "Biru", "PA01");
+        Rak R2 = new Rak("KO02", "Hitam", "MI03");
+        Rak R3 = new Rak("KO03", "Putih", "MA02");
+
+        // stock
+        Stock PA01 = new Stock("PA01", "50", "R1");
+        Stock PA02 = new Stock("MI03", "40", "R3");
+        Stock PA03 = new Stock("MA02", "20", "R2");
+
         // vendor
-        // buat dari sini
+        Vendor V1 = new Vendor("Reisacom", "R314", "8472");
+        Vendor V2 = new Vendor("Kaoru", "K407", "7454");
+        Vendor V3 = new Vendor("Adonis", "A981", "7739");
     }
+
 }
