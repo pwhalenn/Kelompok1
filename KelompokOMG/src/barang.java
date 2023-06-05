@@ -13,6 +13,17 @@ public class Barang {
     private String MerekBarang;
     private String JenisBarang;
 
+
+    public Barang() {
+    }
+    
+
+    public Barang(String IdBarang, String MerekBarang, String JenisBarang) {
+        this.IdBarang = IdBarang;
+        this.MerekBarang = MerekBarang;
+        this.JenisBarang = JenisBarang;
+    }
+    
     public String getIdBarang() {
         return this.IdBarang;
     }
@@ -35,6 +46,16 @@ public class Barang {
 
     public void setJenisBarang(String JenisBarang) {
         this.JenisBarang = JenisBarang;
+    }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " IdBarang='" + getIdBarang() + "'" +
+            ", MerekBarang='" + getMerekBarang() + "'" +
+            ", JenisBarang='" + getJenisBarang() + "'" +
+            "}";
     }
 
 }
