@@ -1,6 +1,6 @@
 //barang
-//Class barang akan berisi ID barang, Merek Barnag dan Kategori
-//ID barang bersifat integer
+//Class barang akan berisi ID barang dan Kategori
+//ID barang bersifat string
 //Merek barang bersifat string
 
 //Kategori
@@ -8,43 +8,34 @@
 //bersifat string
 
 public class Barang {
-    private String IdBarang;
-    private String MerekBarang;
-    private String JenisBarang;
+    private String idBarang;
+    private String kategori;
 
 
     public Barang() {
     }
     
 
-    public Barang(String IdBarang, String MerekBarang, String JenisBarang) {
-        this.IdBarang = IdBarang;
-        this.MerekBarang = MerekBarang;
-        this.JenisBarang = JenisBarang;
+    public Barang(String idBarang, String kategori) {
+        this.idBarang = idBarang;
+        
+        this.kategori = kategori;
     }
     
     public String getIdBarang() {
-        return this.IdBarang;
+        return this.idBarang;
     }
 
     public void setIdBarang(String IdBarang) {
-        this.IdBarang = IdBarang;
+        this.idBarang = IdBarang;
     }
 
-    public String getMerekBarang() {
-        return this.MerekBarang;
+    public String getKategori() {
+        return this.kategori;
     }
 
-    public void setMerekBarang(String MerekBarang) {
-        this.MerekBarang = MerekBarang;
-    }
-
-    public String getJenisBarang() {
-        return this.JenisBarang;
-    }
-
-    public void setJenisBarang(String JenisBarang) {
-        this.JenisBarang = JenisBarang;
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
     }
 
 }

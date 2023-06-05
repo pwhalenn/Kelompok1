@@ -60,6 +60,9 @@ public class App {
     public static void init() {
         // barang
         // buat dari sini
+        Barang baju = new Barang("PA01", "pakaian");
+        Barang teh = new Barang("MI03", "minuman");
+        Barang manisan = new Barang("MA02", "makanan");
 
         // kategori
         // buat dari sini
