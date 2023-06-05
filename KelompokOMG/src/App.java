@@ -71,6 +71,9 @@ public class App {
         // buat dari sini
 
         // vendor
-        // buat dari sini
+        Vendor V1 = new Vendor("Reisacom", "R314", "8472");
+        Vendor V2 = new Vendor("Kaoru", "K407", "7454");
+        Vendor V3 = new Vendor("Adonis", "A981", "7739");
     }
+
 }
