@@ -70,7 +70,9 @@ public class App {
         Rak R3 = new Rak("KO03", "Putih", "MA02");
 
         // stock
-        // buat dari sini
+        Stock PA01 = new Stock("PA01", "50", "R1");
+        Stock PA02 = new Stock("MI03", "40", "R3");
+        Stock PA03 = new Stock("MA02", "20", "R2");
 
         // vendor
         Vendor V1 = new Vendor("Reisacom", "R314", "8472");
