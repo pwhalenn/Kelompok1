@@ -2,51 +2,51 @@ public class Vendor {
     // didalam vendor akan terdapat atribut seperti namaVendor, ID vendor dan PIN class ini akan menunjukkan
     // siapa yang melakukan berbagai kegiatan dalam aplikasi
 
-    private String NamaVendor;
-    private String IdVendor;
-    private String Pin;
+    private String namaVendor;
+    private String idVendor;
+    private String pin;
     
 
     public Vendor() {
     }
 
-    public Vendor(String NamaVendor, String IdVendor, String Pin) {
-        this.NamaVendor = NamaVendor;
-        this.IdVendor = IdVendor;
-        this.Pin = Pin;
+    public Vendor(String namaVendor, String idVendor, String pin) {
+        this.namaVendor = namaVendor;
+        this.idVendor = idVendor;
+        this.pin = pin;
     }
     
 
     public String getNamaVendor() {
-        return this.NamaVendor;
+        return this.namaVendor;
     }
 
-    public void setNamaVendor(String NamaVendor) {
-        this.NamaVendor = NamaVendor;
+    public void setNamaVendor(String namaVendor) {
+        this.namaVendor = namaVendor;
     }
 
     public String getIdVendor() {
-        return this.IdVendor;
+        return this.idVendor;
     }
 
-    public void setIdVendor(String IdVendor) {
-        this.IdVendor = IdVendor;
+    public void setIdVendor(String idVendor) {
+        this.idVendor = idVendor;
     }
 
     public String getPin() {
-        return this.Pin;
+        return this.pin;
     }
 
-    public void setPin(String Pin) {
-        this.Pin = Pin;
+    public void setPin(String pin) {
+        this.pin = pin;
     }
     
     @Override
     public String toString() {
         return "{" +
-            " NamaVendor='" + getNamaVendor() + "'" +
-            ", IdVendor='" + getIdVendor() + "'" +
-            ", Pin='" + getPin() + "'" +
+            " namaVendor='" + getNamaVendor() + "'" +
+            ", idVendor='" + getIdVendor() + "'" +
+            ", pin='" + getPin() + "'" +
             "}";
     }
 
