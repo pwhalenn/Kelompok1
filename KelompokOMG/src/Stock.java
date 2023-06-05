@@ -2,41 +2,41 @@
 // Jumlah barang berupa stock dus
 
 public class Stock {
-    private String IdBarang;
-    private String JumlahBarang;
-    private String Rak;
+    private String idBarang;
+    private String jumlahBarang;
+    private String rak;
 
     public Stock() {
     }
 
-    public Stock(String IdBarang, String JumlahBarang, String Rak) {
-        this.IdBarang = IdBarang;
-        this.JumlahBarang = JumlahBarang;
-        this.Rak = Rak;
+    public Stock(String idBarang, String jumlahBarang, String rak) {
+        this.idBarang = idBarang;
+        this.jumlahBarang = jumlahBarang;
+        this.rak = rak;
     }
 
     public String getIdBarang() {
-        return this.IdBarang;
+        return this.idBarang;
     }
 
     public void setIdBarang(String IdBarang) {
-        this.IdBarang = IdBarang;
+        this.idBarang = idBarang;
     }
 
     public String getJumlahBarang() {
-        return this.JumlahBarang;
+        return this.jumlahBarang;
     }
 
     public void setJumlahBarang(String JumlahBarang) {
-        this.JumlahBarang = JumlahBarang;
+        this.jumlahBarang = jumlahBarang;
     }
 
     public String getRak() {
-        return this.Rak;
+        return this.rak;
     }
 
     public void setRak(String Rak) {
-        this.Rak = Rak;
+        this.rak = rak;
     }  
 
 
