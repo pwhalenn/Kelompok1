@@ -65,6 +65,13 @@ public class App {
         Barang manisan = new Barang("MA02", "makanan");
 
         // kategori
+        Kategori pakaian = new Kategori("PA02", "Non-Fragile");
+        Kategori makanan = new Kategori("MA01", "Fragile");
+        Kategori minuman = new Kategori("MI03", "Fragile");
+
+        // rak
+        // buat dari sini
+
         // buat dari sini
 
         //rak
