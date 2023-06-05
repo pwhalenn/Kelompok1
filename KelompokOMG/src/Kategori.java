@@ -10,6 +10,16 @@ public class Kategori {
     private String Fragile;
 
 
+    public Kategori() {
+    }
+
+    public Kategori(String IdBarang, String JenisBarang, String Fragile) {
+        this.IdBarang = IdBarang;
+        this.JenisBarang = JenisBarang;
+        this.Fragile = Fragile;
+    }
+    
+
     public String getIdBarang() {
         return this.IdBarang;
     }
@@ -34,4 +44,14 @@ public class Kategori {
         this.Fragile = Fragile;
     }
 
+
+    @Override
+    public String toString() {
+        return "{" +
+            " IdBarang='" + getIdBarang() + "'" +
+            ", JenisBarang='" + getJenisBarang() + "'" +
+            ", Fragile='" + getFragile() + "'" +
+            "}";
+    }
+    
 }
