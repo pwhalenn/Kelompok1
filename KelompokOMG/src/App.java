@@ -22,12 +22,11 @@ public class App {
     public static JenisMenu UserMenu() {
         System.out.println("=====================MENU=====================");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1.  Informasi Stock");
-        System.out.println("2.  Pembelian Stock");
-        System.out.println("3.  Penjualan Stock");
-        System.out.println("4.  Pengeditan Stock");
-        System.out.println("5.  Penampilan Lokasi Stock");
-        System.out.println("6.  Riwayat Transaksi Stock");
+        System.out.println("1.  Informasi Barang"); // 
+        System.out.println("2.  Transaksi Barang");
+        System.out.println("3.  Pengeditan Barang");
+        System.out.println("4.  Penampilan Lokasi Stock");
+        System.out.println("5.  Riwayat Transaksi Barang");
         System.out.print("Choice ? ");
         int choice = scanner.nextInt();
         switch (choice) {
@@ -56,6 +55,22 @@ public class App {
     
 
     public static void main(String[] args) throws Exception {
-        
+    }
+
+    public static void init() {
+        // barang
+        // buat dari sini
+
+        // kategori
+        // buat dari sini
+
+        // rak
+        // buat dari sini
+
+        // stock
+        // buat dari sini
+
+        // vendor
+        // buat dari sini
     }
 }
