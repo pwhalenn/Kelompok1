@@ -64,8 +64,10 @@ public class App {
         // kategori
         // buat dari sini
 
-        // rak
-        // buat dari sini
+        //rak
+        Rak R1 = new Rak("KO01", "Biru", "PA01");
+        Rak R2 = new Rak("KO02", "Hitam", "MI03");
+        Rak R3 = new Rak("KO03", "Putih", "MA02");
 
         // stock
         Stock PA01 = new Stock("PA01", "50", "R1");
