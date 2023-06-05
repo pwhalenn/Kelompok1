@@ -12,7 +12,7 @@ public class Kategori {
     public Kategori() {
     }
 
-    public Kategori(String IdBarang, String JenisBarang, String Fragile) {
+    public Kategori(String IdBarang, String Fragile) {
         this.IdBarang = IdBarang;
         this.Fragile = Fragile;
     }
