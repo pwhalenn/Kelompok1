@@ -41,6 +41,16 @@ public class Vendor {
         this.Pin = Pin;
     }
     
+    @Override
+    public String toString() {
+        return "{" +
+            " NamaVendor='" + getNamaVendor() + "'" +
+            ", IdVendor='" + getIdVendor() + "'" +
+            ", Pin='" + getPin() + "'" +
+            "}";
     }
+
+}
+
     
 

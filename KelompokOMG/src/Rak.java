@@ -16,6 +16,16 @@ public class Rak {
     private String Ruangan;
     private String IdBarang;
     
+
+    public Rak() {
+    }
+
+    public Rak(String IdRuangan, String Ruangan, String IdBarang) {
+        this.IdRuangan = IdRuangan;
+        this.Ruangan = Ruangan;
+        this.IdBarang = IdBarang;
+    }
+
     
     public String getIdRuangan() {
         return this.IdRuangan;
@@ -41,6 +51,16 @@ public class Rak {
         this.IdBarang = IdBarang;
     }
     
+
+    @Override
+    public String toString() {
+        return "{" +
+            " IdRuangan='" + getIdRuangan() + "'" +
+            ", Ruangan='" + getRuangan() + "'" +
+            ", IdBarang='" + getIdBarang() + "'" +
+            "}";
+    }
+
 }
 
 
