@@ -1,10 +1,9 @@
 //barang
-//Class barang akan berisi ID barang, Merek Barang dan Jenis barang
-
+//Class barang akan berisi ID barang, Merek Barnag dan Kategori
 //ID barang bersifat integer
 //Merek barang bersifat string
 
-//Jenis barang
+//Kategori
 //Akan menjelaskan apakah barang adalah makanan, minuman, dll.
 //bersifat string
 
@@ -46,16 +45,6 @@ public class Barang {
 
     public void setJenisBarang(String JenisBarang) {
         this.JenisBarang = JenisBarang;
-    }
-
-
-    @Override
-    public String toString() {
-        return "{" +
-            " IdBarang='" + getIdBarang() + "'" +
-            ", MerekBarang='" + getMerekBarang() + "'" +
-            ", JenisBarang='" + getJenisBarang() + "'" +
-            "}";
     }
 
 }

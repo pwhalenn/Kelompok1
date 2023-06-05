@@ -2,7 +2,7 @@
 // Id Barang berupa sebuah string
 // Jenis Barang berupa sebuah string yang berisi: "fragile atau non fragile"
 
-// Id Barang, Jenis Barang, Fragile
+// Id Barang dan Jensi Barnag
 
 public class Kategori {
     private String IdBarang;
@@ -44,14 +44,4 @@ public class Kategori {
         this.Fragile = Fragile;
     }
 
-
-    @Override
-    public String toString() {
-        return "{" +
-            " IdBarang='" + getIdBarang() + "'" +
-            ", JenisBarang='" + getJenisBarang() + "'" +
-            ", Fragile='" + getFragile() + "'" +
-            "}";
-    }
-    
 }
