@@ -12,52 +12,52 @@
 
 public class Rak {
 
-    private String IdRuangan;
-    private String Ruangan;
-    private String IdBarang;
+    private String idRuangan;
+    private String ruangan;
+    private String idBarang;
     
 
     public Rak() {
     }
 
-    public Rak(String IdRuangan, String Ruangan, String IdBarang) {
-        this.IdRuangan = IdRuangan;
-        this.Ruangan = Ruangan;
-        this.IdBarang = IdBarang;
+    public Rak(String idRuangan, String ruangan, String idBarang) {
+        this.idRuangan = idRuangan;
+        this.ruangan = ruangan;
+        this.idBarang = idBarang;
     }
 
     
     public String getIdRuangan() {
-        return this.IdRuangan;
+        return this.idRuangan;
     }
     
-    public void setIdRuangan(String IdRuangan) {
-        this.IdRuangan = IdRuangan;
+    public void setIdRuangan(String idRuangan) {
+        this.idRuangan = idRuangan;
     }
     
     public String getRuangan() {
-        return this.Ruangan;
+        return this.ruangan;
     }
     
-    public void setRuangan(String Ruangan) {
-        this.Ruangan = Ruangan;
+    public void setRuangan(String ruangan) {
+        this.ruangan = ruangan;
     }
     
     public String getIdBarang() {
-        return this.IdBarang;
+        return this.idBarang;
     }
     
-    public void setIdBarang(String IdBarang) {
-        this.IdBarang = IdBarang;
+    public void setIdBarang(String idBarang) {
+        this.idBarang = idBarang;
     }
     
 
     @Override
     public String toString() {
         return "{" +
-            " IdRuangan='" + getIdRuangan() + "'" +
-            ", Ruangan='" + getRuangan() + "'" +
-            ", IdBarang='" + getIdBarang() + "'" +
+            " idRuangan='" + getIdRuangan() + "'" +
+            ", ruangan='" + getRuangan() + "'" +
+            ", idBarang='" + getIdBarang() + "'" +
             "}";
     }
 
