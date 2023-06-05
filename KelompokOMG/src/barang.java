@@ -1,9 +1,9 @@
 //barang
-//Class barang akan berisi ID barang dan Kategori
+//Class barang akan berisi ID barang, Merek Barnag dan Kategori
 //ID barang bersifat integer
 //Merek barang bersifat string
 
-//Jenis barang
+//Kategori
 //Akan menjelaskan apakah barang adalah makanan, minuman, dll.
 //bersifat string
 
