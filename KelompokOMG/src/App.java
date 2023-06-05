@@ -59,7 +59,6 @@ public class App {
 
     public static void init() {
         // barang
-        // buat dari sini
         Barang baju = new Barang("PA01", "pakaian");
         Barang teh = new Barang("MI03", "minuman");
         Barang manisan = new Barang("MA02", "makanan");
@@ -68,11 +67,6 @@ public class App {
         Kategori pakaian = new Kategori("PA02", "Non-Fragile");
         Kategori makanan = new Kategori("MA01", "Fragile");
         Kategori minuman = new Kategori("MI03", "Fragile");
-
-        // rak
-        // buat dari sini
-
-        // buat dari sini
 
         //rak
         Rak R1 = new Rak("KO01", "Biru", "PA01");
