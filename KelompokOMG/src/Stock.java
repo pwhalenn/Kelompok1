@@ -39,4 +39,13 @@ public class Stock {
         this.Rak = Rak;
     }  
 
+
+    @Override
+    public String toString() {
+        return "{" +
+            " IdBarang='" + getIdBarang() + "'" +
+            ", JumlahBarang='" + getJumlahBarang() + "'" +
+            ", Rak='" + getRak() + "'" +
+            "}";
+    }
 }
