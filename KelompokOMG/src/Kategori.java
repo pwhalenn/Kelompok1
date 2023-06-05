@@ -11,7 +11,7 @@ public class Kategori {
 
     public Kategori() {
     }
-
+    
     public Kategori(String IdBarang, String Fragile) {
         this.IdBarang = IdBarang;
         this.Fragile = Fragile;
@@ -35,4 +35,13 @@ public class Kategori {
         this.Fragile = Fragile;
     }
 
+
+    @Override
+    public String toString() {
+        return "{" +
+            " IdBarang='" + getIdBarang() + "'" +
+            ", Fragile='" + getFragile() + "'" +
+            "}";
+    }
+    
 }
