@@ -6,6 +6,14 @@ public class Stock {
     private String JumlahBarang;
     private String Rak;
 
+    public Stock() {
+    }
+
+    public Stock(String IdBarang, String JumlahBarang, String Rak) {
+        this.IdBarang = IdBarang;
+        this.JumlahBarang = JumlahBarang;
+        this.Rak = Rak;
+    }
 
     public String getIdBarang() {
         return this.IdBarang;
@@ -29,5 +37,6 @@ public class Stock {
 
     public void setRak(String Rak) {
         this.Rak = Rak;
-    }    
+    }  
+
 }
