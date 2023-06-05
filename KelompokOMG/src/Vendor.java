@@ -6,29 +6,40 @@ public class Vendor {
     private String IdVendor;
     private String Pin;
     
-        public String getNamaVendor() {
-            return this.NamaVendor;
-        }
+
+    public Vendor() {
+    }
+
+    public Vendor(String NamaVendor, String IdVendor, String Pin) {
+        this.NamaVendor = NamaVendor;
+        this.IdVendor = IdVendor;
+        this.Pin = Pin;
+    }
     
-        public void setNamaVendor(String NamaVendor) {
-            this.NamaVendor = NamaVendor;
-        }
-    
-        public String getIdVendor() {
-            return this.IdVendor;
-        }
-    
-        public void setIdVendor(String IdVendor) {
-            this.IdVendor = IdVendor;
-        }
-    
-        public String getPin() {
-            return this.Pin;
-        }
-    
-        public void setPin(String Pin) {
-            this.Pin = Pin;
-        }
+
+    public String getNamaVendor() {
+        return this.NamaVendor;
+    }
+
+    public void setNamaVendor(String NamaVendor) {
+        this.NamaVendor = NamaVendor;
+    }
+
+    public String getIdVendor() {
+        return this.IdVendor;
+    }
+
+    public void setIdVendor(String IdVendor) {
+        this.IdVendor = IdVendor;
+    }
+
+    public String getPin() {
+        return this.Pin;
+    }
+
+    public void setPin(String Pin) {
+        this.Pin = Pin;
+    }
     
     }
     
