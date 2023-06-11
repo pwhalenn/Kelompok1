@@ -5,6 +5,8 @@ public class Vendor {
     private String namaVendor;
     private String idVendor;
     private String pin;
+
+    
     
 
     public Vendor() {
