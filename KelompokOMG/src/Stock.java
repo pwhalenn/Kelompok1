@@ -19,7 +19,7 @@ public class Stock {
         return this.idBarang;
     }
 
-    public void setIdBarang(String IdBarang) {
+    public void setIdBarang(String idBarang) {
         this.idBarang = idBarang;
     }
 
@@ -27,7 +27,7 @@ public class Stock {
         return this.jumlahBarang;
     }
 
-    public void setJumlahBarang(String JumlahBarang) {
+    public void setJumlahBarang(String jumlahBarang) {
         this.jumlahBarang = jumlahBarang;
     }
 
@@ -35,9 +35,9 @@ public class Stock {
         return this.rak;
     }
 
-    public void setRak(String Rak) {
+    public void setRak(String rak) {
         this.rak = rak;
-    }  
+    }
 
 
     @Override
