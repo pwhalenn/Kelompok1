@@ -5,34 +5,34 @@
 // Id Barang dan Jenis Barang
 
 public class Kategori {
-    private String IdBarang;
-    private String Fragile;
+    private String idBarang;
+    private String fragile;
 
 
     public Kategori() {
     }
     
-    public Kategori(String IdBarang, String Fragile) {
-        this.IdBarang = IdBarang;
-        this.Fragile = Fragile;
+    public Kategori(String idBarang, String fragile) {
+        this.idBarang = idBarang;
+        this.fragile = fragile;
     }
     
 
     public String getIdBarang() {
-        return this.IdBarang;
+        return this.idBarang;
     }
 
-    public void setIdBarang(String IdBarang) {
-        this.IdBarang = IdBarang;
+    public void setIdBarang(String idBarang) {
+        this.idBarang = idBarang;
     }
 
 
     public String getFragile() {
-        return this.Fragile;
+        return this.fragile;
     }
 
-    public void setFragile(String Fragile) {
-        this.Fragile = Fragile;
+    public void setFragile(String fragile) {
+        this.fragile = fragile;
     }
 
 
