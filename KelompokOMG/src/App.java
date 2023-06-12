@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class App {
+    // static Mahasiswa mahasiswa = new Mahasiswa[20];
 
     public static void MenuAtama() {
         Scanner scanner = new Scanner(System.in);
@@ -55,6 +56,7 @@ public class App {
     
 
     public static void main(String[] args) throws Exception {
+        init();
     }
 
     public static void init() {
@@ -79,9 +81,9 @@ public class App {
         Stock PA03 = new Stock("MA02", "20", "R2");
 
         // vendor
-        Vendor V1 = new Vendor("Reisacom", "R314", "8472");
-        Vendor V2 = new Vendor("Kaoru", "K407", "7454");
-        Vendor V3 = new Vendor("Adonis", "A981", "7739");
+        User V1 = new User("Reisacom", "R314", "8472");
+        User V2 = new User("Kaoru", "K407", "7454");
+        User V3 = new User("Adonis", "A981", "7739");
     }
 
 }
