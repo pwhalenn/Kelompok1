@@ -5,25 +5,25 @@
 // Id Barang dan Jenis Barang
 
 public class Kategori {
-    private String idBarang;
+    private String idKategori;
     private String fragile;
 
 
     public Kategori() {
     }
     
-    public Kategori(String idBarang, String fragile) {
-        this.idBarang = idBarang;
+    public Kategori(String idKategori, String fragile) {
+        this.idKategori = idKategori;
         this.fragile = fragile;
     }
     
 
-    public String getIdBarang() {
-        return this.idBarang;
+    public String getIdKategori() {
+        return this.idKategori;
     }
 
-    public void setIdBarang(String idBarang) {
-        this.idBarang = idBarang;
+    public void setIdKategori(String idKategori) {
+        this.idKategori = idKategori;
     }
 
 
@@ -39,7 +39,7 @@ public class Kategori {
     @Override
     public String toString() {
         return "{" +
-            " IdBarang='" + getIdBarang() + "'" +
+            " IdKategori='" + getIdKategori() + "'" +
             ", Fragile='" + getFragile() + "'" +
             "}";
     }

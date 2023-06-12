@@ -64,9 +64,9 @@ public class App {
         Barang manisan = new Barang("MA02", "makanan");
 
         // kategori
-        Kategori pakaian = new Kategori("PA02", "Non-Fragile");
-        Kategori makanan = new Kategori("MA01", "Fragile");
-        Kategori minuman = new Kategori("MI03", "Fragile");
+        Kategori pakaian = new Kategori("KAT01", "Non-Fragile");
+        Kategori makanan = new Kategori("KAT02", "Fragile");
+        Kategori minuman = new Kategori("KAT03", "Fragile");
 
         //rak
         Rak R1 = new Rak("KO01", "Biru", "PA01");
