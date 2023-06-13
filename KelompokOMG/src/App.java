@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class App {
 
-    
+
     public static void MenuAtama() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -83,9 +83,9 @@ public class App {
         Stock S3 = new Stock("STOCK3", "manisan", 20, "R3");
 
         // vendor
-        User V1 = new User("Reisacom", "R314", "8472");
-        User V2 = new User("Kaoru", "K407", "7454");
-        User V3 = new User("Adonis", "A981", "7739");
+        User V1 = new User("R314", "Reisacom", "8472");
+        User V2 = new User("K407", "Kaoru", "7454");
+        User V3 = new User("A981", "Adonis", "7739");
     }
 
 
