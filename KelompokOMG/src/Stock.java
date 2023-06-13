@@ -1,25 +1,25 @@
-// Stock memiliki atribut ID Barang, Jumlah Barang, Rak
-// Jumlah barang berupa stock dus
+// Stock memiliki atribut ID Stock, Barnag, Jumlah Dus, Rak
+// Jumlah Dus berupa stock dus
 
 public class Stock {
 
     private String idStock;
     private String Barang;
-    private int jumlahBarang;
+    private int jumlahDus;
     private String rak;
 
 
     public Stock() {
     }
 
-    public Stock(String idStock, String Barang, int jumlahBarang, String rak) {
+    public Stock(String idStock, String Barang, int jumlahDus, String rak) {
         this.idStock = idStock;
         this.Barang = Barang;
-        this.jumlahBarang = jumlahBarang;
+        this.jumlahDus = jumlahDus;
         this.rak = rak;
     }
 
-    
+
     public String getIdStock() {
         return this.idStock;
     }
@@ -36,12 +36,12 @@ public class Stock {
         this.Barang = Barang;
     }
 
-    public int getJumlahBarang() {
-        return this.jumlahBarang;
+    public int getJumlahDus() {
+        return this.jumlahDus;
     }
 
-    public void setJumlahBarang(int jumlahBarang) {
-        this.jumlahBarang = jumlahBarang;
+    public void setJumlahDus(int jumlahDus) {
+        this.jumlahDus = jumlahDus;
     }
 
     public String getRak() {
@@ -58,7 +58,7 @@ public class Stock {
         return "{" +
             " idStock='" + getIdStock() + "'" +
             ", Barang='" + getBarang() + "'" +
-            ", jumlahBarang='" + getJumlahBarang() + "'" +
+            ", jumlahDus='" + getJumlahDus() + "'" +
             ", rak='" + getRak() + "'" +
             "}";
     }
