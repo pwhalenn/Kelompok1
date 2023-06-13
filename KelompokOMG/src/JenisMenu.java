@@ -1,0 +1,8 @@
+public enum JenisMenu {
+    INFORMASI_STOCK,
+    TRANSAKSI_STOCK,
+    EDIT_STOCK,
+    LOKASI_STOCK,
+    RIWAYAT_STOCK,
+    LOGOUT
+}

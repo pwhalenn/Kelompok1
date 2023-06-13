@@ -28,6 +28,7 @@ public class App {
         System.out.println("3.  Pengeditan Barang");
         System.out.println("4.  Penampilan Lokasi Stock");
         System.out.println("5.  Riwayat Transaksi Barang");
+        System.out.println("5.  Logout");
         System.out.print("Choice ? ");
         int choice = scanner.nextInt();
         switch (choice) {
@@ -35,13 +36,13 @@ public class App {
                 return JenisMenu.INFORMASI_STOCK;
             }
             case 2 -> {
-                return JenisMenu.PEMBELIAN_STOCK;
+                return JenisMenu.TRANSAKSI_STOCK;
             }
             case 3 -> {
-                return JenisMenu.PENUJUALAN_STOCK;
+                return JenisMenu.EDIT_STOCK;
             }
             case 4 -> {
-                return JenisMenu.EDIT_STOCK;
+                return JenisMenu.LOKASI_STOCK;
             }
             case 5 -> {
                 return JenisMenu.RIWAYAT_STOCK;
