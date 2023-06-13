@@ -76,9 +76,9 @@ public class App {
         Rak R3 = new Rak("KO03", "Putih", "MA02");
 
         // stock
-        Stock PA01 = new Stock("PA01", "50", "R1");
-        Stock PA02 = new Stock("MI03", "40", "R3");
-        Stock PA03 = new Stock("MA02", "20", "R2");
+        Stock S1 = new Stock("STOCK1", "baju", 50, "R1");
+        Stock S2 = new Stock("STOCK2", "teh", 40, "R3");
+        Stock S3 = new Stock("STOCK3", "manisan", 20, "R2");
 
         // vendor
         User V1 = new User("Reisacom", "R314", "8472");
