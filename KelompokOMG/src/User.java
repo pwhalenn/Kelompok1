@@ -1,13 +1,14 @@
-public class User {
     // didalam vendor akan terdapat atribut seperti namaUser, ID User dan PIN class ini akan menunjukkan
     // siapa yang melakukan berbagai kegiatan dalam aplikasi
+
+
+
+public class User {
 
     private String namaUser;
     private String idUser;
     private String pin;
 
-    
-    
 
     public User() {
     }
@@ -43,6 +44,7 @@ public class User {
         this.pin = pin;
     }
     
+
     @Override
     public String toString() {
         return "{" +
@@ -51,7 +53,6 @@ public class User {
             ", pin='" + getPin() + "'" +
             "}";
     }
-
 }
 
     

@@ -7,18 +7,19 @@
 //Akan menjelaskan apakah barang adalah makanan, minuman, dll.
 //bersifat string
 
+
+
 public class Barang {
+
     private String idBarang;
     private String kategori;
 
 
     public Barang() {
     }
-    
 
     public Barang(String idBarang, String kategori) {
         this.idBarang = idBarang;
-        
         this.kategori = kategori;
     }
     
@@ -38,4 +39,12 @@ public class Barang {
         this.kategori = kategori;
     }
 
+
+    @Override
+    public String toString() {
+        return "{" +
+            " idBarang='" + getIdBarang() + "'" +
+            ", kategori='" + getKategori() + "'" +
+            "}";
+    }
 }

@@ -4,7 +4,10 @@
 
 // Id Barang dan Jenis Barang
 
+
+
 public class Kategori {
+
     private String idKategori;
     private String fragile;
 
@@ -43,5 +46,4 @@ public class Kategori {
             ", Fragile='" + getFragile() + "'" +
             "}";
     }
-    
 }

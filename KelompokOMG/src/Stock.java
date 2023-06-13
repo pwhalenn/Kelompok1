@@ -2,14 +2,24 @@
 // Jumlah barang berupa stock dus
 
 public class Stock {
+
     private String idStock;
     private String Barang;
     private int jumlahBarang;
     private String rak;
 
+
     public Stock() {
     }
 
+    public Stock(String idStock, String Barang, int jumlahBarang, String rak) {
+        this.idStock = idStock;
+        this.Barang = Barang;
+        this.jumlahBarang = jumlahBarang;
+        this.rak = rak;
+    }
+
+    
     public String getIdStock() {
         return this.idStock;
     }
@@ -52,6 +62,4 @@ public class Stock {
             ", rak='" + getRak() + "'" +
             "}";
     }
-
-
 }

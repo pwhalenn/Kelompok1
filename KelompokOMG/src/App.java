@@ -77,8 +77,8 @@ public class App {
 
         // stock
         Stock S1 = new Stock("STOCK1", "baju", 50, "R1");
-        Stock S2 = new Stock("STOCK2", "teh", 40, "R3");
-        Stock S3 = new Stock("STOCK3", "manisan", 20, "R2");
+        Stock S2 = new Stock("STOCK2", "teh", 40, "R1");
+        Stock S3 = new Stock("STOCK3", "manisan", 20, "R3");
 
         // vendor
         User V1 = new User("Reisacom", "R314", "8472");
