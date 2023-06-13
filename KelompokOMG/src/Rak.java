@@ -1,11 +1,11 @@
 //Rak
-//Pada rak memiliki beberapa class yaitu idRRak, ruangan, dan idBarang
+//Pada rak memiliki beberapa class yaitu idRak, ruangan, dan kategori
 //idRuangan
 
 //ruangan
 //Pada ruangan memiliki beberapa nomor ruangan seperti R1, R2, R3 dan pada tiap ruangan terdapat kategori barang yang berbeda
 
-//idBarang
+//kategori
 
 
 
@@ -13,16 +13,17 @@ public class Rak {
 
     private String idRak;
     private String ruangan;
-    private String idBarang;
+    private String kategori;
     
 
     public Rak() {
     }
 
-    public Rak(String idRak, String ruangan, String idBarang) {
+
+    public Rak(String idRak, String ruangan, String kategori) {
         this.idRak = idRak;
         this.ruangan = ruangan;
-        this.idBarang = idBarang;
+        this.kategori = kategori;
     }
 
 
@@ -42,13 +43,14 @@ public class Rak {
         this.ruangan = ruangan;
     }
 
-    public String getIdBarang() {
-        return this.idBarang;
+    public String getKategori() {
+        return this.kategori;
     }
 
-    public void setIdBarang(String idBarang) {
-        this.idBarang = idBarang;
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
     }
+
 
 
     @Override
@@ -56,7 +58,7 @@ public class Rak {
         return "{" +
             " idRak='" + getIdRak() + "'" +
             ", ruangan='" + getRuangan() + "'" +
-            ", idBarang='" + getIdBarang() + "'" +
+            ", kategori='" + getKategori() + "'" +
             "}";
     }
 }

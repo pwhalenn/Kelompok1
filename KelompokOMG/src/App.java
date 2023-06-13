@@ -63,22 +63,22 @@ public class App {
 
     public static void init() {
         // barang
-        Barang baju = new Barang("PA01", "pakaian");
+        Barang garam = new Barang("PA01", "bumbu");
         Barang teh = new Barang("MI03", "minuman");
         Barang manisan = new Barang("MA02", "makanan");
 
         // kategori
-        Kategori pakaian = new Kategori("KAT01", "Non-Fragile");
-        Kategori makanan = new Kategori("KAT02", "Fragile");
-        Kategori minuman = new Kategori("KAT03", "Fragile");
+        Kategori bumbu = new Kategori("KAT01", "Non-Fragile");
+        Kategori minuman = new Kategori("KAT02", "Fragile");
+        Kategori makanan = new Kategori("KAT03", "Fragile");
 
         //rak
-        Rak R1 = new Rak("KO01", "Biru", "PA01");
-        Rak R2 = new Rak("KO02", "Hitam", "MI03");
-        Rak R3 = new Rak("KO03", "Putih", "MA02");
+        Rak R1 = new Rak("KO01", "Biru", "bumbu");
+        Rak R2 = new Rak("KO02", "Hitam", "minuman");
+        Rak R3 = new Rak("KO03", "Putih", "makanan");
 
         // stock
-        Stock S1 = new Stock("STOCK1", "baju", 50, "R1");
+        Stock S1 = new Stock("STOCK1", "garam", 50, "R1");
         Stock S2 = new Stock("STOCK2", "teh", 40, "R1");
         Stock S3 = new Stock("STOCK3", "manisan", 20, "R3");
 
