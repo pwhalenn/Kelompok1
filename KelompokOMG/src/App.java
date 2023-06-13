@@ -101,6 +101,7 @@ public class App {
         System.out.println(teh);
         Barang manisan = new Barang("MA02", "makanan");
         System.out.println(manisan);
+        //
 
         InfoBarang IB1 = new InfoBarang("23-08-24", "dolphin", "30");
         System.out.println(IB1);
@@ -108,6 +109,7 @@ public class App {
         System.out.println(IB2);
         InfoBarang IB3 = new InfoBarang("11-01-25", "manisku", "80");
         System.out.println(IB3);
+        //
 
         Kategori bumbu = new Kategori("KAT01", "Non-Fragile");
         System.out.println(bumbu);
@@ -115,6 +117,7 @@ public class App {
         System.out.println(minuman);
         Kategori makanan = new Kategori("KAT03", "Fragile");
         System.out.println(makanan);
+        //
 
         Rak R1 = new Rak("KO01", "Biru", "bumbu");
         System.out.println(R1);
@@ -122,6 +125,7 @@ public class App {
         System.out.println(R2);
         Rak R3 = new Rak("KO03", "Putih", "makanan");
         System.out.println(R3);
+        //
 
         Stock S1 = new Stock("STOCK1", "garam", 50, "Rp. 110.000");
         System.out.println(S1);
@@ -129,6 +133,7 @@ public class App {
         System.out.println(S2);
         Stock S3 = new Stock("STOCK3", "manisan", 20, "Rp. 90.000");
         System.out.println(S3);
+        //
 
         User V1 = new User("R314", "Reisacom", "8472");
         System.out.println(V1);
@@ -136,8 +141,6 @@ public class App {
         System.out.println(V2);
         User V3 = new User("A981", "Adonis", "7739");
         System.out.println(V3);
+        //
     }
-
-
-
 }
