@@ -1,5 +1,5 @@
 //Rak
-//Pada rak memiliki beberapa class yaitu idRuangan, ruangan, dan idBarang
+//Pada rak memiliki beberapa class yaitu idRRak, ruangan, dan idBarang
 //idRuangan
 
 //ruangan
@@ -25,7 +25,7 @@ public class Rak {
         this.idBarang = idBarang;
     }
 
-    
+
     public String getIdRak() {
         return this.idRak;
     }

@@ -1,8 +1,8 @@
 // Kategori 
-// Id Barang berupa sebuah string
+// Id Kategori berupa sebuah string
 // Jenis Barang berupa sebuah string yang berisi: "fragile atau non fragile"
 
-// Id Barang dan Jenis Barang
+// Id Kategori dan Jenis Barang
 
 
 
