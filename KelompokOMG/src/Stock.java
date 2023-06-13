@@ -6,17 +6,18 @@ public class Stock {
     private String idStock;
     private String Barang;
     private int jumlahDus;
-    private String rak;
+    private String hargaPerDus;
 
 
     public Stock() {
     }
 
-    public Stock(String idStock, String Barang, int jumlahDus, String rak) {
+
+    public Stock(String idStock, String Barang, int jumlahDus, String hargaPerDus) {
         this.idStock = idStock;
         this.Barang = Barang;
         this.jumlahDus = jumlahDus;
-        this.rak = rak;
+        this.hargaPerDus = hargaPerDus;
     }
 
 
@@ -44,12 +45,12 @@ public class Stock {
         this.jumlahDus = jumlahDus;
     }
 
-    public String getRak() {
-        return this.rak;
+    public String getHargaPerDus() {
+        return this.hargaPerDus;
     }
 
-    public void setRak(String rak) {
-        this.rak = rak;
+    public void setHargaPerDus(String hargaPerDus) {
+        this.hargaPerDus = hargaPerDus;
     }
 
 
@@ -59,7 +60,7 @@ public class Stock {
             " idStock='" + getIdStock() + "'" +
             ", Barang='" + getBarang() + "'" +
             ", jumlahDus='" + getJumlahDus() + "'" +
-            ", rak='" + getRak() + "'" +
+            ", hargaPerDus='" + getHargaPerDus() + "'" +
             "}";
     }
 }

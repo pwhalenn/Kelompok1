@@ -67,6 +67,11 @@ public class App {
         Barang teh = new Barang("MI03", "minuman");
         Barang manisan = new Barang("MA02", "makanan");
 
+        // infoBarang
+        InfoBarang IB1 = new InfoBarang("23-08-24", "dolphin", "30");
+        InfoBarang IB2 = new InfoBarang("01-12-23", "sosoro", "50");
+        InfoBarang IB3 = new InfoBarang("11-01-25", "manisku", "80");
+
         // kategori
         Kategori bumbu = new Kategori("KAT01", "Non-Fragile");
         Kategori minuman = new Kategori("KAT02", "Fragile");
@@ -78,9 +83,9 @@ public class App {
         Rak R3 = new Rak("KO03", "Putih", "makanan");
 
         // stock
-        Stock S1 = new Stock("STOCK1", "garam", 50, "R1");
-        Stock S2 = new Stock("STOCK2", "teh", 40, "R1");
-        Stock S3 = new Stock("STOCK3", "manisan", 20, "R3");
+        Stock S1 = new Stock("STOCK1", "garam", 50, "Rp. 110.000");
+        Stock S2 = new Stock("STOCK2", "teh", 40, "Rp. 100.000");
+        Stock S3 = new Stock("STOCK3", "manisan", 20, "Rp. 90.000");
 
         // vendor
         User V1 = new User("R314", "Reisacom", "8472");
