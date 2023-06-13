@@ -1,4 +1,4 @@
-    // didalam vendor akan terdapat atribut seperti namaUser, ID User dan PIN class ini akan menunjukkan
+    // didalam user akan terdapat atribut seperti namaUser, ID User dan PIN class ini akan menunjukkan
     // siapa yang melakukan berbagai kegiatan dalam aplikasi
 
 
