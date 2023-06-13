@@ -91,8 +91,8 @@ public class App {
 
 
     
-   // public static void main(String[] args) throws Exception {
-        //init();
+   public static void main(String[] args) throws Exception {
+        init();
             //cetakDataBarang();
            // public static void cetakDataBarang(String[] args) {
                 //for (int i =0; i<20;i++){
