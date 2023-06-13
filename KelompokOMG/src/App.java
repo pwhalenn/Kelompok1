@@ -118,9 +118,7 @@ public class App {
 
 
         
-        Barang garam = new Barang();
-        System.out.println(garam);
-        garam = new Barang("PA01", "bumbu");
+        Barang garam = new Barang("PA01", "bumbu");
         System.out.println(garam);
         Barang teh = new Barang("MI03", "minuman");
         System.out.println(teh);
