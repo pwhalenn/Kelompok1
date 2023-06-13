@@ -1,3 +1,6 @@
+//Akan yang akan menjelaskan expiredDate, merek, jumlahDiDus
+
+
 public class InfoBarang {
     
     private String expiredDate;

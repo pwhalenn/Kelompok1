@@ -3,10 +3,9 @@
 //ID barang bersifat string
 //Merek barang bersifat string
 
-//Kategori
-//Akan menjelaskan apakah barang adalah makanan, minuman, dll.
+//infoBarang
+//Akan yang akan menjelaskan expiredDate, merek, jumlahDiDus
 //bersifat string
-
 
 
 public class Barang {
