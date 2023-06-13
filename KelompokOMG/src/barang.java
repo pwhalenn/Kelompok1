@@ -12,39 +12,42 @@
 public class Barang {
 
     private String idBarang;
-    private String kategori;
+    private String infoBarang;
 
 
     public Barang() {
     }
 
-    public Barang(String idBarang, String kategori) {
+
+    public Barang(String idBarang, String infoBarang) {
         this.idBarang = idBarang;
-        this.kategori = kategori;
+        this.infoBarang = infoBarang;
     }
-    
+
+
     public String getIdBarang() {
         return this.idBarang;
     }
 
-    public void setIdBarang(String IdBarang) {
-        this.idBarang = IdBarang;
+    public void setIdBarang(String idBarang) {
+        this.idBarang = idBarang;
     }
 
-    public String getKategori() {
-        return this.kategori;
+    public String getInfoBarang() {
+        return this.infoBarang;
     }
 
-    public void setKategori(String kategori) {
-        this.kategori = kategori;
+    public void setInfoBarang(String infoBarang) {
+        this.infoBarang = infoBarang;
     }
+
 
 
     @Override
     public String toString() {
         return "{" +
             " idBarang='" + getIdBarang() + "'" +
-            ", kategori='" + getKategori() + "'" +
+            ", infoBarang='" + getInfoBarang() + "'" +
             "}";
     }
 }
