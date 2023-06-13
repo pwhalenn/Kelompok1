@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class App {
-    // static Mahasiswa mahasiswa = new Mahasiswa[20];
 
+    
     public static void MenuAtama() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -20,10 +20,11 @@ public class App {
         }
     }
 
+
     public static JenisMenu UserMenu() {
         System.out.println("=====================MENU=====================");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1.  Informasi Barang"); // 
+        System.out.println("1.  Informasi Barang");
         System.out.println("2.  Transaksi Barang");
         System.out.println("3.  Pengeditan Barang");
         System.out.println("4.  Penampilan Lokasi Stock");
@@ -54,11 +55,11 @@ public class App {
         }
     }
 
-    
 
     public static void main(String[] args) throws Exception {
         init();
     }
+
 
     public static void init() {
         // barang
@@ -86,5 +87,6 @@ public class App {
         User V2 = new User("Kaoru", "K407", "7454");
         User V3 = new User("Adonis", "A981", "7739");
     }
+
 
 }
