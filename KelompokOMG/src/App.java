@@ -58,15 +58,8 @@ public class App {
 
 
     public static void init() {
-        // barang
-        Barang garam = new Barang("PA01", "bumbu");
-        Barang teh = new Barang("MI03", "minuman");
-        Barang manisan = new Barang("MA02", "makanan");
-
-        // infoBarang
-        InfoBarang IB1 = new InfoBarang("23-08-24", "dolphin", "30");
-        InfoBarang IB2 = new InfoBarang("01-12-23", "sosoro", "50");
-        InfoBarang IB3 = new InfoBarang("11-01-25", "manisku", "80");
+        // barang GARAM TEH MANISAN PA01 MI03 MA02 50, "dolphin", "Rp. 110.000" 40, "sosoro", "Rp. 100.000",  20, "manisku", "Rp. 90.000"
+        Barang garam = new ;
 
         // kategori
         Kategori bumbu = new Kategori("KAT01", "Non-Fragile");
@@ -78,10 +71,10 @@ public class App {
         Rak R2 = new Rak("KO02", "Hitam", "minuman");
         Rak R3 = new Rak("KO03", "Putih", "makanan");
 
-        // stock
-        Stock S1 = new Stock("STOCK1", "garam", 50, "Rp. 110.000");
-        Stock S2 = new Stock("STOCK2", "teh", 40, "Rp. 100.000");
-        Stock S3 = new Stock("STOCK3", "manisan", 20, "Rp. 90.000");
+        // pesanan
+        Pesanan P1 = new Pesanan("O001", "garam");
+        Pesanan P2 = new Pesanan("O002", "teh");
+        Pesanan P3 = new Pesanan("OR03", "manisan");
 
         // vendor
         User V1 = new User("R314", "Reisacom", "8472");

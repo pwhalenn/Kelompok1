@@ -11,16 +11,20 @@
 public class Barang {
 
     private String idBarang;
-    private String infoBarang;
+    private int stock;
+    private String merekBarang;
+    private String expiredDate;
 
 
     public Barang() {
     }
 
 
-    public Barang(String idBarang, String infoBarang) {
+    public Barang(String idBarang, int stock, String merekBarang, String expiredDate) {
         this.idBarang = idBarang;
-        this.infoBarang = infoBarang;
+        this.stock = stock;
+        this.merekBarang = merekBarang;
+        this.expiredDate = expiredDate;
     }
 
 
@@ -32,21 +36,38 @@ public class Barang {
         this.idBarang = idBarang;
     }
 
-    public String getInfoBarang() {
-        return this.infoBarang;
+    public int getStock() {
+        return this.stock;
     }
 
-    public void setInfoBarang(String infoBarang) {
-        this.infoBarang = infoBarang;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
+    public String getMerekBarang() {
+        return this.merekBarang;
+    }
+
+    public void setMerekBarang(String merekBarang) {
+        this.merekBarang = merekBarang;
+    }
+
+    public String getExpiredDate() {
+        return this.expiredDate;
+    }
+
+    public void setExpiredDate(String expiredDate) {
+        this.expiredDate = expiredDate;
+    }
 
 
     @Override
     public String toString() {
         return "{" +
             " idBarang='" + getIdBarang() + "'" +
-            ", infoBarang='" + getInfoBarang() + "'" +
+            ", stock='" + getStock() + "'" +
+            ", merekBarang='" + getMerekBarang() + "'" +
+            ", expiredDate='" + getExpiredDate() + "'" +
             "}";
     }
 }
