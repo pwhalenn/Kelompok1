@@ -1,16 +1,22 @@
 public class Pesanan {
     
     private String idPesanan;
-    private String barang;
+    private String barangMasuk;
+    private String barangKeluar;
+    private String idString;
+    private String user;
 
 
     public Pesanan() {
     }
 
 
-    public Pesanan(String idPesanan, String barang) {
+    public Pesanan(String idPesanan, String barangMasuk, String barangKeluar, String idString, String user) {
         this.idPesanan = idPesanan;
-        this.barang = barang;
+        this.barangMasuk = barangMasuk;
+        this.barangKeluar = barangKeluar;
+        this.idString = idString;
+        this.user = user;
     }
 
 
@@ -22,12 +28,36 @@ public class Pesanan {
         this.idPesanan = idPesanan;
     }
 
-    public String getBarang() {
-        return this.barang;
+    public String getBarangMasuk() {
+        return this.barangMasuk;
     }
 
-    public void setBarang(String barang) {
-        this.barang = barang;
+    public void setBarangMasuk(String barangMasuk) {
+        this.barangMasuk = barangMasuk;
+    }
+
+    public String getBarangKeluar() {
+        return this.barangKeluar;
+    }
+
+    public void setBarangKeluar(String barangKeluar) {
+        this.barangKeluar = barangKeluar;
+    }
+
+    public String getIdString() {
+        return this.idString;
+    }
+
+    public void setIdString(String idString) {
+        this.idString = idString;
+    }
+
+    public String getUser() {
+        return this.user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
 
@@ -35,7 +65,10 @@ public class Pesanan {
     public String toString() {
         return "{" +
             " idPesanan='" + getIdPesanan() + "'" +
-            ", barang='" + getBarang() + "'" +
+            ", barangMasuk='" + getBarangMasuk() + "'" +
+            ", barangKeluar='" + getBarangKeluar() + "'" +
+            ", idString='" + getIdString() + "'" +
+            ", user='" + getUser() + "'" +
             "}";
     }
 }

@@ -58,10 +58,14 @@ public class App {
 
 
     public static void init() {
-        // barang GARAM TEH MANISAN PA01 MI03 MA02 50, "dolphin", "Rp. 110.000" 40, "sosoro", "Rp. 100.000",  20, "manisku", "Rp. 90.000"
-        Barang garam = new ;
+        // barang
+        // garam PA01, 50, "dolphin", "Rp. 110.000"
+        // teh MI03, 40, "sosoro", "Rp. 100.000"
+        // manisan MA02, 20, "manisku", "Rp. 90.000"
+        Barang garam = new Barang("PA01", 0, null, null);
 
-        // kategori bumbu, minuman, makanan
+        // kategori 
+        // namaKategori bumbu, minuman, makanan
         Kategori K1 = new Kategori("KAT01", "Non-Fragile");
         Kategori K2 = new Kategori("KAT02", "Fragile");
         Kategori K3 = new Kategori("KAT03", "Fragile");
