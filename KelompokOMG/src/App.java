@@ -76,9 +76,7 @@ public class App {
         Rak R3 = new Rak("KO03", "Putih", "makanan");
 
         // pesanan
-        Pesanan P1 = new Pesanan("O001", "garam");
-        Pesanan P2 = new Pesanan("O002", "teh");
-        Pesanan P3 = new Pesanan("OR03", "manisan");
+        Pesanan P1 = new Pesanan(null, null, null, null, null)
 
         // vendor
         User V1 = new User("R314", "Reisacom", "8472");
