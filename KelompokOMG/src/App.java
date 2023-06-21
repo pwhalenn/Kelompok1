@@ -62,7 +62,9 @@ public class App {
         // garam PA01, 50, "dolphin", "Rp. 110.000"
         // teh MI03, 40, "sosoro", "Rp. 100.000"
         // manisan MA02, 20, "manisku", "Rp. 90.000"
-        Barang garam = new Barang("PA01", 0, null, null);
+        Barang garam = new Barang("PA01", 50, "dolphin", "110000");
+        Barang teh = new Barang("MI03", 40, "sosoro", "100000");
+        Barang manisan = new Barang("MA02", 20, "manisku", "90000");
 
         // kategori 
         // namaKategori bumbu, minuman, makanan
