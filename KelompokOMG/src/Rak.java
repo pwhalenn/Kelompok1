@@ -14,17 +14,20 @@ public class Rak {
     private String idRak;
     private String ruangan;
     private String kategori;
-    
+    private String user;
+
 
     public Rak() {
     }
 
 
-    public Rak(String idRak, String ruangan, String kategori) {
+    public Rak(String idRak, String ruangan, String kategori, String user) {
         this.idRak = idRak;
         this.ruangan = ruangan;
         this.kategori = kategori;
+        this.user = user;
     }
+
 
 
     public String getIdRak() {
@@ -51,6 +54,14 @@ public class Rak {
         this.kategori = kategori;
     }
 
+    public String getUser() {
+        return this.user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
 
 
     @Override
@@ -59,6 +70,7 @@ public class Rak {
             " idRak='" + getIdRak() + "'" +
             ", ruangan='" + getRuangan() + "'" +
             ", kategori='" + getKategori() + "'" +
+            ", user='" + getUser() + "'" +
             "}";
     }
 }
