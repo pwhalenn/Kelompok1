@@ -76,7 +76,7 @@ public class App {
         Rak R3 = new Rak("KO03", "Putih", "makanan");
 
         // pesanan
-        Pesanan P1 = new Pesanan(null, null, null, null, null)
+        
 
         // vendor
         User V1 = new User("R314", "Reisacom", "8472");
@@ -110,55 +110,5 @@ public class App {
                         //System.out.println(infoKategori[i]);
                 //}
             //}
-
-
-        
-        Barang garam = new Barang("PA01", "bumbu");
-        System.out.println(garam);
-        Barang teh = new Barang("MI03", "minuman");
-        System.out.println(teh);
-        Barang manisan = new Barang("MA02", "makanan");
-        System.out.println(manisan);
-        //
-
-        InfoBarang IB1 = new InfoBarang("23-08-24", "dolphin", "30");
-        System.out.println(IB1);
-        InfoBarang IB2 = new InfoBarang("01-12-23", "sosoro", "50");
-        System.out.println(IB2);
-        InfoBarang IB3 = new InfoBarang("11-01-25", "manisku", "80");
-        System.out.println(IB3);
-        //
-
-        Kategori bumbu = new Kategori("KAT01", "Non-Fragile");
-        System.out.println(bumbu);
-        Kategori minuman = new Kategori("KAT02", "Fragile");
-        System.out.println(minuman);
-        Kategori makanan = new Kategori("KAT03", "Fragile");
-        System.out.println(makanan);
-        //
-
-        Rak R1 = new Rak("KO01", "Biru", "bumbu");
-        System.out.println(R1);
-        Rak R2 = new Rak("KO02", "Hitam", "minuman");
-        System.out.println(R2);
-        Rak R3 = new Rak("KO03", "Putih", "makanan");
-        System.out.println(R3);
-        //
-
-        Stock S1 = new Stock("STOCK1", "garam", 50, "Rp. 110.000");
-        System.out.println(S1);
-        Stock S2 = new Stock("STOCK2", "teh", 40, "Rp. 100.000");
-        System.out.println(S2);
-        Stock S3 = new Stock("STOCK3", "manisan", 20, "Rp. 90.000");
-        System.out.println(S3);
-        //
-
-        User V1 = new User("R314", "Reisacom", "8472");
-        System.out.println(V1);
-        User V2 = new User("K407", "Kaoru", "7454");
-        System.out.println(V2);
-        User V3 = new User("A981", "Adonis", "7739");
-        System.out.println(V3);
-        //
     }
 }
