@@ -3,8 +3,8 @@ public class ArusStock {
     private String idPesanan;
     private int barangMasuk;
     private int barangKeluar;
-    private Barang idBarang;
-    private User user;
+    private Barang Barang;
+    private String idUser;
 
 
     public ArusStock() {
