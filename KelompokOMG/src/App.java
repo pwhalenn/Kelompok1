@@ -66,9 +66,9 @@ public class App {
 
         // kategori 
         // namaKategori bumbu, minuman, makanan
-        Kategori K1 = new Kategori("KAT01", "Non-Fragile");
-        Kategori K2 = new Kategori("KAT02", "Fragile");
-        Kategori K3 = new Kategori("KAT03", "Fragile");
+        Kategori K1 = new Kategori("KAT01", "Bumbu");
+        Kategori K2 = new Kategori("KAT02", "Minuman");
+        Kategori K3 = new Kategori("KAT03", "Makanan");
 
         //rak
         Rak R1 = new Rak("KO01", "Biru", "bumbu");
