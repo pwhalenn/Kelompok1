@@ -3,7 +3,7 @@ public class Pesanan {
     private String idPesanan;
     private String barangMasuk;
     private String barangKeluar;
-    private String idString;
+    private String idBarang;
     private String user;
 
 
@@ -11,11 +11,11 @@ public class Pesanan {
     }
 
 
-    public Pesanan(String idPesanan, String barangMasuk, String barangKeluar, String idString, String user) {
+    public Pesanan(String idPesanan, String barangMasuk, String barangKeluar, String idBarang, String user) {
         this.idPesanan = idPesanan;
         this.barangMasuk = barangMasuk;
         this.barangKeluar = barangKeluar;
-        this.idString = idString;
+        this.idBarang = idBarang;
         this.user = user;
     }
 
@@ -44,12 +44,12 @@ public class Pesanan {
         this.barangKeluar = barangKeluar;
     }
 
-    public String getIdString() {
-        return this.idString;
+    public String getIdBarang() {
+        return this.idBarang;
     }
 
-    public void setIdString(String idString) {
-        this.idString = idString;
+    public void setIdBarang(String idBarang) {
+        this.idBarang = idBarang;
     }
 
     public String getUser() {
@@ -67,7 +67,7 @@ public class Pesanan {
             " idPesanan='" + getIdPesanan() + "'" +
             ", barangMasuk='" + getBarangMasuk() + "'" +
             ", barangKeluar='" + getBarangKeluar() + "'" +
-            ", idString='" + getIdString() + "'" +
+            ", idBarang='" + getIdBarang() + "'" +
             ", user='" + getUser() + "'" +
             "}";
     }
