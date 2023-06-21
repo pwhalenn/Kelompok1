@@ -1,4 +1,4 @@
-public class Pesanan {
+public class ArusStock {
     
     private String idPesanan;
     private String barangMasuk;
@@ -7,11 +7,11 @@ public class Pesanan {
     private String user;
 
 
-    public Pesanan() {
+    public ArusStock() {
     }
 
 
-    public Pesanan(String idPesanan, String barangMasuk, String barangKeluar, String idBarang, String user) {
+    public ArusStock(String idPesanan, String barangMasuk, String barangKeluar, String idBarang, String user) {
         this.idPesanan = idPesanan;
         this.barangMasuk = barangMasuk;
         this.barangKeluar = barangKeluar;
