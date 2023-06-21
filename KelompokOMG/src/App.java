@@ -78,7 +78,7 @@ public class App {
         // pesanan
         
 
-        // vendor
+        // user
         User V1 = new User("R314", "Reisacom", "8472");
         User V2 = new User("K407", "Kaoru", "7454");
         User V3 = new User("A981", "Adonis", "7739");
