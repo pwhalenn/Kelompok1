@@ -1,11 +1,15 @@
-//barang
-//Class barang akan berisi ID barang dan Kategori
-//ID barang bersifat string
-//Merek barang bersifat string
+/* 
+Kelas untuk mengetahui informasi-informasi barang
 
-//infoBarang
-//Akan yang akan menjelaskan expiredDate, merek, jumlahDiDus
-//bersifat string
+Memiliki atribut:
+
+idBarang bersifat string
+stock bersifat int
+merek bersifat string
+hargaBarang bersifat int
+idKategori
+user
+*/
 
 
 public class Barang {
@@ -14,6 +18,8 @@ public class Barang {
     private int stock;
     private String merekBarang;
     private String hargaBarang;
+    private Kategori idkategori;
+    private User user;
 
 
     public Barang() {
@@ -25,6 +31,8 @@ public class Barang {
         this.stock = stock;
         this.merekBarang = merekBarang;
         this.hargaBarang = hargaBarang;
+        this.idkategori = idkategori;
+        this.user = user;
     }
 
 
@@ -60,6 +68,21 @@ public class Barang {
         this.hargaBarang = hargaBarang;
     }
 
+    public Kategori getIdkategori() {
+        return this.idkategori;
+    }
+
+    public void setIdkategori(Kategori idkategori) {
+        this.idkategori = idkategori;
+    }
+
+    public User getUser() {
+        return this.user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     @Override
     public String toString() {
