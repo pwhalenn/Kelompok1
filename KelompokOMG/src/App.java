@@ -75,8 +75,10 @@ public class App {
         Rak R2 = new Rak("KO02", "Hitam", "minuman");
         Rak R3 = new Rak("KO03", "Putih", "makanan");
 
-        // pesanan
-        
+        // aruspesanan
+        ArusStock A1 = new ArusStock("PE01", 0, 0, garam, null);
+        ArusStock A2 = new ArusStock("PE02", 0, 0, garam, null);
+        ArusStock A3 = new ArusStock("PE03", 0, 0, garam, null);
 
         // vendor
         User V1 = new User("R314", "Reisacom", "8472");
