@@ -16,8 +16,9 @@ public class Kategori {
     public Kategori(String idKategori, String namaKategori) {
         this.idKategori = idKategori;
         this.namaKategori = namaKategori;
-    
+    }
 
+    
     public String getIdKategori() {
         return this.idKategori;
     }
