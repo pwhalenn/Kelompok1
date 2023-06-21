@@ -62,7 +62,9 @@ public class App {
         // garam PA01, 50, "dolphin", "Rp. 110.000"
         // teh MI03, 40, "sosoro", "Rp. 100.000"
         // manisan MA02, 20, "manisku", "Rp. 90.000"
-        Barang garam = new Barang("PA01", 0, null, null);
+        Barang garam = new Barang("PA01", 50, "dolphin", "110000");
+        Barang teh = new Barang("MI03", 40, "sosoro", "100000");
+        Barang manisan = new Barang("MA02", 20, "manisku", "90000");
 
         // kategori 
         // namaKategori bumbu, minuman, makanan
@@ -80,7 +82,7 @@ public class App {
         ArusStock A2 = new ArusStock("PE02", 0, 0, garam, null);
         ArusStock A3 = new ArusStock("PE03", 0, 0, garam, null);
 
-        // vendor
+        // user
         User V1 = new User("R314", "Reisacom", "8472");
         User V2 = new User("K407", "Kaoru", "7454");
         User V3 = new User("A981", "Adonis", "7739");
