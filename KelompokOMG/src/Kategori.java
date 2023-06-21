@@ -1,24 +1,21 @@
 // Kategori 
 // Id Kategori berupa sebuah string
-// Jenis Barang berupa sebuah string yang berisi: "fragile atau non fragile"
+// namaKategori berupa sebuah string
 
-// Id Kategori dan Jenis Barang
-
-
+// Id Kategori dan Nama Kategori
 
 public class Kategori {
 
     private String idKategori;
-    private String fragile;
+    private String namaKategori;
 
 
     public Kategori() {
     }
     
-    public Kategori(String idKategori, String fragile) {
+    public Kategori(String idKategori, String namaKategori) {
         this.idKategori = idKategori;
-        this.fragile = fragile;
-    }
+        this.namaKategori = namaKategori;
     
 
     public String getIdKategori() {
@@ -30,12 +27,12 @@ public class Kategori {
     }
 
 
-    public String getFragile() {
-        return this.fragile;
+    public String getNamaKategori() {
+        return this.namaKategori;
     }
 
-    public void setFragile(String fragile) {
-        this.fragile = fragile;
+    public void setnamaKategori(String namaKategori) {
+        this.namaKategori = namaKategori;
     }
 
 
@@ -43,7 +40,7 @@ public class Kategori {
     public String toString() {
         return "{" +
             " IdKategori='" + getIdKategori() + "'" +
-            ", Fragile='" + getFragile() + "'" +
+            ", NamaKategori='" + getNamaKategori() + "'" +
             "}";
     }
 }

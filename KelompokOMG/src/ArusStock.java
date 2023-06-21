@@ -1,17 +1,17 @@
 public class ArusStock {
     
     private String idPesanan;
-    private String barangMasuk;
-    private String barangKeluar;
-    private String idBarang;
-    private String user;
+    private int barangMasuk;
+    private int barangKeluar;
+    private Barang idBarang;
+    private User user;
 
 
     public ArusStock() {
     }
 
 
-    public ArusStock(String idPesanan, String barangMasuk, String barangKeluar, String idBarang, String user) {
+    public ArusStock(String idPesanan, int barangMasuk, int barangKeluar, Barang idBarang, User user) {
         this.idPesanan = idPesanan;
         this.barangMasuk = barangMasuk;
         this.barangKeluar = barangKeluar;
@@ -28,35 +28,35 @@ public class ArusStock {
         this.idPesanan = idPesanan;
     }
 
-    public String getBarangMasuk() {
+    public int getBarangMasuk() {
         return this.barangMasuk;
     }
 
-    public void setBarangMasuk(String barangMasuk) {
+    public void setBarangMasuk(int barangMasuk) {
         this.barangMasuk = barangMasuk;
     }
 
-    public String getBarangKeluar() {
+    public int getBarangKeluar() {
         return this.barangKeluar;
     }
 
-    public void setBarangKeluar(String barangKeluar) {
+    public void setBarangKeluar(int barangKeluar) {
         this.barangKeluar = barangKeluar;
     }
 
-    public String getIdBarang() {
+    public Barang getIdBarang() {
         return this.idBarang;
     }
 
-    public void setIdBarang(String idBarang) {
+    public void setIdBarang(Barang idBarang) {
         this.idBarang = idBarang;
     }
 
-    public String getUser() {
+    public User getUser() {
         return this.user;
     }
 
-    public void setUser(String user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
