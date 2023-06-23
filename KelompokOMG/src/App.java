@@ -92,8 +92,8 @@ public class App {
     
    public static void main(String[] args) throws Exception {
         init();
-            //cetakDataBarang();
-           // public static void cetakDataBarang(String[] args) {
+            // cetakDataBarang();
+            // public static void cetakDataBarang(String[] args) {
                 //for (int i =0; i<20;i++){
                     //if(barang[i]!=null)
                         //System.out.println(barang[i]);
@@ -101,7 +101,7 @@ public class App {
                 
             //}
             //cetakInfoBarang();
-           // public static void cetakInfoBarang(String[] args) {
+            // public static void cetakInfoBarang(String[] args) {
                 //for (int i =0; i<20;i++){
                     //if(infoBarang[i]!=null)
                         //System.out.println(infoBarang[i]);
