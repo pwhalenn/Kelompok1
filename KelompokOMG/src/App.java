@@ -4,6 +4,27 @@ import java.util.Scanner;
 public class App {
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+    //public static void MenuUtama() {
+    //    Scanner scanner = new Scanner(System.in);
+    //    while (true) {
+    //        System.out.println("==================Oh My Stock==================");
+    //        System.out.println("1. Login");
+    //        System.out.println("2. Exit");
+    //        int choice = scanner.nextInt();
+    //        switch (choice) {
+    //            case 1 -> {
+    //                return;
+    //            }
+    //            case 2 -> System.exit(0);
+    //            default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
+    //        }
+    //    }
+    //}
+=======
+=======
+>>>>>>> b157adeff3f8e72b32c91a4db998eb0f22731671
     public static void MenuAtama() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -20,6 +41,10 @@ public class App {
             }
         }
     }
+<<<<<<< HEAD
+>>>>>>> b157adeff3f8e72b32c91a4db998eb0f22731671
+=======
+>>>>>>> b157adeff3f8e72b32c91a4db998eb0f22731671
 
 
     public static JenisMenu UserMenu() {
