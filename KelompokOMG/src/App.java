@@ -5,6 +5,7 @@ public class App {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     //public static void MenuUtama() {
     //    Scanner scanner = new Scanner(System.in);
     //    while (true) {
@@ -22,6 +23,8 @@ public class App {
     //    }
     //}
 =======
+=======
+>>>>>>> b157adeff3f8e72b32c91a4db998eb0f22731671
     public static void MenuAtama() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -38,6 +41,9 @@ public class App {
             }
         }
     }
+<<<<<<< HEAD
+>>>>>>> b157adeff3f8e72b32c91a4db998eb0f22731671
+=======
 >>>>>>> b157adeff3f8e72b32c91a4db998eb0f22731671
 
 
