@@ -73,9 +73,9 @@ public class App {
         Kategori K3 = new Kategori("KAT03", "Makanan");
 
         //rak
-        Rak R1 = new Rak("KO01", "Biru", "Bumbu", null);
-        Rak R2 = new Rak("KO02", "Hitam", "Minuman", null);
-        Rak R3 = new Rak("KO03", "Putih", "Makanan", null)
+        Rak R1 = new Rak("KO01", "Biru", "R314");
+        Rak R2 = new Rak("KO02", "Hitam", "K407");
+        Rak R3 = new Rak("KO03", "Putih", "A981");
 
         // aruspesanan
         ArusStock A1 = new ArusStock("PE01", 0, 0, garam, null);
