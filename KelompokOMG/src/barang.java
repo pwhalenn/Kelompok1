@@ -6,9 +6,8 @@ Memiliki atribut:
 idBarang bersifat string
 stock bersifat int
 merek bersifat string
-hargaBarang bersifat int
-idKategori
-user
+hargaBarang bersifat string
+iduser bersifat string
 */
 
 
@@ -18,8 +17,7 @@ public class Barang {
     private int stock;
     private String merekBarang;
     private String hargaBarang;
-    private Kategori idkategori;
-    private User user;
+    private String idUser;
 
 
     public Barang() {
@@ -31,8 +29,7 @@ public class Barang {
         this.stock = stock;
         this.merekBarang = merekBarang;
         this.hargaBarang = hargaBarang;
-        this.idkategori = idkategori;
-        this.user = user;
+        this.idUser = idUser;
     }
 
 
@@ -68,20 +65,12 @@ public class Barang {
         this.hargaBarang = hargaBarang;
     }
 
-    public Kategori getIdkategori() {
-        return this.idkategori;
+    public String getIdUser() {
+        return this.idUser;
     }
 
-    public void setIdkategori(Kategori idkategori) {
-        this.idkategori = idkategori;
-    }
-
-    public User getUser() {
-        return this.user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
     }
 
     @Override
