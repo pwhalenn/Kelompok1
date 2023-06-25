@@ -4,6 +4,7 @@ public class ArusStock {
     private int barangMasuk;
     private int barangKeluar;
     private Barang barang;
+    private String idUser;
 
 
     public ArusStock() {
