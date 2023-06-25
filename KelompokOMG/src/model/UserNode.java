@@ -16,7 +16,6 @@ public class UserNode extends Node<UserNode> {
     private String idUser;
     private String namaUser;
     private String pin;
-    // private int stock;
     private Riwayat riwayat;
 
 

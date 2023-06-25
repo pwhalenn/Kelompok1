@@ -30,38 +30,39 @@ public class App {
 
 
     public static JenisMenu MainMenu() {
-        System.out.println("=====================MENU=====================");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1.  Informasi Barang");
-        System.out.println("2.  Pembelian Barang");
-        System.out.println("3.  Penjualan Barang");
-        System.out.println("4.  Riwayat Stock");
-        System.out.println("5.  Penampilan Lokasi Stock");
-        System.out.println("6.  Logout");
-        System.out.print("Choice ? ");
-        int choice = scanner.nextInt();
-        switch (choice) {
-            case 1 -> {
-                return JenisMenu.INFORMASI_STOCK;
+        while (true) {
+            System.out.println("=====================MENU=====================");
+            System.out.println("1.  Informasi Barang");
+            System.out.println("2.  Pembelian Barang");
+            System.out.println("3.  Penjualan Barang");
+            System.out.println("4.  Riwayat Stock");
+            System.out.println("5.  Penampilan Lokasi Stock");
+            System.out.println("6.  Logout");
+            System.out.print("Choice ? ");
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1 -> {
+                    return JenisMenu.INFORMASI_STOCK;
+                }
+                case 2 -> {
+                    return JenisMenu.PEMBELIAN_STOCK;
+                }
+                case 3 -> {
+                    return JenisMenu.PENJUALAN_STOCK;
+                }
+                case 4 -> {
+                    return JenisMenu.RIWAYAT_STOCK;
+                }
+                case 5 -> {
+                    return JenisMenu.LOKASI_STOCK;
+                }
+                case 6 -> {
+                    return JenisMenu.LOGOUT;
+                }
+                default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
             }
-            case 2 -> {
-                return JenisMenu.PEMBELIAN_STOCK;
-            }
-            case 3 -> {
-                return JenisMenu.PENJUALAN_STOCK;
-            }
-            case 4 -> {
-                return JenisMenu.RIWAYAT_STOCK;
-            }
-            case 5 -> {
-                return JenisMenu.LOKASI_STOCK;
-            }
-            case 6 -> {
-                return JenisMenu.LOGOUT;
-            }
-            default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
         }
-        return null;
     }
 
 
