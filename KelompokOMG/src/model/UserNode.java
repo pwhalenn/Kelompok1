@@ -1,3 +1,4 @@
+package model;
 /*
 Kelas untuk mengetahui siapa yang melakukan semua aktifitas penginputan dan pengeditan.
 
@@ -23,7 +24,6 @@ public class UserNode extends Node<UserNode> {
         this.idUser = idUser;
         this.namaUser = namaUser;
         this.pin = pin;
-        // this.stock = stock;
 
         this.Next = null;
     }
@@ -32,7 +32,6 @@ public class UserNode extends Node<UserNode> {
         String idUser = metadata[0];
         String namaUser = metadata[1];
         String pin = metadata[2];
-        // int stock = (int) (metadata[3]);
 
         this.idUser = idUser;
         this.namaUser = namaUser;
@@ -101,13 +100,4 @@ public class UserNode extends Node<UserNode> {
             ", pin='" + getPin() + "'" +
             "}";
     }
-
-
-    // public void pembelianStock(double amount) {
-    //     this.Saldo -= amount;
-    // }
-
-    // public void penjualanStock(double amount) {
-    //     this.Saldo += amount;
-    // }
 }

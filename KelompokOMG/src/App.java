@@ -67,7 +67,7 @@ public class App {
         String namaUser = x.nextLine();
 
         System.out.print("PIN ? ");
-        String sandi = new String(console.readPassword());
+        String pin = new String(console.readPassword());
 
         user.login(idUser, namaUser, pin);
     }
@@ -137,9 +137,9 @@ public class App {
 
 
         // Barang
-        Barang garam = new Barang("PA01", 50, "dolphin", "Rp. 110.000", "R314");
-        Barang teh = new Barang("MI03", 40, "sosoro", "Rp. 100.000", "K407");
-        Barang manisan = new Barang("MA02", 20, "manisku", "Rp. 90.000", "A981");
+        Barang garam = new Barang("PA01", 50, "dolphin", "Rp. 110.000");
+        Barang teh = new Barang("MI03", 40, "sosoro", "Rp. 100.000");
+        Barang manisan = new Barang("MA02", 20, "manisku", "Rp. 90.000");
 
 
         // ArusStock
