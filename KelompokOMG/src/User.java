@@ -1,6 +1,11 @@
-    // didalam user akan terdapat atribut seperti namaUser, ID User dan PIN class ini akan menunjukkan
-    // siapa yang melakukan berbagai kegiatan dalam aplikasi
+/*
+Kelas untuk mengetahui siapa yang melakukan semua aktifitas penginputan dan pengeditan.
 
+Memiliki atribut:
+idUserk bersifat string
+namaUserk bersifat string
+pink bersifat string
+*/
 
 
 public class User {

@@ -1,8 +1,15 @@
-// Kategori 
-// Id Kategori berupa sebuah string
-// namaKategori berupa sebuah string
+/*
+Kelas untuk mengetahui kategori dari setiap barang.
 
-// Id Kategori dan Nama Kategori
+NB: Nantinya kategori akan menjadi penentu pengalokasi barang.
+
+Memiliki atribut:
+idKategori bersifat string
+namaKategori bersifat string
+barang merupakan kelas (agregrasi)
+rak merupakan kelas (agregrasi)
+*/
+
 
 public class Kategori {
 

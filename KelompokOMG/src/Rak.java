@@ -1,13 +1,11 @@
-//Rak
-//Pada rak memiliki beberapa class yaitu idRak, ruangan, dan kategori
-//idRuangan
+/*
+Kelas untuk mengetahui lokasi barang.
 
-//ruangan
-//Pada ruangan memiliki beberapa nomor ruangan seperti R1, R2, R3 dan pada tiap ruangan terdapat kategori barang yang berbeda
-
-//kategori
-
-
+Memiliki atribut:
+idRak bersifat string
+ruangan bersifat string
+idUser bersifat string (asosiasi)
+*/
 
 public class Rak {
 

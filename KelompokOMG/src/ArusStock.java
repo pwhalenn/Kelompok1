@@ -1,3 +1,15 @@
+/*
+Kelas untuk mengetahui stock barang masuk dan keluar.
+
+Memiliki atribut
+idPesanan bersifat string
+barangMasuk bersifat int
+barangKeluar bersifat int
+barang merupakan kelas (agregrasi)
+idUser bersifat string (asosiasi)
+*/
+
+
 public class ArusStock {
     
     private String idPesanan;

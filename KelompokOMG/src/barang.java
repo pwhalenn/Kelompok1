@@ -2,12 +2,11 @@
 Kelas untuk mengetahui informasi-informasi barang
 
 Memiliki atribut:
-
 idBarang bersifat string
 stock bersifat int
 merek bersifat string
 hargaBarang bersifat string
-iduser bersifat string
+iduser bersifat string (asosiasi)
 */
 
 
