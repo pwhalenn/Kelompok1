@@ -11,7 +11,7 @@ iduser bersifat string (asosiasi)
 */
 
 
-public class LOL {
+public class Barang {
 
     private String idBarang;
     private int stock;
@@ -20,11 +20,11 @@ public class LOL {
     private String idUser;
 
 
-    public LOL() {
+    public Barang() {
     }
 
 
-    public LOL(String idBarang, int stock, String merekBarang, String hargaBarang) {
+    public Barang(String idBarang, int stock, String merekBarang, String hargaBarang) {
         this.idBarang = idBarang;
         this.stock = stock;
         this.merekBarang = merekBarang;
