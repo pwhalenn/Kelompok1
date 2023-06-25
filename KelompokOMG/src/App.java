@@ -3,24 +3,7 @@ import java.util.Scanner;
 
 public class App {
 
-    //public static void MenuUtama() {
-    //    Scanner scanner = new Scanner(System.in);
-    //    while (true) {
-    //        System.out.println("==================Oh My Stock==================");
-    //        System.out.println("1. Login");
-    //        System.out.println("2. Exit");
-    //        int choice = scanner.nextInt();
-    //        switch (choice) {
-    //            case 1 -> {
-    //                return;
-    //            }
-    //            case 2 -> System.exit(0);
-    //            default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
-    //        }
-    //    }
-    //}
-
-    public static void MenuAtama() {
+    public static void GuestMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("==================Oh My Stock==================");
@@ -42,10 +25,10 @@ public class App {
         System.out.println("=====================MENU=====================");
         Scanner scanner = new Scanner(System.in);
         System.out.println("1.  Informasi Barang");
-        System.out.println("2.  Transaksi Barang");
-        System.out.println("3.  Pengeditan Barang");
-        System.out.println("4.  Penampilan Lokasi Stock");
-        System.out.println("5.  Riwayat Transaksi Barang");
+        System.out.println("2.  Pembelian Barang");
+        System.out.println("3.  Penjualan Barang");
+        System.out.println("4.  Riwayat Stock");
+        System.out.println("5.  Penampilan Lokasi Stock");
         System.out.println("6.  Logout");
         System.out.print("Choice ? ");
         int choice = scanner.nextInt();
@@ -54,16 +37,16 @@ public class App {
                 return JenisMenu.INFORMASI_STOCK;
             }
             case 2 -> {
-                return JenisMenu.TRANSAKSI_STOCK;
+                return JenisMenu.PEMBELIAN_STOCK;
             }
             case 3 -> {
-                return JenisMenu.EDIT_STOCK;
+                return JenisMenu.PENJUALAN_STOCK;
             }
             case 4 -> {
-                return JenisMenu.LOKASI_STOCK;
+                return JenisMenu.RIWAYAT_STOCK;
             }
             case 5 -> {
-                return JenisMenu.RIWAYAT_STOCK;
+                return JenisMenu.LOKASI_STOCK;
             }
             case 6 -> {
                 return JenisMenu.LOGOUT;
@@ -73,11 +56,84 @@ public class App {
     }
 
 
+    public static void LoginForm(User user) {
+        Scanner x = new Scanner(System.in);
+        Console console = System.console();
+
+        System.out.print("ID User ? ");
+        String idUser = x.nextLine();
+
+        System.out.print("Nama User ? ");
+        String namaUser = x.nextLine();
+
+        System.out.print("PIN ? ");
+        String sandi = new String(console.readPassword());
+
+        user.login(idUser, namaUser, pin);
+    }
+
+    
+   public static void main(String[] args) throws Exception {
+        User user = new User();
+
+        while (true) {
+            GuestMenu();
+            LoginForm(user);
+
+            while (user.getUser() != null) {
+                JenisMenu jenisMenu = UserMenu();
+                switch (jenisMenu) {
+                    case INFORMASI_STOCK -> {
+                        user.informasiStock();
+                    }
+                    case PEMBELIAN_STOCK -> {
+                        user.pembelianStock();
+                    }
+                    case PENJUALAN_STOCK -> {
+                        user.penjualanStock();
+                    }
+                    case RIWAYAT_STOCK -> {
+                        user.riwayatStock();
+                    }
+                    case LOKASI_STOCK ->  {
+                        user.lokasiStock();
+                    }
+                    case LOGOUT -> {
+                        user.logout();
+                    }
+                }
+            }
+        }
+            // cetakDataBarang();
+            // public static void cetakDataBarang(String[] args) {
+                //for (int i =0; i<20;i++){
+                    //if(barang[i]!=null)
+                        //System.out.println(barang[i]);
+                //}
+                
+            //}
+            //cetakInfoBarang();
+            // public static void cetakInfoBarang(String[] args) {
+                //for (int i =0; i<20;i++){
+                    //if(infoBarang[i]!=null)
+                        //System.out.println(infoBarang[i]);
+                //}
+            //}
+            //cetakKategori();
+            //public static void cetakKategori(String[] args) {
+                //for (int i =0; i<20;i++){
+                    //if(infoKategori[i]!=null)
+                        //System.out.println(infoKategori[i]);
+                //}
+            //}
+    }
+    
+
     public static void init() {
         // User
-        User V1 = new User("R314", "Reisacom", "8472");
-        User V2 = new User("K407", "Kaoru", "7454");
-        User V3 = new User("A981", "Adonis", "7739");
+        UserNode U1 = new UserNode("R314", "Reisacom", "8472");
+        UserNode U2 = new UserNode("K407", "Kaoru", "7454");
+        UserNode U3 = new UserNode("A981", "Adonis", "7739");
 
 
         // Barang
@@ -102,33 +158,5 @@ public class App {
         Kategori K1 = new Kategori("KAT01", "bumbu", garam, R1);
         Kategori K2 = new Kategori("KAT02", "minuman", garam, R2);
         Kategori K3 = new Kategori("KAT03", "makanan", garam, R3);
-    }
-
-
-    
-   public static void main(String[] args) throws Exception {
-        init();
-            // cetakDataBarang();
-            // public static void cetakDataBarang(String[] args) {
-                //for (int i =0; i<20;i++){
-                    //if(barang[i]!=null)
-                        //System.out.println(barang[i]);
-                //}
-                
-            //}
-            //cetakInfoBarang();
-            // public static void cetakInfoBarang(String[] args) {
-                //for (int i =0; i<20;i++){
-                    //if(infoBarang[i]!=null)
-                        //System.out.println(infoBarang[i]);
-                //}
-            //}
-            //cetakKategori();
-            //public static void cetakKategori(String[] args) {
-                //for (int i =0; i<20;i++){
-                    //if(infoKategori[i]!=null)
-                        //System.out.println(infoKategori[i]);
-                //}
-            //}
     }
 }
