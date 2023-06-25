@@ -13,8 +13,6 @@ idUser bersifat string (asosiasi)
 public class ArusStock {
     
     private String idPesanan;
-    private int barangMasuk;
-    private int barangKeluar;
     private Barang barang;
     private String idUser;
 
@@ -23,10 +21,8 @@ public class ArusStock {
     }
 
 
-    public ArusStock(String idPesanan, int barangMasuk, int barangKeluar, Barang barang) {
+    public ArusStock(String idPesanan, Barang barang) {
         this.idPesanan = idPesanan;
-        this.barangMasuk = barangMasuk;
-        this.barangKeluar = barangKeluar;
         this.barang = barang;
     }
 
@@ -37,22 +33,6 @@ public class ArusStock {
 
     public void setIdPesanan(String idPesanan) {
         this.idPesanan = idPesanan;
-    }
-
-    public int getBarangMasuk() {
-        return this.barangMasuk;
-    }
-
-    public void setBarangMasuk(int barangMasuk) {
-        this.barangMasuk = barangMasuk;
-    }
-
-    public int getBarangKeluar() {
-        return this.barangKeluar;
-    }
-
-    public void setBarangKeluar(int barangKeluar) {
-        this.barangKeluar = barangKeluar;
     }
 
     public Barang getBarang() {
@@ -68,8 +48,6 @@ public class ArusStock {
     public String toString() {
         return "{" +
             " idPesanan='" + getIdPesanan() + "'" +
-            ", barangMasuk='" + getBarangMasuk() + "'" +
-            ", barangKeluar='" + getBarangKeluar() + "'" +
             ", barang='" + getBarang() + "'" +
             "}";
     }

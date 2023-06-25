@@ -87,9 +87,9 @@ public class App {
 
 
         // ArusStock
-        ArusStock AS1 = new ArusStock("PE01", 0, 0, garam);
-        ArusStock AS2 = new ArusStock("PE02", 0, 0, teh);
-        ArusStock AS3 = new ArusStock("PE03", 0, 0, manisan);
+        ArusStock AS1 = new ArusStock("PE01", garam);
+        ArusStock AS2 = new ArusStock("PE02", teh);
+        ArusStock AS3 = new ArusStock("PE03", manisan);
 
 
         // Rak
@@ -102,11 +102,6 @@ public class App {
         Kategori K1 = new Kategori("KAT01", "bumbu", garam, R1);
         Kategori K2 = new Kategori("KAT02", "minuman", garam, R2);
         Kategori K3 = new Kategori("KAT03", "makanan", garam, R3);
-
-
-        // Fragile
-        Fragile F1 = new Fragile("FG01", "Fragile");
-        Fragile F2 = new Fragile("FG02", "Non-Fragile");
     }
 
 
