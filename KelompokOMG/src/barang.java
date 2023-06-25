@@ -17,6 +17,7 @@ public class Barang {
     private int stock;
     private String merekBarang;
     private String hargaBarang;
+    private String idUser;
 
 
     public Barang() {

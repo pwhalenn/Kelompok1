@@ -13,8 +13,9 @@ public class Rak {
 
     private String idRak;
     private String ruangan;
+    private String idUser;
 
-
+    
     public Rak() {
     }
 
