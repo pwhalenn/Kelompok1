@@ -4,19 +4,17 @@ public class ArusStock {
     private int barangMasuk;
     private int barangKeluar;
     private Barang barang;
-    private String idUser;
 
 
     public ArusStock() {
     }
 
 
-    public ArusStock(String idPesanan, int barangMasuk, int barangKeluar, Barang barang, String idUser) {
+    public ArusStock(String idPesanan, int barangMasuk, int barangKeluar, Barang barang) {
         this.idPesanan = idPesanan;
         this.barangMasuk = barangMasuk;
         this.barangKeluar = barangKeluar;
         this.barang = barang;
-        this.idUser = idUser;
     }
 
 
@@ -52,14 +50,6 @@ public class ArusStock {
         this.barang = barang;
     }
 
-    public String getIdUser() {
-        return this.idUser;
-    }
-
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
-    }
-
 
     @Override
     public String toString() {
@@ -68,7 +58,6 @@ public class ArusStock {
             ", barangMasuk='" + getBarangMasuk() + "'" +
             ", barangKeluar='" + getBarangKeluar() + "'" +
             ", barang='" + getBarang() + "'" +
-            ", idUser='" + getIdUser() + "'" +
             "}";
     }
 }

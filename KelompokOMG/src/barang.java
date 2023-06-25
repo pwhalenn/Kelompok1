@@ -17,19 +17,17 @@ public class Barang {
     private int stock;
     private String merekBarang;
     private String hargaBarang;
-    private String idUser;
 
 
     public Barang() {
     }
 
 
-    public Barang(String idBarang, int stock, String merekBarang, String hargaBarang, String idUser) {
+    public Barang(String idBarang, int stock, String merekBarang, String hargaBarang) {
         this.idBarang = idBarang;
         this.stock = stock;
         this.merekBarang = merekBarang;
         this.hargaBarang = hargaBarang;
-        this.idUser = idUser;
     }
 
 
@@ -65,14 +63,6 @@ public class Barang {
         this.hargaBarang = hargaBarang;
     }
 
-    public String getIdUser() {
-        return this.idUser;
-    }
-
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
-    }
-
 
     @Override
     public String toString() {
@@ -81,7 +71,6 @@ public class Barang {
             ", stock='" + getStock() + "'" +
             ", merekBarang='" + getMerekBarang() + "'" +
             ", hargaBarang='" + getHargaBarang() + "'" +
-            ", idUser='" + getIdUser() + "'" +
             "}";
     }
 }

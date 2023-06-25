@@ -13,17 +13,15 @@ public class Rak {
 
     private String idRak;
     private String ruangan;
-    private String idUser;
 
 
     public Rak() {
     }
 
 
-    public Rak(String idRak, String ruangan, String idUser) {
+    public Rak(String idRak, String ruangan) {
         this.idRak = idRak;
         this.ruangan = ruangan;
-        this.idUser = idUser;
     }
 
 
@@ -43,21 +41,12 @@ public class Rak {
         this.ruangan = ruangan;
     }
 
-    public String getIdUser() {
-        return this.idUser;
-    }
-
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
-    }
-
 
     @Override
     public String toString() {
         return "{" +
             " idRak='" + getIdRak() + "'" +
             ", ruangan='" + getRuangan() + "'" +
-            ", idUser='" + getIdUser() + "'" +
             "}";
     }
 }
