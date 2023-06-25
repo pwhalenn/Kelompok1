@@ -78,20 +78,20 @@ public class App {
         // garam PA01, 50, "dolphin", "Rp. 110.000"
         // teh MI03, 40, "sosoro", "Rp. 100.000"
         // manisan MA02, 20, "manisku", "Rp. 90.000"
-        Barang garam = new Barang("PA01", 50, "dolphin", "110000");
-        Barang teh = new Barang("MI03", 40, "sosoro", "100000");
-        Barang manisan = new Barang("MA02", 20, "manisku", "90000");
+        Barang garam = new Barang("PA01", 50, "dolphin", "Rp. 110.000");
+        Barang teh = new Barang("MI03", 40, "sosoro", "Rp. 100.000");
+        Barang manisan = new Barang("MA02", 20, "manisku", "Rp. 90.000");
 
         // kategori 
         // namaKategori bumbu, minuman, makanan
-        Kategori K1 = new Kategori("KAT01", "Bumbu");
-        Kategori K2 = new Kategori("KAT02", "Minuman");
-        Kategori K3 = new Kategori("KAT03", "Makanan");
+
+        
 
         //rak
-        Rak R1 = new Rak("KO01", "Biru", "R314");
-        Rak R2 = new Rak("KO02", "Hitam", "K407");
-        Rak R3 = new Rak("KO03", "Putih", "A981");
+        // Rak R1 = new Rak("KO01", "Biru", "R314");
+        // Rak R2 = new Rak("KO02", "Hitam", "K407");
+        // Rak R3 = new Rak("KO03", "Putih", "A981");
+        Rak R1 = new Rak("KO01", "Biru");
 
         // aruspesanan
         ArusStock A1 = new ArusStock("PE01", 0, 0, garam, null);
