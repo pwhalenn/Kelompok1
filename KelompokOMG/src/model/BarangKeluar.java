@@ -1,6 +1,6 @@
 package model;
 
-public class BarangKeluar extends ArusStock {
+public class BarangKeluar extends ArusStock implements ILaporanStock {
 
     private String idKeluar;
     private int jumlahKeluar;
@@ -39,5 +39,11 @@ public class BarangKeluar extends ArusStock {
             " idKeluar='" + getIdKeluar() + "'" +
             ", jumlahKeluar='" + getJumlahKeluar() + "'" +
             "}";
+    }
+
+
+    @Override
+    public void pencatatanStock() {
+        
     }
 }

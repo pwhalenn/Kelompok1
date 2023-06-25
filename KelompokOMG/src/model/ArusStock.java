@@ -2,10 +2,8 @@ package model;
 /*
 Kelas untuk mengetahui stock barang masuk dan keluar.
 
-Memiliki atribut
+Memiliki atribut:
 idPesanan bersifat string
-barangMasuk bersifat int
-barangKeluar bersifat int
 barang merupakan kelas (agregrasi)
 idUser bersifat string (asosiasi)
 */
@@ -13,7 +11,7 @@ idUser bersifat string (asosiasi)
 public abstract class ArusStock {
     
     private String idPesanan;
-    private Barang barang;
+    private LOL barang;
     private String idUser;
 
 
@@ -21,7 +19,7 @@ public abstract class ArusStock {
     }
 
 
-    public ArusStock(String idPesanan, Barang barang) {
+    public ArusStock(String idPesanan, LOL barang) {
         this.idPesanan = idPesanan;
         this.barang = barang;
     }
@@ -35,11 +33,11 @@ public abstract class ArusStock {
         this.idPesanan = idPesanan;
     }
 
-    public Barang getBarang() {
+    public LOL getBarang() {
         return this.barang;
     }
 
-    public void setBarang(Barang barang) {
+    public void setBarang(LOL barang) {
         this.barang = barang;
     }
 
