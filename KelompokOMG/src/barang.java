@@ -23,11 +23,12 @@ public class Barang {
     }
 
 
-    public Barang(String idBarang, int stock, String merekBarang, String hargaBarang) {
+    public Barang(String idBarang, int stock, String merekBarang, String hargaBarang, String idUser) {
         this.idBarang = idBarang;
         this.stock = stock;
         this.merekBarang = merekBarang;
         this.hargaBarang = hargaBarang;
+        this.idUser = idUser;
     }
 
 
@@ -61,6 +62,14 @@ public class Barang {
 
     public void setHargaBarang(String hargaBarang) {
         this.hargaBarang = hargaBarang;
+    }
+
+    public String getIdUser() {
+        return this.idUser;
+    }
+
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
     }
 
 
