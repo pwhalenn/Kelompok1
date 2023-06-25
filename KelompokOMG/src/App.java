@@ -79,8 +79,11 @@ public class App {
         Barang teh = new Barang("MI03", 40, "sosoro", "Rp. 100.000");
         Barang manisan = new Barang("MA02", 20, "manisku", "Rp. 90.000");
 
-        // Kategori 
-        // namaKategori bumbu, minuman, makanan
+
+        // ArusStock
+        ArusStock AS1 = new ArusStock("PE01", 0, 0, garam);
+        ArusStock AS2 = new ArusStock("PE02", 0, 0, teh);
+        ArusStock AS3 = new ArusStock("PE03", 0, 0, manisan);
 
 
         // Rak
@@ -88,10 +91,12 @@ public class App {
         Rak R2 = new Rak("KO02", "Hitam");
         Rak R3 = new Rak("KO03", "Putih");
 
-        // ArusStock
-        ArusStock AS1 = new ArusStock("PE01", 0, 0, garam);
-        ArusStock AS2 = new ArusStock("PE02", 0, 0, teh);
-        ArusStock AS3 = new ArusStock("PE03", 0, 0, manisan);
+
+        // Kategori 
+        Kategori K1 = new Kategori("KAT01", "bumbu", garam, R1);
+        Kategori K2 = new Kategori("KAT02", "minuman", garam, R2);
+        Kategori K3 = new Kategori("KAT03", "makanan", garam, R3);
+
 
         // User
         User V1 = new User("R314", "Reisacom", "8472");
