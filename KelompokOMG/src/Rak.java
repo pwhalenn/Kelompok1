@@ -13,21 +13,18 @@ public class Rak {
 
     private String idRak;
     private String ruangan;
-    private String kategori;
-    private String user;
+    private String idUser;
 
 
     public Rak() {
     }
 
 
-    public Rak(String idRak, String ruangan, String kategori, String user) {
+    public Rak(String idRak, String ruangan, String idUser) {
         this.idRak = idRak;
         this.ruangan = ruangan;
-        this.kategori = kategori;
-        this.user = user;
+        this.idUser = idUser;
     }
-
 
 
     public String getIdRak() {
@@ -46,22 +43,13 @@ public class Rak {
         this.ruangan = ruangan;
     }
 
-    public String getKategori() {
-        return this.kategori;
+    public String getIdUser() {
+        return this.idUser;
     }
 
-    public void setKategori(String kategori) {
-        this.kategori = kategori;
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
     }
-
-    public String getUser() {
-        return this.user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
 
 
     @Override
@@ -69,8 +57,7 @@ public class Rak {
         return "{" +
             " idRak='" + getIdRak() + "'" +
             ", ruangan='" + getRuangan() + "'" +
-            ", kategori='" + getKategori() + "'" +
-            ", user='" + getUser() + "'" +
+            ", idUser='" + getIdUser() + "'" +
             "}";
     }
 }

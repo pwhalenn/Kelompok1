@@ -24,7 +24,7 @@ public class Barang {
     }
 
 
-    public Barang(String idBarang, int stock, String merekBarang, String hargaBarang) {
+    public Barang(String idBarang, int stock, String merekBarang, String hargaBarang, String idUser) {
         this.idBarang = idBarang;
         this.stock = stock;
         this.merekBarang = merekBarang;
@@ -73,6 +73,7 @@ public class Barang {
         this.idUser = idUser;
     }
 
+
     @Override
     public String toString() {
         return "{" +
@@ -80,6 +81,7 @@ public class Barang {
             ", stock='" + getStock() + "'" +
             ", merekBarang='" + getMerekBarang() + "'" +
             ", hargaBarang='" + getHargaBarang() + "'" +
+            ", idUser='" + getIdUser() + "'" +
             "}";
     }
 }
