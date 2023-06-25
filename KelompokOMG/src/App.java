@@ -74,6 +74,12 @@ public class App {
 
 
     public static void init() {
+        // User
+        User V1 = new User("R314", "Reisacom", "8472");
+        User V2 = new User("K407", "Kaoru", "7454");
+        User V3 = new User("A981", "Adonis", "7739");
+
+
         // Barang
         Barang garam = new Barang("PA01", 50, "dolphin", "Rp. 110.000");
         Barang teh = new Barang("MI03", 40, "sosoro", "Rp. 100.000");
@@ -98,10 +104,9 @@ public class App {
         Kategori K3 = new Kategori("KAT03", "makanan", garam, R3);
 
 
-        // User
-        User V1 = new User("R314", "Reisacom", "8472");
-        User V2 = new User("K407", "Kaoru", "7454");
-        User V3 = new User("A981", "Adonis", "7739");
+        // Fragile
+        Fragile F1 = new Fragile("FG01", "Fragile");
+        Fragile F2 = new Fragile("FG02", "Non-Fragile");
     }
 
 
