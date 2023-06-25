@@ -29,7 +29,8 @@ public class User {
                 listUser.add(userNode);
                 line = br.readLine();
             }
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

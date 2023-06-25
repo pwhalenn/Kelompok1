@@ -1,6 +1,14 @@
 import java.io.Console;
 import java.util.Scanner;
 
+import model.ArusStock;
+import model.Barang;
+import model.JenisMenu;
+import model.Kategori;
+import model.Rak;
+import model.User;
+import model.UserNode;
+
 public class App {
 
     public static void GuestMenu() {
@@ -21,7 +29,7 @@ public class App {
     }
 
 
-    public static JenisMenu UserMenu() {
+    public static JenisMenu MainMenu() {
         System.out.println("=====================MENU=====================");
         Scanner scanner = new Scanner(System.in);
         System.out.println("1.  Informasi Barang");
@@ -53,18 +61,19 @@ public class App {
             }
             default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
         }
+        return null;
     }
 
 
     public static void LoginForm(User user) {
-        Scanner x = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         Console console = System.console();
 
         System.out.print("ID User ? ");
-        String idUser = x.nextLine();
+        String idUser = scanner.nextLine();
 
         System.out.print("Nama User ? ");
-        String namaUser = x.nextLine();
+        String namaUser = scanner.nextLine();
 
         System.out.print("PIN ? ");
         String pin = new String(console.readPassword());
@@ -81,7 +90,7 @@ public class App {
             LoginForm(user);
 
             while (user.getUser() != null) {
-                JenisMenu jenisMenu = UserMenu();
+                JenisMenu jenisMenu = MainMenu();
                 switch (jenisMenu) {
                     case INFORMASI_STOCK -> {
                         user.informasiStock();
@@ -143,9 +152,9 @@ public class App {
 
 
         // ArusStock
-        ArusStock AS1 = new ArusStock("PE01", garam);
-        ArusStock AS2 = new ArusStock("PE02", teh);
-        ArusStock AS3 = new ArusStock("PE03", manisan);
+        // ArusStock AS1 = new ArusStock("PE01", garam);
+        // ArusStock AS2 = new ArusStock("PE02", teh);
+        // ArusStock AS3 = new ArusStock("PE03", manisan);
 
 
         // Rak

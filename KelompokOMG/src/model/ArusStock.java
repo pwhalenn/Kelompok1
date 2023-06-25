@@ -11,7 +11,7 @@ idUser bersifat string (asosiasi)
 public abstract class ArusStock {
     
     private String idPesanan;
-    private LOL barang;
+    private Barang barang;
     private String idUser;
 
 
@@ -19,7 +19,7 @@ public abstract class ArusStock {
     }
 
 
-    public ArusStock(String idPesanan, LOL barang) {
+    public ArusStock(String idPesanan, Barang barang) {
         this.idPesanan = idPesanan;
         this.barang = barang;
     }
@@ -33,11 +33,11 @@ public abstract class ArusStock {
         this.idPesanan = idPesanan;
     }
 
-    public LOL getBarang() {
+    public Barang getBarang() {
         return this.barang;
     }
 
-    public void setBarang(LOL barang) {
+    public void setBarang(Barang barang) {
         this.barang = barang;
     }
 
