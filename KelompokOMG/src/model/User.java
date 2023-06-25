@@ -16,7 +16,7 @@ public class User {
 
     private UserNode user = null;
 
-    User() {
+    public User() {
         listUser = new List<UserNode>();
 
         Path pathToFile = Paths.get("assets/user.csv");

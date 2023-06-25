@@ -1,3 +1,5 @@
+package model;
+
 public class List<T extends Node<T>> {
     private Node<T> Head;
 

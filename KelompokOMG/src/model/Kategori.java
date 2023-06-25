@@ -1,3 +1,5 @@
+package model;
+
 /*
 Kelas untuk mengetahui kategori dari setiap barang.
 

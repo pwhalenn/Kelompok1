@@ -1,3 +1,5 @@
+package model;
+
 public class Riwayat {
     public Queue<RiwayatNode> listRiwayat;
 

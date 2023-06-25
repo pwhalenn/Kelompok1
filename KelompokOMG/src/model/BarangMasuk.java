@@ -1,3 +1,5 @@
+package model;
+
 public class BarangMasuk extends ArusStock {
     
     private String idMasuk;

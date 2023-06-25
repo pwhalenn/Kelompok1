@@ -1,3 +1,4 @@
+package model;
 /*
 Kelas untuk mengetahui stock barang masuk dan keluar.
 
@@ -9,8 +10,7 @@ barang merupakan kelas (agregrasi)
 idUser bersifat string (asosiasi)
 */
 
-
-public class ArusStock {
+public abstract class ArusStock {
     
     private String idPesanan;
     private Barang barang;

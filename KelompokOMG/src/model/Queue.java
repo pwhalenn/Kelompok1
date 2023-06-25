@@ -1,3 +1,5 @@
+package model;
+
 public class Queue<T extends Node<T>> {
     private Node<T> front, rear, iterator;
 

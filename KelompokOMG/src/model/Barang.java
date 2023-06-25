@@ -1,3 +1,4 @@
+package model;
 /* 
 Kelas untuk mengetahui informasi-informasi barang
 
