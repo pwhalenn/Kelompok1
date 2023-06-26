@@ -107,7 +107,7 @@ public class User {
         // input.readLine();
     }
 
-    public void riwayatStock() throws IOException {
+    // public void riwayatStock() throws IOException {
         // BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
         // Scanner scanner = new Scanner(System.in);
 
@@ -148,7 +148,7 @@ public class User {
 
         // System.out.println("Tahan layar, dan kembali ke menu utama.\n");
         // input.readLine();
-    }
+    // }
 
     public void lokasiStock() throws IOException {
         // BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
@@ -169,7 +169,7 @@ public class User {
         // input.readLine();
     }
 
-    public void transaksiHistory() {
+    public void riwayatStock() {
         user.getRiwayat().printListRiwayat();
     }
 

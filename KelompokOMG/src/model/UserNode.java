@@ -35,6 +35,7 @@ public class UserNode extends Node<UserNode> {
         this.idUser = idUser;
         this.namaUser = namaUser;
         this.pin = pin;
+        this.riwayat = new Riwayat();
 
         this.Next = null;
     }
