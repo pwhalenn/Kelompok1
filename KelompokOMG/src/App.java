@@ -33,7 +33,7 @@ public class App {
     public static JenisMenu MainMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("=====================MENU=====================");
+            System.out.println("======================MENU=====================");
             System.out.println("1.  Informasi Barang");
             System.out.println("2.  Pembelian Barang");
             System.out.println("3.  Penjualan Barang");

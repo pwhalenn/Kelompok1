@@ -12,7 +12,7 @@ public abstract class ArusStock {
     
     private String idPesanan;
     private Barang barang;
-    private String idUser;
+    // private String idUser;
 
 
     public ArusStock() {
