@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Objects;
@@ -19,7 +20,7 @@ public class User {
     public User() {
         listUser = new List<UserNode>();
 
-        Path pathToFile = Paths.get("assets/user.csv");
+        Path pathToFile = Paths.get("KelompokOMG/assets/user.csv");
         try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
             String line = br.readLine();
 
@@ -29,8 +30,11 @@ public class User {
                 listUser.add(userNode);
                 line = br.readLine();
             }
-        }
-        catch (IOException e) {
+            br.close();
+        } catch (NoSuchFileException e) {
+            System.err.println("File not found: " + e.getMessage());
+            e.printStackTrace();
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

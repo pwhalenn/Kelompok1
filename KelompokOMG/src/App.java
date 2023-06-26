@@ -17,6 +17,7 @@ public class App {
             System.out.println("==================Oh My Stock==================");
             System.out.println("1. Login");
             System.out.println("2. Exit");
+            System.out.print("Choice ? ");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1 -> {
