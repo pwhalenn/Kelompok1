@@ -67,10 +67,10 @@ public class Barang {
     @Override
     public String toString() {
         return "===============================================" +
-            "ID Barang\t='" + getIdBarang() +
+            "\nID Barang\t='" + getIdBarang() +
             "\nMerek Barang\t=" + getMerekBarang() +
-            "\nHarga Barang\t=" + String.format("%,.2f", getHargaBarang()) +
-            "\nStock\t=" + getStock() + "dus" +
-            "===============================================";
+            "\nHarga Barang\t=" + "Rp. " + getHargaBarang() +
+            "\nStock\t\t=" + getStock() + "dus" +
+            "\n===============================================";
     }
 }

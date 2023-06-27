@@ -109,6 +109,8 @@ public class App {
         String hargaBarang;
         int stock;
         
+        System.out.println();
+        System.out.println("===============================================");
         System.out.print("ID Barang : ");
         idBarang = input.nextLine();
 
@@ -127,6 +129,7 @@ public class App {
         barang.setStock(stock);
 
         listBarang.add(new Barang(idBarang, stock, merekBarang, hargaBarang));
+        System.out.println("===============================================");
         System.out.println("Barang berhasil ditambahkan.");
 
         System.out.println();
