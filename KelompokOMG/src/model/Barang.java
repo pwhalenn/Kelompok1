@@ -74,4 +74,9 @@ public class Barang {
             ", hargaBarang='" + getHargaBarang() + "'" +
             "}";
     }
+
+
+    public static void informasiStock() {
+        System.out.println("Barang yang tersedia");
+    }
 }
