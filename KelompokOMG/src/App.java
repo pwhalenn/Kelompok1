@@ -1,8 +1,10 @@
 import java.io.Console;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import model.ArusStock;
 import model.Barang;
+import model.BarangKeluar;
 import model.BarangMasuk;
 import model.JenisMenu;
 import model.Kategori;
@@ -34,28 +36,28 @@ public class App {
         while (true) {
             System.out.println("======================MENU=====================");
             System.out.println("1.  Informasi Barang");
-            System.out.println("2.  Pembelian Barang");
-            System.out.println("3.  Penjualan Barang");
-            System.out.println("4.  Riwayat Stock");
-            System.out.println("5.  Penampilan Lokasi Stock");
+            System.out.println("2.  Input Stock");
+            System.out.println("3.  Pembelian Barang");
+            System.out.println("4.  Penjualan Barang");
+            System.out.println("5.  Edit Stock");
             System.out.println("6.  Logout");
             System.out.print("Choice ? ");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1 -> {
-                    return JenisMenu.INFORMASI_STOCK;
+                    return JenisMenu.INFORMASI_BARANG;
                 }
                 case 2 -> {
-                    return JenisMenu.PEMBELIAN_STOCK;
+                    return JenisMenu.INPUT_STOCK;
                 }
                 case 3 -> {
-                    return JenisMenu.PENJUALAN_STOCK;
+                    return JenisMenu.PEMBELIAN_STOCK;
                 }
                 case 4 -> {
-                    return JenisMenu.RIWAYAT_STOCK;
+                    return JenisMenu.PENJUALAN_STOCK;
                 }
                 case 5 -> {
-                    return JenisMenu.LOKASI_STOCK;
+                    return JenisMenu.EDIT_STOCK;
                 }
                 case 6 -> {
                     return JenisMenu.LOGOUT;
@@ -83,9 +85,50 @@ public class App {
         user.setPin(pin);
 
         System.out.println("===============================================");
-        System.out
-                .println("Hi " + user.getNamaUser() + "(" + user.getIdUser() + ")" + ", apa yang ingin anda lakukan :");
+        System.out.println("Hi " + user.getNamaUser() + "(" + user.getIdUser() + ")" + ", apa yang ingin anda lakukan?");
     }
+
+
+    public static ArrayList<Barang> listBarang = new ArrayList<Barang>();
+
+    public static void inputStock(Barang barang) {
+        Scanner input = new Scanner(System.in);
+        String idBarang;
+        String merekBarang;
+        String hargaBarang;
+        int stock;
+        
+        System.out.print("ID Barang : ");
+        idBarang = input.nextLine();
+        System.out.print("Merek Barang : ");
+        merekBarang = input.nextLine();
+        System.out.print("Harga Barang : ");
+        hargaBarang = input.nextLine();
+        System.out.print("Stock Barang : ");
+        stock = input.nextInt();
+
+        barang.setIdBarang(idBarang);
+        barang.setMerekBarang(merekBarang);
+        barang.setHargaBarang(hargaBarang);
+        barang.setStock(stock);
+
+        listBarang.add(new Barang(idBarang, stock, merekBarang, hargaBarang));
+        input.close();
+        System.out.println("Barang berhasil ditambahkan.");
+    }
+
+
+    public static void cetakListBarang() {
+        if (listBarang.size() == 0) {
+            System.out.println("Tidak tersedia barang, silahkan input barang.");
+        }
+        else {
+            for (Barang listBarang2 : listBarang) {
+                System.out.println(listBarang2);
+            }
+        }
+    }
+
 
     public static void main(String[] args) throws Exception {
         init();
@@ -99,8 +142,11 @@ public class App {
             while (user.getNamaUser() != null) {
                 JenisMenu jenisMenu = MainMenu();
                 switch (jenisMenu) {
-                    case INFORMASI_STOCK -> {
-                        barang.informasiStock();
+                    case INFORMASI_BARANG -> {
+                        cetakListBarang();
+                    }
+                    case INPUT_STOCK -> {
+                        inputStock(barang);
                     }
                     case PEMBELIAN_STOCK -> {
                         return;
@@ -108,10 +154,7 @@ public class App {
                     case PENJUALAN_STOCK -> {
                         return;
                     }
-                    case RIWAYAT_STOCK -> {
-                        return;
-                    }
-                    case LOKASI_STOCK -> {
+                    case EDIT_STOCK -> {
                         return;
                     }
                     case LOGOUT -> {
@@ -134,12 +177,14 @@ public class App {
         Barang manisan = new Barang("MA02", 20, "manisku", "Rp. 90.000");
 
         // ArusStock
-        // ArusStock AS1 = new BarangMasuk("PE01", garam);
-        // ArusStock AS2 = new BarangMasuk("PE02", teh);
-        // ArusStock AS3 = new BarangMasuk("PE03", manisan);
-        ArusStock AS1 = new BarangMasuk("IN01", 0);
-        ArusStock AS2 = new BarangMasuk("IN02", 0);
-        ArusStock AS3 = new BarangMasuk("IN03", 0);
+        // BarangMasuk
+        ArusStock AI1 = new BarangMasuk("IN01", 0);
+        ArusStock AI2 = new BarangMasuk("IN02", 0);
+        ArusStock AI3 = new BarangMasuk("IN03", 0);
+        // BarangKeluar
+        ArusStock AO1 = new BarangKeluar("OU01", 0);
+        ArusStock AO2 = new BarangKeluar("OU02", 0);
+        ArusStock AO3 = new BarangKeluar("OU03", 0);
 
         // Rak
         Rak R1 = new Rak("KO01", "Biru");
