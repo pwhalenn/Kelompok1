@@ -139,11 +139,11 @@ public class App {
         Scanner input = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         if (listBarang.size() == 0) {
-            System.out.println("Tidak tersedia barang, silahkan input barang.");
+            System.out.println("Tidak tersedia barang, silahkan input barang terlebih dahulu.");
         }
         else {
-            for (Barang barang : listBarang) {
-                System.out.println(barang.toString());
+            for (Barang listBarang2 : listBarang) {
+                System.out.println(listBarang2);
             }
         }
         System.out.println();
