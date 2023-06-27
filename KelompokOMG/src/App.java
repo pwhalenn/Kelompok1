@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.sound.midi.Soundbank;
+
 import model.ArusStock;
 import model.Barang;
 import model.BarangKeluar;
@@ -82,22 +84,57 @@ public class App {
     public static void LoginForm(User user) {
         Scanner scanner = new Scanner(System.in);
         Console console = System.console();
+        boolean akses = false;
 
-        System.out.print("ID User : ");
-        String idUser = scanner.nextLine();
+        User u1 = new User("R314", "Reisacom", "8472");
+        User u2 = new User("K407", "Kaoru", "7454");
+        User u3 = new User("A981", "Adonis", "7739");
+        
+        while (!akses) {
+            System.out.print("ID User : ");
+            String idUser = scanner.nextLine();
 
-        System.out.print("Nama User : ");
-        String namaUser = scanner.nextLine();
+            System.out.print("Nama User : ");
+            String namaUser = scanner.nextLine();
 
-        System.out.print("PIN : ");
-        String pin = new String(console.readPassword());
+            System.out.print("PIN : ");
+            String pin = new String(console.readPassword());
 
-        user.setIdUser(idUser);
-        user.setNamaUser(namaUser);
-        user.setPin(pin);
+            if (u1.isValid(idUser, namaUser, pin)) {
+                akses = true;
 
-        System.out.println("===============================================");
-        System.out.println("Hi " + user.getNamaUser() + "(" + user.getIdUser() + ")" + ", apa yang ingin anda lakukan?");
+                user.setIdUser(idUser);
+                user.setNamaUser(namaUser);
+                user.setPin(pin);
+
+                System.out.println("===============================================");
+                System.out.println("Hi " + user.getNamaUser() + "(" + user.getIdUser() + ")" + ", apa yang ingin anda lakukan?");
+            }
+            else if (u2.isValid(idUser, namaUser, pin)) {
+                akses = true;
+
+                user.setIdUser(idUser);
+                user.setNamaUser(namaUser);
+                user.setPin(pin);
+
+                System.out.println("===============================================");
+                System.out.println("Hi " + user.getNamaUser() + "(" + user.getIdUser() + ")" + ", apa yang ingin anda lakukan?");
+            }
+            else if (u3.isValid(idUser, namaUser, pin)) {
+                akses = true;
+
+                user.setIdUser(idUser);
+                user.setNamaUser(namaUser);
+                user.setPin(pin);
+
+                System.out.println("===============================================");
+                System.out.println("Hi " + user.getNamaUser() + "(" + user.getIdUser() + ")" + ", apa yang ingin anda lakukan?");
+            }
+            else {
+                System.out.println();
+                System.out.println("Tidak ada user yang cocok. Mohon isi kembali.");
+            }
+        }
     }
 
 
@@ -160,11 +197,17 @@ public class App {
         User user = new User();
         Barang barang = new Barang();
 
+        boolean login = false;
+
         while (true) {
             UserMenu();
-            LoginForm(user);
 
-            while (user.getNamaUser() != null) {
+            if (!login) {
+                LoginForm(user);
+                login = true;
+            }
+
+            while (login) {
                 JenisMenu jenisMenu = MainMenu();
                 switch (jenisMenu) {
                     case INFORMASI_BARANG -> {
@@ -183,7 +226,7 @@ public class App {
                         return;
                     }
                     case LOGOUT -> {
-                        return;
+                        login = false;
                     }
                 }
             }

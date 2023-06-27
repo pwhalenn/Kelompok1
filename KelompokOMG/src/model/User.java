@@ -42,7 +42,11 @@ public class User {
         this.pin = pin;
     }
 
+    public boolean isValid(String inputedIdUser, String inputedNamaUser, String inputedPin) {
+        return inputedIdUser.equals(idUser) && inputedNamaUser.equals(namaUser) && inputedPin.equals(pin);
+    }
 
+    
     @Override
     public String toString() {
         return "{" +
