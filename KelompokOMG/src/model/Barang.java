@@ -10,7 +10,6 @@ hargaBarang bersifat string
 iduser bersifat string (asosiasi)
 */
 
-
 public class Barang {
 
     private String idBarang;
@@ -78,5 +77,6 @@ public class Barang {
 
     public void informasiStock() throws Exception {
         System.out.println("Barang yang tersedia");
+
     }
 }
