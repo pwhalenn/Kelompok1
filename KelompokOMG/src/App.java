@@ -65,13 +65,13 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         Console console = System.console();
 
-        System.out.print("ID User ? ");
+        System.out.print("ID User : ");
         String idUser = scanner.nextLine();
 
-        System.out.print("Nama User ? ");
+        System.out.print("Nama User : ");
         String namaUser = scanner.nextLine();
 
-        System.out.print("PIN ? ");
+        System.out.print("PIN : ");
         String pin = new String(console.readPassword());
 
         user.setIdUser(idUser);
@@ -79,8 +79,7 @@ public class App {
         user.setPin(pin);
 
         System.out.println("===============================================");
-        System.out.println("Hi " + user.getNamaUser() + "(" + user.getIdUser() + ")" + ", apa yang ingin anda lakukan?");
-    }
+        System.out.println("Hi " + user.getNamaUser() + "(" + user.getIdUser() + ")" + ", apa yang ingin anda lakukan :");
 
     
    public static void main(String[] args) throws Exception {
