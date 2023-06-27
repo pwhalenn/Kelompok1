@@ -1,5 +1,7 @@
 import java.io.Console;
 import java.util.Scanner;
+
+import model.Barang;
 import model.JenisMenu;
 import model.User;
 
@@ -22,7 +24,6 @@ public class App {
             }
         }
     }
-
 
     public static JenisMenu MainMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -60,7 +61,6 @@ public class App {
         }
     }
 
-
     public static void LoginForm(User user) {
         Scanner scanner = new Scanner(System.in);
         Console console = System.console();
@@ -79,12 +79,12 @@ public class App {
         user.setPin(pin);
 
         System.out.println("===============================================");
-        System.out.println("Hi " + user.getNamaUser() + "(" + user.getIdUser() + ")" + ", apa yang ingin anda lakukan :");
+        System.out
+                .println("Hi " + user.getNamaUser() + "(" + user.getIdUser() + ")" + ", apa yang ingin anda lakukan :");
     }
-    
-    
-   public static void main(String[] args) throws Exception {
-        inti();
+
+    public static void main(String[] args) throws Exception {
+        init();
         User user = new User();
         Barang barang = new Barang();
 
@@ -96,7 +96,7 @@ public class App {
                 JenisMenu jenisMenu = MainMenu();
                 switch (jenisMenu) {
                     case INFORMASI_STOCK -> {
-                        return barang.informasiStock;
+                        return barang.informasiStock();
                     }
                     case PEMBELIAN_STOCK -> {
                         return;
@@ -107,7 +107,7 @@ public class App {
                     case RIWAYAT_STOCK -> {
                         return;
                     }
-                    case LOKASI_STOCK ->  {
+                    case LOKASI_STOCK -> {
                         return;
                     }
                     case LOGOUT -> {
@@ -117,7 +117,6 @@ public class App {
             }
         }
     }
-    
 
     public static void init() {
         // User
@@ -125,26 +124,22 @@ public class App {
         UserNode U2 = new UserNode("K407", "Kaoru", "7454");
         UserNode U3 = new UserNode("A981", "Adonis", "7739");
 
-
         // Barang
         Barang garam = new Barang("PA01", 50, "dolphin", "Rp. 110.000");
         Barang teh = new Barang("MI03", 40, "sosoro", "Rp. 100.000");
         Barang manisan = new Barang("MA02", 20, "manisku", "Rp. 90.000");
-
 
         // ArusStock
         ArusStock AS1 = new ArusStock("PE01", garam);
         ArusStock AS2 = new ArusStock("PE02", teh);
         ArusStock AS3 = new ArusStock("PE03", manisan);
 
-
         // Rak
         Rak R1 = new Rak("KO01", "Biru");
         Rak R2 = new Rak("KO02", "Hitam");
         Rak R3 = new Rak("KO03", "Putih");
 
-
-        // Kategori 
+        // Kategori
         Kategori K1 = new Kategori("KAT01", "bumbu", garam, R1);
         Kategori K2 = new Kategori("KAT02", "minuman", garam, R2);
         Kategori K3 = new Kategori("KAT03", "makanan", garam, R3);
