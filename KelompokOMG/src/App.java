@@ -1,4 +1,7 @@
+import java.io.BufferedReader;
 import java.io.Console;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,6 +15,8 @@ import model.Rak;
 import model.User;
 
 public class App {
+    
+    public static ArrayList<Barang> listBarang = new ArrayList<Barang>();
 
     public static void UserMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -42,27 +47,34 @@ public class App {
             System.out.println("5.  Edit Stock");
             System.out.println("6.  Logout");
             System.out.print("Choice ? ");
-            int choice = scanner.nextInt();
-            switch (choice) {
-                case 1 -> {
-                    return JenisMenu.INFORMASI_BARANG;
+            if (scanner.hasNextInt()) {
+                int choice = scanner.nextInt();
+                scanner.nextLine();
+                switch (choice) {
+                    case 1 -> {
+                        return JenisMenu.INFORMASI_BARANG;
+                    }
+                    case 2 -> {
+                        return JenisMenu.INPUT_STOCK;
+                    }
+                    case 3 -> {
+                        return JenisMenu.PEMBELIAN_STOCK;
+                    }
+                    case 4 -> {
+                        return JenisMenu.PENJUALAN_STOCK;
+                    }
+                    case 5 -> {
+                        return JenisMenu.EDIT_STOCK;
+                    }
+                    case 6 -> {
+                        return JenisMenu.LOGOUT;
+                    }
+                    default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
                 }
-                case 2 -> {
-                    return JenisMenu.INPUT_STOCK;
-                }
-                case 3 -> {
-                    return JenisMenu.PEMBELIAN_STOCK;
-                }
-                case 4 -> {
-                    return JenisMenu.PENJUALAN_STOCK;
-                }
-                case 5 -> {
-                    return JenisMenu.EDIT_STOCK;
-                }
-                case 6 -> {
-                    return JenisMenu.LOGOUT;
-                }
-                default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
+            }
+            else {
+                System.out.println("Input tidak valid. Silakan masukkan pilihan angka.");
+                scanner.nextLine();
             }
         }
     }
@@ -89,10 +101,9 @@ public class App {
     }
 
 
-    public static ArrayList<Barang> listBarang = new ArrayList<Barang>();
-
-    public static void inputStock(Barang barang) {
+    public static void inputStock(Barang barang) throws IOException {
         Scanner input = new Scanner(System.in);
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         String idBarang;
         String merekBarang;
         String hargaBarang;
@@ -100,10 +111,13 @@ public class App {
         
         System.out.print("ID Barang : ");
         idBarang = input.nextLine();
+
         System.out.print("Merek Barang : ");
         merekBarang = input.nextLine();
+
         System.out.print("Harga Barang : ");
         hargaBarang = input.nextLine();
+        
         System.out.print("Stock Barang : ");
         stock = input.nextInt();
 
@@ -113,20 +127,28 @@ public class App {
         barang.setStock(stock);
 
         listBarang.add(new Barang(idBarang, stock, merekBarang, hargaBarang));
-        input.close();
         System.out.println("Barang berhasil ditambahkan.");
+
+        System.out.println();
+        System.out.println("Tahan layar untuk kembali ke menu utama.");
+        read.readLine();
     }
 
 
-    public static void cetakListBarang() {
+    public static void cetakListBarang() throws IOException {
+        Scanner input = new Scanner(System.in);
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         if (listBarang.size() == 0) {
             System.out.println("Tidak tersedia barang, silahkan input barang.");
         }
         else {
-            for (Barang listBarang2 : listBarang) {
-                System.out.println(listBarang2);
+            for (Barang barang : listBarang) {
+                System.out.println(barang.toString());
             }
         }
+        System.out.println();
+        System.out.println("Tahan layar untuk kembali ke menu utama.");
+        read.readLine();
     }
 
 

@@ -66,17 +66,11 @@ public class Barang {
 
     @Override
     public String toString() {
-        return "{" +
-            " idBarang='" + getIdBarang() + "'" +
-            ", stock='" + getStock() + "'" +
-            ", merekBarang='" + getMerekBarang() + "'" +
-            ", hargaBarang='" + getHargaBarang() + "'" +
-            "}";
-    }
-
-
-    public void informasiStock() throws Exception {
-        System.out.println("Barang yang tersedia");
-
+        return "===============================================" +
+            "ID Barang\t='" + getIdBarang() +
+            "\nMerek Barang\t=" + getMerekBarang() +
+            "\nHarga Barang\t=" + String.format("%,.2f", getHargaBarang()) +
+            "\nStock\t=" + getStock() + "dus" +
+            "===============================================";
     }
 }
