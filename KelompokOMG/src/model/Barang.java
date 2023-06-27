@@ -76,7 +76,7 @@ public class Barang {
     }
 
 
-    public static void informasiStock() {
+    public void informasiStock() throws Exception {
         System.out.println("Barang yang tersedia");
     }
 }
