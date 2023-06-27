@@ -1,8 +1,12 @@
 import java.io.Console;
 import java.util.Scanner;
 
+import model.ArusStock;
 import model.Barang;
+import model.BarangMasuk;
 import model.JenisMenu;
+import model.Kategori;
+import model.Rak;
 import model.User;
 
 public class App {
@@ -96,7 +100,7 @@ public class App {
                 JenisMenu jenisMenu = MainMenu();
                 switch (jenisMenu) {
                     case INFORMASI_STOCK -> {
-                        return barang.informasiStock();
+                        barang.informasiStock();
                     }
                     case PEMBELIAN_STOCK -> {
                         return;
@@ -120,9 +124,9 @@ public class App {
 
     public static void init() {
         // User
-        UserNode U1 = new UserNode("R314", "Reisacom", "8472");
-        UserNode U2 = new UserNode("K407", "Kaoru", "7454");
-        UserNode U3 = new UserNode("A981", "Adonis", "7739");
+        User U1 = new User("R314", "Reisacom", "8472");
+        User U2 = new User("K407", "Kaoru", "7454");
+        User U3 = new User("A981", "Adonis", "7739");
 
         // Barang
         Barang garam = new Barang("PA01", 50, "dolphin", "Rp. 110.000");
@@ -130,9 +134,12 @@ public class App {
         Barang manisan = new Barang("MA02", 20, "manisku", "Rp. 90.000");
 
         // ArusStock
-        ArusStock AS1 = new ArusStock("PE01", garam);
-        ArusStock AS2 = new ArusStock("PE02", teh);
-        ArusStock AS3 = new ArusStock("PE03", manisan);
+        // ArusStock AS1 = new BarangMasuk("PE01", garam);
+        // ArusStock AS2 = new BarangMasuk("PE02", teh);
+        // ArusStock AS3 = new BarangMasuk("PE03", manisan);
+        ArusStock AS1 = new BarangMasuk("IN01", 0);
+        ArusStock AS2 = new BarangMasuk("IN02", 0);
+        ArusStock AS3 = new BarangMasuk("IN03", 0);
 
         // Rak
         Rak R1 = new Rak("KO01", "Biru");
