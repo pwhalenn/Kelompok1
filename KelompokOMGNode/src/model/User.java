@@ -20,7 +20,7 @@ public class User {
     public User() {
         listUser = new List<UserNode>();
 
-        Path pathToFile = Paths.get("KelompokOMG/assets/user.csv");
+        Path pathToFile = Paths.get("KelompokOMGNode/assets/user.csv");
         try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
             String line = br.readLine();
 
