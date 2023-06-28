@@ -81,7 +81,7 @@ public class Barang {
             "\nID Barang\t: " + getIdBarang() +
             "\nMerek Barang\t: " + getMerekBarang() +
             "\nHarga Barang\t: " + "Rp. " + getHargaBarang() +
-            "\nStock\t\t: " + getStock() + "dus" +
+            "\nStock\t\t: " + getStock() + " dus" +
             "\n-----------------------------------------------" +
             "\nKategori\n" + getKategori() +
             "\n===============================================";

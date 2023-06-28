@@ -133,7 +133,7 @@ public class App {
             }
             else {
                 System.out.println();
-                System.out.println("Tidak ada user yang cocok. Mohon isi kembali.");
+                System.out.println("Tidak ada user yang cocok. Mohon isi kembali.\n");
             }
         }
     }
