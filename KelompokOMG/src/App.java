@@ -49,7 +49,7 @@ public class App {
             System.out.println("4.  Penjualan Barang");
             System.out.println("5.  Edit Stock");
             System.out.println("6.  Logout");
-            System.out.print("Pilihan ? ");
+            System.out.print("Pilihan : ");
             if (scanner.hasNextInt()) {
                 int choice = scanner.nextInt();
                 scanner.nextLine();
@@ -160,7 +160,7 @@ public class App {
         System.out.print("Merek Barang\t: ");
         merekBarang = input.nextLine();
 
-        System.out.print("Harga Baran\t: ");
+        System.out.print("Harga Barang\t: ");
         hargaBarang = input.nextLine();
         
         System.out.print("Stock Barang\t: ");
@@ -171,7 +171,7 @@ public class App {
         System.out.println("1. Bumbu");
         System.out.println("2. Makanan");
         System.out.println("3. Minuman");
-        System.out.print("Pilihan ? ");
+        System.out.print("Pilihan : ");
         if (scanner.hasNextInt()) {
             int pilihanKategori = scanner.nextInt();
             scanner.nextLine();
