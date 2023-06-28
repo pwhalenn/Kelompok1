@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.naming.NameAlreadyBoundException;
 import javax.sound.midi.Soundbank;
 
 import model.ArusStock;
@@ -19,6 +20,7 @@ import model.User;
 public class App {
     
     public static ArrayList<Barang> listBarang = new ArrayList<Barang>();
+    private static String idKategori;
 
     public static void UserMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -139,15 +141,23 @@ public class App {
 
 
     public static void inputStock(Barang barang) throws IOException {
+        Scanner scanner = new Scanner(System.in);
         Scanner input = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+        Rak rak = new Rak();
+        Kategori kategori = new Kategori();
+
         String idBarang;
         String merekBarang;
         String hargaBarang;
+        String namaKategori;
+        String ruangan;
+        String idRak;
         int stock;
         
         System.out.println();
         System.out.println("===============================================");
+
         System.out.print("ID Barang : ");
         idBarang = input.nextLine();
 
@@ -166,6 +176,37 @@ public class App {
         barang.setStock(stock);
 
         listBarang.add(new Barang(idBarang, stock, merekBarang, hargaBarang));
+
+        System.out.println("Pilih Kategori Barang : ");
+        System.out.println("1. Bumbu");
+        System.out.println("2. Makanan");
+        System.out.println("3. Minuman");
+        System.out.print("Choice ? ");
+        namaKategori = input.nextLine();
+        if (scanner.hasNextInt()) {
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice) {
+                case 1 -> {
+                    Rak r1 = new Rak("KO01", "Biru");
+                    // Rak r2 = new Rak("KO02", "Hitam");
+                    // Rak r3 = new Rak("KO03", "Putih");
+
+                    Kategori k1 = new Kategori("KAT01", "bumbu", barang, r1);
+                    // Kategori k2 = new Kategori("KAT02", "minuman", barang, r2);
+                    // Kategori k3 = new Kategori("KAT03", "makanan", barang, r3);
+
+                    rak.setIdRak(idRak);
+                    rak.setRuangan(ruangan);
+                    kategori.setIdKategori(idKategori);
+                    kategori.setNamaKategori(namaKategori);
+
+                }
+
+            }
+
+        }
+
         System.out.println("===============================================");
         System.out.println("Barang berhasil ditambahkan.");
 
@@ -190,6 +231,8 @@ public class App {
         System.out.println("Tahan layar untuk kembali ke menu utama.");
         read.readLine();
     }
+
+
 
 
     public static void main(String[] args) throws Exception {
@@ -235,33 +278,33 @@ public class App {
 
     public static void init() {
         // User
-        User U1 = new User("R314", "Reisacom", "8472");
-        User U2 = new User("K407", "Kaoru", "7454");
-        User U3 = new User("A981", "Adonis", "7739");
+        User u1 = new User("R314", "Reisacom", "8472");
+        User u2 = new User("K407", "Kaoru", "7454");
+        User u3 = new User("A981", "Adonis", "7739");
 
         // Barang
-        Barang garam = new Barang("PA01", 50, "dolphin", "Rp. 110.000");
-        Barang teh = new Barang("MI03", 40, "sosoro", "Rp. 100.000");
-        Barang manisan = new Barang("MA02", 20, "manisku", "Rp. 90.000");
+        Barang b1 = new Barang("PA01", 50, "dolphin", "Rp. 110.000");
+        Barang b2 = new Barang("MI03", 40, "sosoro", "Rp. 100.000");
+        Barang b3 = new Barang("MA02", 20, "manisku", "Rp. 90.000");
 
         // ArusStock
         // BarangMasuk
-        ArusStock AI1 = new BarangMasuk("IN01", 0);
-        ArusStock AI2 = new BarangMasuk("IN02", 0);
-        ArusStock AI3 = new BarangMasuk("IN03", 0);
+        ArusStock ai1 = new BarangMasuk("IN01", 0);
+        ArusStock ai2 = new BarangMasuk("IN02", 0);
+        ArusStock ai3 = new BarangMasuk("IN03", 0);
         // BarangKeluar
-        ArusStock AO1 = new BarangKeluar("OU01", 0);
-        ArusStock AO2 = new BarangKeluar("OU02", 0);
-        ArusStock AO3 = new BarangKeluar("OU03", 0);
+        ArusStock ao1 = new BarangKeluar("OU01", 0);
+        ArusStock ao2 = new BarangKeluar("OU02", 0);
+        ArusStock ao3 = new BarangKeluar("OU03", 0);
 
         // Rak
-        Rak R1 = new Rak("KO01", "Biru");
-        Rak R2 = new Rak("KO02", "Hitam");
-        Rak R3 = new Rak("KO03", "Putih");
+        Rak r1 = new Rak("KO01", "Biru");
+        Rak r2 = new Rak("KO02", "Hitam");
+        Rak r3 = new Rak("KO03", "Putih");
 
         // Kategori
-        Kategori K1 = new Kategori("KAT01", "bumbu", garam, R1);
-        Kategori K2 = new Kategori("KAT02", "minuman", garam, R2);
-        Kategori K3 = new Kategori("KAT03", "makanan", garam, R3);
+        // Kategori k1 = new Kategori("KAT01", "bumbu", b1, r1);
+        // Kategori k2 = new Kategori("KAT02", "minuman", b2, r2);
+        // Kategori k3 = new Kategori("KAT03", "makanan", b3, r3);
     }
 }
