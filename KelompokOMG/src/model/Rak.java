@@ -45,10 +45,9 @@ public class Rak {
 
     @Override
     public String toString() {
-        return "{" +
-            " idRak='" + getIdRak() + "'" +
-            ", ruangan='" + getRuangan() + "'" +
-            "}";
+        return
+            "ID Rak\t: " + getIdRak() +
+            "\nRuangan\t: " + getRuangan();
     }
 }
 

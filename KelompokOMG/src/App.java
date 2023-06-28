@@ -20,7 +20,6 @@ import model.User;
 public class App {
     
     public static ArrayList<Barang> listBarang = new ArrayList<Barang>();
-    private static String idKategori;
 
     public static void UserMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -28,7 +27,7 @@ public class App {
             System.out.println("==================Oh My Stock==================");
             System.out.println("1. Login");
             System.out.println("2. Exit");
-            System.out.print("Choice ? ");
+            System.out.print("Pilihan ? ");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1 -> {
@@ -50,7 +49,7 @@ public class App {
             System.out.println("4.  Penjualan Barang");
             System.out.println("5.  Edit Stock");
             System.out.println("6.  Logout");
-            System.out.print("Choice ? ");
+            System.out.print("Pilihan ? ");
             if (scanner.hasNextInt()) {
                 int choice = scanner.nextInt();
                 scanner.nextLine();
@@ -150,61 +149,71 @@ public class App {
         String idBarang;
         String merekBarang;
         String hargaBarang;
-        String namaKategori;
-        String ruangan;
-        String idRak;
         int stock;
         
-        System.out.println();
+        System.out.println("Silahkan input barang.");
         System.out.println("===============================================");
 
-        System.out.print("ID Barang : ");
+        System.out.print("ID Barang\t: ");
         idBarang = input.nextLine();
 
-        System.out.print("Merek Barang : ");
+        System.out.print("Merek Barang\t: ");
         merekBarang = input.nextLine();
 
-        System.out.print("Harga Barang : ");
+        System.out.print("Harga Baran\t: ");
         hargaBarang = input.nextLine();
         
-        System.out.print("Stock Barang : ");
+        System.out.print("Stock Barang\t: ");
         stock = input.nextInt();
 
-        barang.setIdBarang(idBarang);
-        barang.setMerekBarang(merekBarang);
-        barang.setHargaBarang(hargaBarang);
-        barang.setStock(stock);
-
-        listBarang.add(new Barang(idBarang, stock, merekBarang, hargaBarang));
-
-        System.out.println("Pilih Kategori Barang : ");
+        System.out.println("-----------------------------------------------");
+        System.out.println("Apa kategori dari barang tersebut: ");
         System.out.println("1. Bumbu");
         System.out.println("2. Makanan");
         System.out.println("3. Minuman");
-        System.out.print("Choice ? ");
-        namaKategori = input.nextLine();
+        System.out.print("Pilihan ? ");
         if (scanner.hasNextInt()) {
-            int choice = scanner.nextInt();
+            int pilihanKategori = scanner.nextInt();
             scanner.nextLine();
-            switch (choice) {
+            switch (pilihanKategori) {
                 case 1 -> {
                     Rak r1 = new Rak("KO01", "Biru");
-                    // Rak r2 = new Rak("KO02", "Hitam");
-                    // Rak r3 = new Rak("KO03", "Putih");
+                    Kategori k1 = new Kategori("KAT01", "bumbu", r1);
 
-                    Kategori k1 = new Kategori("KAT01", "bumbu", barang, r1);
-                    // Kategori k2 = new Kategori("KAT02", "minuman", barang, r2);
-                    // Kategori k3 = new Kategori("KAT03", "makanan", barang, r3);
-
-                    rak.setIdRak(idRak);
-                    rak.setRuangan(ruangan);
-                    kategori.setIdKategori(idKategori);
-                    kategori.setNamaKategori(namaKategori);
-
+                    rak.setIdRak(r1.getIdRak());
+                    rak.setRuangan(r1.getRuangan());
+                    kategori.setIdKategori(k1.getIdKategori());
+                    kategori.setNamaKategori(k1.getNamaKategori());
+                    kategori.setRak(k1.getRak());
                 }
+                case 2 -> {
+                    Rak r2 = new Rak("KO02", "Hitam");
+                    Kategori k2 = new Kategori("KAT02", "minuman", r2);
 
+                    rak.setIdRak(r2.getIdRak());
+                    rak.setRuangan(r2.getRuangan());
+                    kategori.setIdKategori(k2.getIdKategori());
+                    kategori.setNamaKategori(k2.getNamaKategori());
+                    kategori.setRak(k2.getRak());
+                }
+                case 3 -> {
+                    Rak r3 = new Rak("KO03", "Putih");
+                    Kategori k3 = new Kategori("KAT03", "makanan", r3);
+
+                    rak.setIdRak(r3.getIdRak());
+                    rak.setRuangan(r3.getRuangan());
+                    kategori.setIdKategori(k3.getIdKategori());
+                    kategori.setNamaKategori(k3.getNamaKategori());
+                    kategori.setRak(k3.getRak());
+                }
+                default -> System.out.println("Pilihan tidak ada. Mohon untuk input kembali.");
             }
+            barang.setIdBarang(idBarang);
+            barang.setMerekBarang(merekBarang);
+            barang.setHargaBarang(hargaBarang);
+            barang.setStock(stock);
 
+            listBarang.add(new Barang(idBarang, stock, merekBarang, hargaBarang, kategori));
         }
 
         System.out.println("===============================================");
@@ -282,11 +291,6 @@ public class App {
         User u2 = new User("K407", "Kaoru", "7454");
         User u3 = new User("A981", "Adonis", "7739");
 
-        // Barang
-        Barang b1 = new Barang("PA01", 50, "dolphin", "Rp. 110.000");
-        Barang b2 = new Barang("MI03", 40, "sosoro", "Rp. 100.000");
-        Barang b3 = new Barang("MA02", 20, "manisku", "Rp. 90.000");
-
         // ArusStock
         // BarangMasuk
         ArusStock ai1 = new BarangMasuk("IN01", 0);
@@ -303,8 +307,13 @@ public class App {
         Rak r3 = new Rak("KO03", "Putih");
 
         // Kategori
-        // Kategori k1 = new Kategori("KAT01", "bumbu", b1, r1);
-        // Kategori k2 = new Kategori("KAT02", "minuman", b2, r2);
-        // Kategori k3 = new Kategori("KAT03", "makanan", b3, r3);
+        Kategori k1 = new Kategori("KAT01", "bumbu", r1);
+        Kategori k2 = new Kategori("KAT02", "minuman", r2);
+        Kategori k3 = new Kategori("KAT03", "makanan", r3);
+
+        // Barang
+        Barang b1 = new Barang("PA01", 50, "dolphin", "Rp. 110.000", null);
+        Barang b2 = new Barang("MI03", 40, "sosoro", "Rp. 100.000", null);
+        Barang b3 = new Barang("MA02", 20, "manisku", "Rp. 90.000", null);
     }
 }

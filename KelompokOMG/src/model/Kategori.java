@@ -17,7 +17,6 @@ public class Kategori {
 
     private String idKategori;
     private String namaKategori;
-    private Barang barang;
     private Rak rak;
 
 
@@ -25,10 +24,9 @@ public class Kategori {
     }
 
 
-    public Kategori(String idKategori, String namaKategori, Barang barang, Rak rak) {
+    public Kategori(String idKategori, String namaKategori, Rak rak) {
         this.idKategori = idKategori;
         this.namaKategori = namaKategori;
-        this.barang = barang;
         this.rak = rak;
     }
 
@@ -49,14 +47,6 @@ public class Kategori {
         this.namaKategori = namaKategori;
     }
 
-    public Barang getBarang() {
-        return this.barang;
-    }
-
-    public void setBarang(Barang barang) {
-        this.barang = barang;
-    }
-
     public Rak getRak() {
         return this.rak;
     }
@@ -68,11 +58,10 @@ public class Kategori {
 
     @Override
     public String toString() {
-        return "{" +
-            " idKategori='" + getIdKategori() + "'" +
-            ", namaKategori='" + getNamaKategori() + "'" +
-            ", barang='" + getBarang() + "'" +
-            ", rak='" + getRak() + "'" +
-            "}";
+        return
+            "\nID Kategori\t: " + getIdKategori() +
+            "\nNama Kategori\t: " + getNamaKategori() +
+            "\n-----------------------------------------------" +
+            "\nRak\n\n" + getRak();
     }
 }

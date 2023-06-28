@@ -16,6 +16,7 @@ public class Barang {
     private int stock;
     private String merekBarang;
     private String hargaBarang;
+    private Kategori kategori;
     // private String idUser;
 
 
@@ -23,11 +24,12 @@ public class Barang {
     }
 
 
-    public Barang(String idBarang, int stock, String merekBarang, String hargaBarang) {
+    public Barang(String idBarang, int stock, String merekBarang, String hargaBarang, Kategori kategori) {
         this.idBarang = idBarang;
         this.stock = stock;
         this.merekBarang = merekBarang;
         this.hargaBarang = hargaBarang;
+        this.kategori = kategori;
     }
 
 
@@ -63,14 +65,25 @@ public class Barang {
         this.hargaBarang = hargaBarang;
     }
 
+    public Kategori getKategori() {
+        return this.kategori;
+    }
+
+    public void setKategori(Kategori kategori) {
+        this.kategori = kategori;
+    }
+
 
     @Override
     public String toString() {
         return "===============================================" +
-            "\nID Barang\t= " + getIdBarang() +
-            "\nMerek Barang\t= " + getMerekBarang() +
-            "\nHarga Barang\t= " + "Rp. " + getHargaBarang() +
-            "\nStock\t\t= " + getStock() + "dus" +
+            "\nInfo Barang\n" +
+            "\nID Barang\t: " + getIdBarang() +
+            "\nMerek Barang\t: " + getMerekBarang() +
+            "\nHarga Barang\t: " + "Rp. " + getHargaBarang() +
+            "\nStock\t\t: " + getStock() + "dus" +
+            "\n-----------------------------------------------" +
+            "\nKategori\n" + getKategori() +
             "\n===============================================";
     }
 }
