@@ -9,8 +9,8 @@ Fitur yang tersedia adalah:
 - Penginputan Barang
 - Pembelian Stock
 - Penjualan Stock
-- Edit Stock
-- Riwayat Stock
+- Penghapusan Barang
+- Arus Stock
 
 - `src`: the folder to maintain sources
 - `lib`: the folder to maintain dependencies
