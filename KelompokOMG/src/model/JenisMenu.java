@@ -6,6 +6,7 @@ public enum JenisMenu {
     INPUT_STOCK,
     PEMBELIAN_STOCK,
     PENJUALAN_STOCK,
-    EDIT_STOCK,
+    PENGHAPUSAN_BARANG,
+    ARUS_STOCK,
     LOGOUT
 }

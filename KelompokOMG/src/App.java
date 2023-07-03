@@ -67,9 +67,12 @@ public class App {
                         return JenisMenu.PENJUALAN_STOCK;
                     }
                     case 5 -> {
-                        return JenisMenu.EDIT_STOCK;
+                        return JenisMenu.PENGHAPUSAN_BARANG;
                     }
                     case 6 -> {
+                        return JenisMenu.ARUS_STOCK;
+                    }
+                    case 7 -> {
                         return JenisMenu.LOGOUT;
                     }
                     default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
@@ -293,7 +296,7 @@ public class App {
         System.out.println("Tahan layar untuk kembali ke menu utama.");
         read.readLine();
     }
-    
+
 
     public static void penjualanStock() throws IOException {
         Scanner scanner = new Scanner(System.in);
@@ -373,12 +376,15 @@ public class App {
                         inputStock(barang);
                     }
                     case PEMBELIAN_STOCK -> {
-                        ceta;
+                        pembelianStock();;
                     }
                     case PENJUALAN_STOCK -> {
+                        penjualanStock();;
+                    }
+                    case PENGHAPUSAN_BARANG -> {
                         return;
                     }
-                    case EDIT_STOCK -> {
+                    case ARUS_STOCK -> {
                         return;
                     }
                     case LOGOUT -> {
