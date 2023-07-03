@@ -47,8 +47,9 @@ public class App {
             System.out.println("2.  Input Stock");
             System.out.println("3.  Pembelian Barang");
             System.out.println("4.  Penjualan Barang");
-            System.out.println("5.  Edit Stock");
-            System.out.println("6.  Logout");
+            System.out.println("5.  Penghapusan Barang");
+            System.out.println("6.  Arus Stock");
+            System.out.println("7.  Logout");
             System.out.print("Pilihan ? ");
             if (scanner.hasNextInt()) {
                 int choice = scanner.nextInt();
