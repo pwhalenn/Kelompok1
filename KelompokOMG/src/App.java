@@ -277,7 +277,7 @@ public class App {
 
                     System.out.println("-----------------------------------------------");
                     System.out.println("Berhasil membeli barang sebesar " + tambahanStock + " dus.");
-                    System.out.println("Sukses mengupdate stock " + pilihanBarang.getMerekBarang() + " menjadi " + pilihanBarang.getStock() + " dus");
+                    System.out.println("Sukses mengupdate stock " + pilihanBarang.getMerekBarang() + " menjadi " + pilihanBarang.getStock() + " dus.");
                     System.out.println("===============================================");
                 }
                 else {
@@ -293,6 +293,9 @@ public class App {
         read.readLine();
     }
 
+
+
+    
 
     public static void main(String[] args) throws Exception {
         init();
@@ -322,7 +325,7 @@ public class App {
                         pembelianStock();
                     }
                     case PENJUALAN_STOCK -> {
-                        return;
+                        penjualanStock();
                     }
                     case EDIT_STOCK -> {
                         return;
