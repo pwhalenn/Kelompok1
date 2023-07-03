@@ -43,7 +43,7 @@ public class BarangMasuk extends ArusStock implements ILaporanStock{
 
 
     @Override
-    public void pencatatanStock() {
+    public void laporanArusStock() {
         
     }
 }

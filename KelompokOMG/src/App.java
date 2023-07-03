@@ -242,6 +242,59 @@ public class App {
     }
 
 
+        public static void pembelianStock() throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+        int i;
+
+        System.out.println("===============================================");
+        if (listBarang.size() == 0) {
+            System.out.println("Mohon melakukan penginputan barang terlebih dahulu.");
+        }
+        else {
+            boolean redo = false;
+            while (!redo) {
+                redo = true;
+                System.out.println("List Barang:");
+                for (i = 0; i < listBarang.size(); i++) {
+                    Barang barang = listBarang.get(i);
+                    int displayedIndex = i + 1;
+                    System.out.println(displayedIndex + ". " + barang.getMerekBarang() + "\t: " + barang.getStock() + " dus");
+                }
+                System.out.println("===============================================");
+                System.out.print("Pilih barang yang akan dibeli : ");
+                int choice = scanner.nextInt();
+                int index = choice - 1;
+                scanner.nextLine();
+                if (index >= 0 && index < listBarang.size()) {
+                    redo = true;
+                    Barang pilihanBarang = listBarang.get(index);
+                    System.out.print("Berapa stock yang akan dibeli untuk " + pilihanBarang.getMerekBarang() + " : ");
+                    int tambahanStock = scanner.nextInt();
+                    scanner.nextLine();
+                    int stockSekarang = pilihanBarang.getStock();
+                    int stockUpdate = stockSekarang + tambahanStock;
+                    pilihanBarang.setStock(stockUpdate);
+
+                    System.out.println("-----------------------------------------------");
+                    System.out.println("Berhasil membeli barang sebesar " + tambahanStock + " dus.");
+                    System.out.println("Sukses mengupdate stock " + pilihanBarang.getMerekBarang() + " menjadi " + pilihanBarang.getStock() + " dus");
+                    System.out.println("===============================================");
+                }
+                else {
+                    redo = false;
+                    System.out.println();
+                    System.out.println("Pilihan tidak ada. Mohon untuk memilih kembali.");
+                    System.out.println();
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("Tahan layar untuk kembali ke menu utama.");
+        read.readLine();
+    }
+    
+
     public static void penjualanStock() throws IOException {
         Scanner scanner = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
@@ -320,7 +373,7 @@ public class App {
                         inputStock(barang);
                     }
                     case PEMBELIAN_STOCK -> {
-                        return;
+                        ceta;
                     }
                     case PENJUALAN_STOCK -> {
                         return;
