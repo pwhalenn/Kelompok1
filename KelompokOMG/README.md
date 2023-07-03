@@ -21,7 +21,8 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 
 ## Susunan Tim
 
-Ketua: Farencia Levis (03081220029)
+Ketua:
+- Farencia Levis (03081220029)
 Member:
 - Cindy Chuwardi (03081220003)
 - Cintya Chen (03081220005)
