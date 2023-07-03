@@ -302,6 +302,21 @@ public class App {
     }
 
 
+    public static void penghapusanBarang() throws IOException {
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+
+        if (listBarang.size() == 0) {
+            System.out.println("Tidak tersedia barang, silahkan input barang terlebih dahulu.");
+        }
+        else {
+        }
+        
+        System.out.println();
+        System.out.println("Tahan layar untuk kembali ke menu utama.");
+        read.readLine();
+    }
+
+
     public static void penjualanStock() throws IOException {
         Scanner scanner = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
