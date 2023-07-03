@@ -160,7 +160,7 @@ public class App {
         System.out.print("Merek Barang\t: ");
         merekBarang = input.nextLine();
 
-        System.out.print("Harga Baran\t: ");
+        System.out.print("Harga Barang\t: ");
         hargaBarang = input.nextLine();
         
         System.out.print("Stock Barang\t: ");
@@ -226,6 +226,7 @@ public class App {
 
 
     public static void cetakListBarang() throws IOException {
+        Scanner input = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         if (listBarang.size() == 0) {
             System.out.println("Tidak tersedia barang, silahkan input barang terlebih dahulu.");
@@ -241,7 +242,7 @@ public class App {
     }
 
 
-    public static void pembelianStock() throws IOException {
+    public static void penjualanStock() throws IOException {
         Scanner scanner = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         int i;
@@ -258,25 +259,25 @@ public class App {
                 for (i = 0; i < listBarang.size(); i++) {
                     Barang barang = listBarang.get(i);
                     int displayedIndex = i + 1;
-                    System.out.println(displayedIndex + ". " + barang.getMerekBarang() + "\t: " + barang.getStock() + " dus");
+                    System.out.println(displayedIndex + ". " + barang.getMerekBarang() + "\t: " + barang.getStock());
                 }
                 System.out.println("===============================================");
-                System.out.print("Pilih barang yang akan dibeli : ");
-                int choice = scanner.nextInt();
-                int index = choice - 1;
+                System.out.print("Pilih barang yang akan dijual : ");
+                int pilihan = scanner.nextInt();
+                int index = pilihan - 1;
                 scanner.nextLine();
                 if (index >= 0 && index < listBarang.size()) {
                     redo = true;
                     Barang pilihanBarang = listBarang.get(index);
-                    System.out.print("Berapa stock yang akan dibeli untuk " + pilihanBarang.getMerekBarang() + " : ");
-                    int tambahanStock = scanner.nextInt();
+                    System.out.print("Berapa jumlah stock yang akan dijual untuk " + pilihanBarang.getMerekBarang() + " : ");
+                    int penguranganStock = scanner.nextInt();
                     scanner.nextLine();
                     int stockSekarang = pilihanBarang.getStock();
-                    int stockUpdate = stockSekarang + tambahanStock;
+                    int stockUpdate = stockSekarang - penguranganStock;
                     pilihanBarang.setStock(stockUpdate);
 
                     System.out.println("-----------------------------------------------");
-                    System.out.println("Berhasil membeli barang sebesar " + tambahanStock + " dus.");
+                    System.out.println("Berhasil menjual barang sebesar " + penguranganStock + " dus.");
                     System.out.println("Sukses mengupdate stock " + pilihanBarang.getMerekBarang() + " menjadi " + pilihanBarang.getStock() + " dus.");
                     System.out.println("===============================================");
                 }
@@ -293,9 +294,6 @@ public class App {
         read.readLine();
     }
 
-
-
-    
 
     public static void main(String[] args) throws Exception {
         init();
@@ -322,10 +320,10 @@ public class App {
                         inputStock(barang);
                     }
                     case PEMBELIAN_STOCK -> {
-                        pembelianStock();
+                        return;
                     }
                     case PENJUALAN_STOCK -> {
-                        penjualanStock();
+                        return;
                     }
                     case EDIT_STOCK -> {
                         return;
