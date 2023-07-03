@@ -143,9 +143,13 @@ public class App {
     }
 
 
+    public static void inputDataListBarang() {
+        
+    }
+
+
     public static void inputStock(Barang barang) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        Scanner input = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         Rak rak = new Rak();
         Kategori kategori = new Kategori();
@@ -159,16 +163,16 @@ public class App {
         System.out.println("===============================================");
 
         System.out.print("ID Barang\t: ");
-        idBarang = input.nextLine();
+        idBarang = scanner.nextLine();
 
         System.out.print("Merek Barang\t: ");
-        merekBarang = input.nextLine();
+        merekBarang = scanner.nextLine();
 
         System.out.print("Harga Barang\t: ");
-        hargaBarang = input.nextLine();
+        hargaBarang = scanner.nextLine();
         
         System.out.print("Stock Barang\t: ");
-        stock = input.nextInt();
+        stock = scanner.nextInt();
 
         System.out.println("-----------------------------------------------");
         System.out.println("Apa kategori dari barang tersebut: ");
@@ -230,7 +234,6 @@ public class App {
 
 
     public static void cetakListBarang() throws IOException {
-        Scanner input = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         if (listBarang.size() == 0) {
             System.out.println("Tidak tersedia barang, silahkan input barang terlebih dahulu.");
@@ -246,7 +249,7 @@ public class App {
     }
 
 
-        public static void pembelianStock() throws IOException {
+    public static void pembelianStock() throws IOException {
         Scanner scanner = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         int i;
