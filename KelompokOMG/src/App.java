@@ -234,7 +234,6 @@ public class App {
 
 
     public static void cetakListBarang() throws IOException {
-        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         if (listBarang.size() == 0) {
             System.out.println("Tidak tersedia barang, silahkan input barang terlebih dahulu.");
         }
@@ -251,9 +250,6 @@ public class App {
             }
             System.out.println("=========================================================================================================================");
         }
-        System.out.println();
-        System.out.println("Tahan layar untuk kembali ke menu utama.");
-        read.readLine();
     }
 
 
@@ -383,10 +379,9 @@ public class App {
             while (!redo) {
                 if (indeks >= 0 && indeks <= listBarang.size()) {
                     redo = true;
-                    listBarang.remove(indeks);
                     System.out.print("Tekan Y untuk melanjutkan penghapusan data barang " + pilihanBarang.getMerekBarang() + " : ");
-                    String yakin = scanner.nextLine();
-                    if (yakin == "Y") {
+                    String yakin = scanner.next();
+                    if (yakin.equalsIgnoreCase("Y")) {
                         listBarang.remove(indeks);
                         System.out.println("Barang " + pilihanBarang.getMerekBarang() + " berhasil dihapus dari list.");
                     }
@@ -425,6 +420,10 @@ public class App {
                 switch (jenisMenu) {
                     case INFORMASI_BARANG -> {
                         cetakListBarang();
+                        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+                        System.out.println();
+                        System.out.println("Tahan layar untuk kembali ke menu utama.");
+                        read.readLine();
                     }
                     case INPUT_STOCK -> {
                         inputStock(barang);
