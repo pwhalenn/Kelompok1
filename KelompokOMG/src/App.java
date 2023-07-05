@@ -366,16 +366,39 @@ public class App {
     public static void penghapusanBarang() throws IOException {
         Scanner scanner = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-
+        Barang barang = new Barang();
+        
         if (listBarang.size() == 0) {
             System.out.println("Tidak tersedia barang, silahkan input barang terlebih dahulu.");
         }
         else {
+            boolean redo = false;
+            
             cetakListBarang();
             System.out.print("Pilih data barang yang akan dihapus : ");
             int pilihan = scanner.nextInt();
+            int indeks = pilihan - 1;
+            Barang pilihanBarang = listBarang.get(indeks);
+
+            while (!redo) {
+                if (indeks >= 0 && indeks <= listBarang.size()) {
+                    redo = true;
+                    listBarang.remove(indeks);
+                    System.out.print("Tekan Y untuk melanjutkan penghapusan data barang " + pilihanBarang.getMerekBarang() + " : ");
+                    String yakin = scanner.nextLine();
+                    if (yakin == "Y") {
+                        listBarang.remove(indeks);
+                        System.out.println("Barang " + pilihanBarang.getMerekBarang() + " berhasil dihapus dari list.");
+                    }
+                    else {
+                        System.out.println("Penghapusan barang " + pilihanBarang.getMerekBarang() + " dibatalkan.");
+                    }
+                }
+                else {
+                    System.out.println("Pilihan tidak valid.");
+                }
+            }
         }
-        
         System.out.println();
         System.out.println("Tahan layar untuk kembali ke menu utama.");
         read.readLine();
@@ -407,13 +430,13 @@ public class App {
                         inputStock(barang);
                     }
                     case PEMBELIAN_STOCK -> {
-                        pembelianStock();;
+                        pembelianStock();
                     }
                     case PENJUALAN_STOCK -> {
-                        penjualanStock();;
+                        penjualanStock();
                     }
                     case PENGHAPUSAN_BARANG -> {
-                        return;
+                        penghapusanBarang();
                     }
                     case ARUS_STOCK -> {
                         return;
