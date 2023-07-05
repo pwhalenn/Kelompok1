@@ -239,9 +239,18 @@ public class App {
             System.out.println("Tidak tersedia barang, silahkan input barang terlebih dahulu.");
         }
         else {
-            for (Barang listBarang2 : listBarang) {
-                System.out.println(listBarang2);
+            int i;
+            System.out.println("=========================================================================================================================");
+            System.out.format("%-60s  %-34s  %-16s%n", "   Info Barang", "Kategori", "Rak");
+            System.out.println("=========================================================================================================================");
+            System.out.format("%-2s %-12s  %-20s  %-12s  %-7s  %-12s  %-20s  %-8s  %-12s%n", "i", "ID Barang", "Merek Barang", "Harga Barang", "Stock", "ID Kategori", "Nama Kategori", "ID Rak", "Ruangan");
+            System.out.format("%-2s %-12s  %-20s  %-12s  %-7s  %-12s  %-20s  %-8s  %-12s%n", "-", "-----------", "------------------", "------------", "-------", "-----------", "------------------", "--------", "----------");
+            for (i = 0; i < listBarang.size(); i++) {
+                Barang barang = listBarang.get(i);
+                int displayedIndex = i + 1;
+                System.out.println(displayedIndex + ". " + listBarang);
             }
+            System.out.println("=========================================================================================================================");
         }
         System.out.println();
         System.out.println("Tahan layar untuk kembali ke menu utama.");
@@ -441,8 +450,8 @@ public class App {
         Kategori k3 = new Kategori("KAT03", "makanan", r3);
 
         // Barang
-        Barang b1 = new Barang("PA01", 50, "dolphin", "Rp. 110.000", null);
-        Barang b2 = new Barang("MI03", 40, "sosoro", "Rp. 100.000", null);
-        Barang b3 = new Barang("MA02", 20, "manisku", "Rp. 90.000", null);
+        Barang b1 = new Barang("PA01", 50, "dolphin", "Rp. 110.000", k1);
+        Barang b2 = new Barang("MI03", 40, "sosoro", "Rp. 100.000", k2);
+        Barang b3 = new Barang("MA02", 20, "manisku", "Rp. 90.000", k3);
     }
 }

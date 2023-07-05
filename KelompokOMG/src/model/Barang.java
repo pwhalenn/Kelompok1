@@ -76,14 +76,17 @@ public class Barang {
 
     @Override
     public String toString() {
-        return "===============================================" +
-            "\nInfo Barang\n" +
-            "\nID Barang\t: " + getIdBarang() +
-            "\nMerek Barang\t: " + getMerekBarang() +
-            "\nHarga Barang\t: " + "Rp. " + getHargaBarang() +
-            "\nStock\t\t: " + getStock() + " dus" +
-            "\n-----------------------------------------------" +
-            "\nKategori\n" + getKategori() +
-            "\n===============================================";
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("%-12s  %-20s  %-12s  %-3d %-3s  %-12s  %-20s  %-8s  %-12s%n",
+            getIdBarang(),
+            getMerekBarang(),
+            "Rp. " + getHargaBarang(),
+            getStock(),
+            "dus",
+            getKategori().getIdKategori(),
+            getKategori().getNamaKategori(),
+            getKategori().getRak().getIdRak(),
+            getKategori().getRak().getRuangan()));
+        return sb.toString();
     }
 }
