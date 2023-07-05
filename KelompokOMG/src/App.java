@@ -143,7 +143,7 @@ public class App {
     }
 
 
-    public static void inputDataListBarang() {
+    public static void inputDataTetap() {
         
     }
 
