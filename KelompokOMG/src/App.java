@@ -245,10 +245,9 @@ public class App {
             System.out.println("=========================================================================================================================");
             System.out.format("%-2s %-12s  %-20s  %-12s  %-7s  %-12s  %-20s  %-8s  %-12s%n", "i", "ID Barang", "Merek Barang", "Harga Barang", "Stock", "ID Kategori", "Nama Kategori", "ID Rak", "Ruangan");
             System.out.format("%-2s %-12s  %-20s  %-12s  %-7s  %-12s  %-20s  %-8s  %-12s%n", "-", "-----------", "------------------", "------------", "-------", "-----------", "------------------", "--------", "----------");
-            for (i = 0; i < listBarang.size(); i++) {
-                Barang barang = listBarang.get(i);
-                int displayedIndex = i + 1;
-                System.out.println(displayedIndex + ". " + listBarang);
+            int indeks = 1;
+            for (Barang listBarang2 : listBarang) {
+                System.out.println(indeks++ + ". " + listBarang2);
             }
             System.out.println("=========================================================================================================================");
         }
@@ -365,12 +364,16 @@ public class App {
 
 
     public static void penghapusanBarang() throws IOException {
+        Scanner scanner = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
 
         if (listBarang.size() == 0) {
             System.out.println("Tidak tersedia barang, silahkan input barang terlebih dahulu.");
         }
         else {
+            cetakListBarang();
+            System.out.print("Pilih data barang yang akan dihapus : ");
+            int pilihan = scanner.nextInt();
         }
         
         System.out.println();
