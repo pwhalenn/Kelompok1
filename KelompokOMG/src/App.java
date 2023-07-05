@@ -137,7 +137,7 @@ public class App {
             }
             else {
                 System.out.println();
-                System.out.println("Tidak ada user yang cocok. Mohon isi kembali.\n");
+                System.out.println("Akun tidak ditemukan. Mohon isi kembali.\n");
             }
         }
     }
