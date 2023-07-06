@@ -3,6 +3,7 @@ import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import javax.naming.NameAlreadyBoundException;
@@ -28,13 +29,20 @@ public class App {
             System.out.println("1. Login");
             System.out.println("2. Exit");
             System.out.print("Pilihan ? ");
-            int choice = scanner.nextInt();
-            switch (choice) {
-                case 1 -> {
-                    return;
+            try {
+                int choice = scanner.nextInt();
+                switch (choice) {
+                    case 1 -> {
+                        return;
+                    }
+                    case 2 -> System.exit(0);
+                    default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
                 }
-                case 2 -> System.exit(0);
-                default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Input tidak valid. Mohon menginput dengan angka.");
+                System.out.println();
+                scanner.nextLine();
             }
         }
     }
@@ -51,36 +59,43 @@ public class App {
             System.out.println("6.  Arus Stock");
             System.out.println("7.  Logout");
             System.out.print("Pilihan ? ");
-            if (scanner.hasNextInt()) {
-                int choice = scanner.nextInt();
-                scanner.nextLine();
-                switch (choice) {
-                    case 1 -> {
-                        return JenisMenu.INFORMASI_BARANG;
+            try {
+                if (scanner.hasNextInt()) {
+                    int choice = scanner.nextInt();
+                    scanner.nextLine();
+                    switch (choice) {
+                        case 1 -> {
+                            return JenisMenu.INFORMASI_BARANG;
+                        }
+                        case 2 -> {
+                            return JenisMenu.INPUT_STOCK;
+                        }
+                        case 3 -> {
+                            return JenisMenu.PEMBELIAN_STOCK;
+                        }
+                        case 4 -> {
+                            return JenisMenu.PENJUALAN_STOCK;
+                        }
+                        case 5 -> {
+                            return JenisMenu.PENGHAPUSAN_BARANG;
+                        }
+                        case 6 -> {
+                            return JenisMenu.ARUS_STOCK;
+                        }
+                        case 7 -> {
+                            return JenisMenu.LOGOUT;
+                        }
+                        default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
                     }
-                    case 2 -> {
-                        return JenisMenu.INPUT_STOCK;
-                    }
-                    case 3 -> {
-                        return JenisMenu.PEMBELIAN_STOCK;
-                    }
-                    case 4 -> {
-                        return JenisMenu.PENJUALAN_STOCK;
-                    }
-                    case 5 -> {
-                        return JenisMenu.PENGHAPUSAN_BARANG;
-                    }
-                    case 6 -> {
-                        return JenisMenu.ARUS_STOCK;
-                    }
-                    case 7 -> {
-                        return JenisMenu.LOGOUT;
-                    }
-                    default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
+                }
+                else {
+                    System.out.println("Input tidak valid. Silakan masukkan pilihan angka.");
+                    scanner.nextLine();
                 }
             }
-            else {
+            catch (InputMismatchException e) {
                 System.out.println("Input tidak valid. Silakan masukkan pilihan angka.");
+                System.out.println();
                 scanner.nextLine();
             }
         }
