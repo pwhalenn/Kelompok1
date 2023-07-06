@@ -144,7 +144,25 @@ public class App {
 
 
     public static void inputDataTetap() {
+        // init
+        // Rak
+        Rak r1 = new Rak("KO01", "Biru");
+        Rak r2 = new Rak("KO02", "Hitam");
+        Rak r3 = new Rak("KO03", "Putih");
+
+        // Kategori
+        Kategori k1 = new Kategori("KAT01", "bumbu", r1);
+        Kategori k2 = new Kategori("KAT02", "minuman", r2);
+        Kategori k3 = new Kategori("KAT03", "makanan", r3);
+
+        // Barang
+        // Barang b1 = new Barang("PA01", 50, "dolphin", "110.000", k1);
+        // Barang b2 = new Barang("MI03", 40, "sosoro", "100.000", k2);
+        // Barang b3 = new Barang("MA02", 20, "manisku", "90.000", k3);
         
+        listBarang.add(new Barang("PA01", 50, "dolphin", "110.000", k1));
+        listBarang.add(new Barang("MI03", 40, "sosoro", "100.000", k2));
+        listBarang.add(new Barang("MA02", 20, "manisku", "90.000", k3));
     }
 
 
@@ -402,6 +420,7 @@ public class App {
     
     public static void main(String[] args) throws Exception {
         init();
+        inputDataTetap();
         User user = new User();
         Barang barang = new Barang();
 
