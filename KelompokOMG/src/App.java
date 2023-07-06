@@ -417,6 +417,10 @@ public class App {
         read.readLine();
     }
 
+
+    public static void arusStock() {
+        
+    }
     
     public static void main(String[] args) throws Exception {
         init();
