@@ -158,8 +158,26 @@ public class App {
     }
 
 
-    public static void inputDataListBarang() {
+    public static void inputDataTetap() {
+        // init
+        // Rak
+        Rak r1 = new Rak("KO01", "Biru");
+        Rak r2 = new Rak("KO02", "Hitam");
+        Rak r3 = new Rak("KO03", "Putih");
+
+        // Kategori
+        Kategori k1 = new Kategori("KAT01", "bumbu", r1);
+        Kategori k2 = new Kategori("KAT02", "minuman", r2);
+        Kategori k3 = new Kategori("KAT03", "makanan", r3);
+
+        // Barang
+        // Barang b1 = new Barang("PA01", 50, "dolphin", "110.000", k1);
+        // Barang b2 = new Barang("MI03", 40, "sosoro", "100.000", k2);
+        // Barang b3 = new Barang("MA02", 20, "manisku", "90.000", k3);
         
+        listBarang.add(new Barang("PA01", 50, "dolphin", "110.000", k1));
+        listBarang.add(new Barang("MI03", 40, "sosoro", "100.000", k2));
+        listBarang.add(new Barang("MA02", 20, "manisku", "90.000", k3));
     }
 
 
@@ -249,7 +267,6 @@ public class App {
 
 
     public static void cetakListBarang() throws IOException {
-        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         if (listBarang.size() == 0) {
             System.out.println("Tidak tersedia barang, silahkan input barang terlebih dahulu.");
         }
@@ -260,16 +277,12 @@ public class App {
             System.out.println("=========================================================================================================================");
             System.out.format("%-2s %-12s  %-20s  %-12s  %-7s  %-12s  %-20s  %-8s  %-12s%n", "i", "ID Barang", "Merek Barang", "Harga Barang", "Stock", "ID Kategori", "Nama Kategori", "ID Rak", "Ruangan");
             System.out.format("%-2s %-12s  %-20s  %-12s  %-7s  %-12s  %-20s  %-8s  %-12s%n", "-", "-----------", "------------------", "------------", "-------", "-----------", "------------------", "--------", "----------");
-            for (i = 0; i < listBarang.size(); i++) {
-                Barang barang = listBarang.get(i);
-                int displayedIndex = i + 1;
-                System.out.println(displayedIndex + ". " + listBarang);
+            int indeks = 1;
+            for (Barang listBarang2 : listBarang) {
+                System.out.println(indeks++ + ". " + listBarang2);
             }
             System.out.println("=========================================================================================================================");
         }
-        System.out.println();
-        System.out.println("Tahan layar untuk kembali ke menu utama.");
-        read.readLine();
     }
 
 
@@ -380,22 +393,53 @@ public class App {
 
 
     public static void penghapusanBarang() throws IOException {
+        Scanner scanner = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-
+        Barang barang = new Barang();
+        
         if (listBarang.size() == 0) {
             System.out.println("Tidak tersedia barang, silahkan input barang terlebih dahulu.");
         }
         else {
+            boolean redo = false;
+            
+            cetakListBarang();
+            System.out.print("Pilih data barang yang akan dihapus : ");
+            int pilihan = scanner.nextInt();
+            int indeks = pilihan - 1;
+            Barang pilihanBarang = listBarang.get(indeks);
+
+            while (!redo) {
+                if (indeks >= 0 && indeks <= listBarang.size()) {
+                    redo = true;
+                    System.out.print("Tekan Y untuk melanjutkan penghapusan data barang " + pilihanBarang.getMerekBarang() + " : ");
+                    String yakin = scanner.next();
+                    if (yakin.equalsIgnoreCase("Y")) {
+                        listBarang.remove(indeks);
+                        System.out.println("Barang " + pilihanBarang.getMerekBarang() + " berhasil dihapus dari list.");
+                    }
+                    else {
+                        System.out.println("Penghapusan barang " + pilihanBarang.getMerekBarang() + " dibatalkan.");
+                    }
+                }
+                else {
+                    System.out.println("Pilihan tidak valid.");
+                }
+            }
         }
-        
         System.out.println();
         System.out.println("Tahan layar untuk kembali ke menu utama.");
         read.readLine();
     }
 
+
+    public static void arusStock() {
+        
+    }
     
     public static void main(String[] args) throws Exception {
         init();
+        inputDataTetap();
         User user = new User();
         Barang barang = new Barang();
 
@@ -414,18 +458,22 @@ public class App {
                 switch (jenisMenu) {
                     case INFORMASI_BARANG -> {
                         cetakListBarang();
+                        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+                        System.out.println();
+                        System.out.println("Tahan layar untuk kembali ke menu utama.");
+                        read.readLine();
                     }
                     case INPUT_STOCK -> {
                         inputStock(barang);
                     }
                     case PEMBELIAN_STOCK -> {
-                        pembelianStock();;
+                        pembelianStock();
                     }
                     case PENJUALAN_STOCK -> {
-                        penjualanStock();;
+                        penjualanStock();
                     }
                     case PENGHAPUSAN_BARANG -> {
-                        return;
+                        penghapusanBarang();
                     }
                     case ARUS_STOCK -> {
                         return;

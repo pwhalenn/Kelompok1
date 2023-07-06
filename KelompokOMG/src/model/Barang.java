@@ -77,7 +77,7 @@ public class Barang {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%-12s  %-20s  %-12s  %-3d %-3s  %-12s  %-20s  %-8s  %-12s%n",
+        sb.append(String.format("%-12s  %-20s  %-12s  %-3d %-3s  %-12s  %-20s  %-8s  %-12s",
             getIdBarang(),
             getMerekBarang(),
             "Rp. " + getHargaBarang(),
