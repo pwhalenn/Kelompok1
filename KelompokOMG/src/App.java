@@ -417,7 +417,7 @@ public class App {
                             }
                         }
                     }
-                    }
+                }
                 else {
                     redo1 = false;
                     System.out.println();
