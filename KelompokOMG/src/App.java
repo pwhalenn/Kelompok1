@@ -3,6 +3,7 @@ import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import javax.naming.NameAlreadyBoundException;
@@ -28,13 +29,23 @@ public class App {
             System.out.println("1. Login");
             System.out.println("2. Exit");
             System.out.print("Pilihan ? ");
-            int choice = scanner.nextInt();
-            switch (choice) {
-                case 1 -> {
-                    return;
+            try {
+                int choice = scanner.nextInt();
+                switch (choice) {
+                    case 1 -> {
+                        return;
+                    }
+                    case 2 -> System.exit(0);
+                    default -> {
+                        System.out.println();
+                        System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
+                    }
                 }
-                case 2 -> System.exit(0);
-                default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
+            }
+            catch (InputMismatchException e) {
+                System.out.println();
+                System.out.println("Input tidak valid. Mohon menginput dengan angka.\n");
+                scanner.nextLine();
             }
         }
     }
@@ -76,11 +87,15 @@ public class App {
                     case 7 -> {
                         return JenisMenu.LOGOUT;
                     }
-                    default -> System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
+                    default -> {
+                        System.out.println();
+                        System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
+                    }
                 }
             }
             else {
-                System.out.println("Input tidak valid. Silakan masukkan pilihan angka.");
+                System.out.println();
+                System.out.println("Input tidak valid. Mohon menginput dengan angka.\n");
                 scanner.nextLine();
             }
         }
@@ -175,7 +190,7 @@ public class App {
         String idBarang;
         String merekBarang;
         String hargaBarang;
-        int stock;
+        int stock = 0;
         
         System.out.println("Silahkan input barang.");
         System.out.println("===============================================");
@@ -189,58 +204,81 @@ public class App {
         System.out.print("Harga Barang\t: ");
         hargaBarang = scanner.nextLine();
         
-        System.out.print("Stock Barang\t: ");
-        stock = scanner.nextInt();
-
-        System.out.println("-----------------------------------------------");
-        System.out.println("Apa kategori dari barang tersebut: ");
-        System.out.println("1. Bumbu");
-        System.out.println("2. Makanan");
-        System.out.println("3. Minuman");
-        System.out.print("Pilihan ? ");
-        if (scanner.hasNextInt()) {
-            int pilihanKategori = scanner.nextInt();
-            scanner.nextLine();
-            switch (pilihanKategori) {
-                case 1 -> {
-                    Rak r1 = new Rak("KO01", "Biru");
-                    Kategori k1 = new Kategori("KAT01", "bumbu", r1);
-
-                    rak.setIdRak(r1.getIdRak());
-                    rak.setRuangan(r1.getRuangan());
-                    kategori.setIdKategori(k1.getIdKategori());
-                    kategori.setNamaKategori(k1.getNamaKategori());
-                    kategori.setRak(k1.getRak());
-                }
-                case 2 -> {
-                    Rak r2 = new Rak("KO02", "Hitam");
-                    Kategori k2 = new Kategori("KAT02", "minuman", r2);
-
-                    rak.setIdRak(r2.getIdRak());
-                    rak.setRuangan(r2.getRuangan());
-                    kategori.setIdKategori(k2.getIdKategori());
-                    kategori.setNamaKategori(k2.getNamaKategori());
-                    kategori.setRak(k2.getRak());
-                }
-                case 3 -> {
-                    Rak r3 = new Rak("KO03", "Putih");
-                    Kategori k3 = new Kategori("KAT03", "makanan", r3);
-
-                    rak.setIdRak(r3.getIdRak());
-                    rak.setRuangan(r3.getRuangan());
-                    kategori.setIdKategori(k3.getIdKategori());
-                    kategori.setNamaKategori(k3.getNamaKategori());
-                    kategori.setRak(k3.getRak());
-                }
-                default -> System.out.println("Pilihan tidak ada. Mohon untuk input kembali.");
+        boolean redo = false;
+        while (!redo) {
+            System.out.print("Stock Barang\t: ");
+            try {
+                stock = scanner.nextInt();
+                redo = true;
             }
-            barang.setIdBarang(idBarang);
-            barang.setMerekBarang(merekBarang);
-            barang.setHargaBarang(hargaBarang);
-            barang.setStock(stock);
-
-            listBarang.add(new Barang(idBarang, stock, merekBarang, hargaBarang, kategori));
+            catch (InputMismatchException e) {
+                System.out.println();
+                System.out.println("Input tidak valid. Mohon menginput dengan angka.\n");
+                scanner.nextLine();
+            }
         }
+
+        redo = false;
+        while (!redo) {
+            System.out.println("-----------------------------------------------");
+            System.out.println("Apa kategori dari barang tersebut: ");
+            System.out.println("1. Bumbu");
+            System.out.println("2. Makanan");
+            System.out.println("3. Minuman");
+            System.out.print("Pilihan ? ");
+            try {
+                redo = true;
+                int pilihanKategori = scanner.nextInt();
+                scanner.nextLine();
+                switch (pilihanKategori) {
+                    case 1 -> {
+                        Rak r1 = new Rak("KO01", "Biru");
+                        Kategori k1 = new Kategori("KAT01", "bumbu", r1);
+
+                        rak.setIdRak(r1.getIdRak());
+                        rak.setRuangan(r1.getRuangan());
+                        kategori.setIdKategori(k1.getIdKategori());
+                        kategori.setNamaKategori(k1.getNamaKategori());
+                        kategori.setRak(k1.getRak());
+                    }
+                    case 2 -> {
+                        Rak r2 = new Rak("KO02", "Hitam");
+                        Kategori k2 = new Kategori("KAT02", "minuman", r2);
+
+                        rak.setIdRak(r2.getIdRak());
+                        rak.setRuangan(r2.getRuangan());
+                        kategori.setIdKategori(k2.getIdKategori());
+                        kategori.setNamaKategori(k2.getNamaKategori());
+                        kategori.setRak(k2.getRak());
+                    }
+                    case 3 -> {
+                        Rak r3 = new Rak("KO03", "Putih");
+                        Kategori k3 = new Kategori("KAT03", "makanan", r3);
+
+                        rak.setIdRak(r3.getIdRak());
+                        rak.setRuangan(r3.getRuangan());
+                        kategori.setIdKategori(k3.getIdKategori());
+                        kategori.setNamaKategori(k3.getNamaKategori());
+                        kategori.setRak(k3.getRak());
+                    }
+                    default -> {
+                        redo = false;
+                        System.out.println("Pilihan tidak ada. Mohon untuk input kembali.");
+                    }
+                }
+            }
+            catch (InputMismatchException e) {
+                redo = false;
+                System.out.println("Input tidak valid. Mohon menginput dengan angka.");
+                scanner.nextLine();
+            }
+        }
+        barang.setIdBarang(idBarang);
+        barang.setMerekBarang(merekBarang);
+        barang.setHargaBarang(hargaBarang);
+        barang.setStock(stock);
+
+        listBarang.add(new Barang(idBarang, stock, merekBarang, hargaBarang, kategori));
 
         System.out.println("===============================================");
         System.out.println("Barang berhasil ditambahkan.");
@@ -292,6 +330,7 @@ public class App {
                 }
                 System.out.println("===============================================");
                 System.out.print("Pilih barang yang akan dibeli : ");
+                
                 int choice = scanner.nextInt();
                 int index = choice - 1;
                 scanner.nextLine();
@@ -433,6 +472,10 @@ public class App {
         read.readLine();
     }
 
+
+    public static void arusStock() {
+        
+    }
     
     public static void main(String[] args) throws Exception {
         init();
