@@ -209,7 +209,13 @@ public class App {
             System.out.print("Stock Barang\t: ");
             try {
                 stock = scanner.nextInt();
-                redo = true;
+                if (stock > 999) {
+                    redo = false;
+                    System.out.println("Stock barang tidak boleh melibihi 999. Mohon untuk menginput kembali.");
+                }
+                else {
+                    redo = true;
+                }
             }
             catch (InputMismatchException e) {
                 System.out.println();
@@ -319,9 +325,10 @@ public class App {
             System.out.println("Mohon melakukan penginputan barang terlebih dahulu.");
         }
         else {
-            boolean redo = false;
-            while (!redo) {
-                redo = true;
+            boolean redo1 = false;
+            boolean redo2 = false;
+            while (!redo1) {
+                redo1 = true;
                 System.out.println("List Barang:");
                 for (i = 0; i < listBarang.size(); i++) {
                     Barang barang = listBarang.get(i);
@@ -330,27 +337,42 @@ public class App {
                 }
                 System.out.println("===============================================");
                 System.out.print("Pilih barang yang akan dibeli : ");
-                
                 int choice = scanner.nextInt();
                 int index = choice - 1;
                 scanner.nextLine();
                 if (index >= 0 && index < listBarang.size()) {
-                    redo = true;
+                    redo1 = true;
                     Barang pilihanBarang = listBarang.get(index);
-                    System.out.print("Berapa stock yang akan dibeli untuk " + pilihanBarang.getMerekBarang() + " : ");
-                    int tambahanStock = scanner.nextInt();
-                    scanner.nextLine();
-                    int stockSekarang = pilihanBarang.getStock();
-                    int stockUpdate = stockSekarang + tambahanStock;
-                    pilihanBarang.setStock(stockUpdate);
+                    while (!redo2) {
+                        System.out.print("Berapa stock yang akan dibeli untuk " + pilihanBarang.getMerekBarang() + " : ");
+                        int tambahanStock = scanner.nextInt();
+                        scanner.nextLine();
+                        int stockSekarang = pilihanBarang.getStock();
+                        int stockUpdate = stockSekarang + tambahanStock;
+                        if (stockUpdate > 999) {
+                            System.out.print("Pembelian melebihi batas stock (Tidak melibihi 999 dus). Apakah anda ingin melanjutkan pembelian barang " + pilihanBarang.getMerekBarang() + " (Y/N) ? ");
+                            String lanjut = scanner.next();
+                            if (lanjut.equalsIgnoreCase("Y")) {
+                                redo2 = false;
+                            }
+                            else {
+                                redo2 = true;
+                            }
+                        }
+                        else {
+                            redo2 = true;
+                            pilihanBarang.setStock(stockUpdate);
 
-                    System.out.println("-----------------------------------------------");
-                    System.out.println("Berhasil membeli barang sebesar " + tambahanStock + " dus.");
-                    System.out.println("Sukses mengupdate stock " + pilihanBarang.getMerekBarang() + " menjadi " + pilihanBarang.getStock() + " dus");
-                    System.out.println("===============================================");
+                            System.out.println("-----------------------------------------------");
+                            System.out.println("Berhasil membeli barang sebesar " + tambahanStock + " dus.");
+                            System.out.println("Sukses mengupdate stock " + pilihanBarang.getMerekBarang() + " menjadi " + pilihanBarang.getStock() + " dus.");
+                            System.out.println("===============================================");
+                        }
+
+                    }
                 }
                 else {
-                    redo = false;
+                    redo1 = false;
                     System.out.println();
                     System.out.println("Pilihan tidak ada. Mohon untuk memilih kembali.");
                     System.out.println();
