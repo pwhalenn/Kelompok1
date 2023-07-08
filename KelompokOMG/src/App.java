@@ -315,7 +315,7 @@ public class App {
     }
 
 
-    public static void pembelianStock() throws IOException {
+   public static void pembelianStock() throws IOException {
         Scanner scanner = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         int i;
@@ -337,45 +337,182 @@ public class App {
                 }
                 System.out.println("===============================================");
                 System.out.print("Pilih barang yang akan dibeli : ");
-                int choice = scanner.nextInt();
-                int index = choice - 1;
-                scanner.nextLine();
-                if (index >= 0 && index < listBarang.size()) {
-                    redo1 = true;
-                    Barang pilihanBarang = listBarang.get(index);
-                    while (!redo2) {
-                        System.out.print("Berapa stock yang akan dibeli untuk " + pilihanBarang.getMerekBarang() + " : ");
-                        int tambahanStock = scanner.nextInt();
-                        scanner.nextLine();
-                        int stockSekarang = pilihanBarang.getStock();
-                        int stockUpdate = stockSekarang + tambahanStock;
-                        if (stockUpdate > 999) {
-                            System.out.print("Pembelian melebihi batas stock (Tidak melibihi 999 dus). Apakah anda ingin melanjutkan pembelian barang " + pilihanBarang.getMerekBarang() + " (Y/N) ? ");
-                            String lanjut = scanner.next();
-                            if (lanjut.equalsIgnoreCase("Y")) {
-                                redo2 = false;
+                try {
+                    int choice = scanner.nextInt();
+                    scanner.nextLine();
+                    int index = choice - 1;
+                    if (index >= 0 && index < listBarang.size()) {
+                        redo1 = true;
+                        Barang pilihanBarang = listBarang.get(index);
+                        while (!redo2) {
+                            System.out.print("Berapa stock yang akan dibeli untuk " + pilihanBarang.getMerekBarang() + " : ");
+                            int tambahanStock = scanner.nextInt();
+                            scanner.nextLine();
+                            int stockSekarang = pilihanBarang.getStock();
+                            int stockUpdate = stockSekarang + tambahanStock;
+                            if (stockUpdate > 999) {
+                                System.out.print("Pembelian melebihi batas stock (Tidak melibihi 999 dus). Apakah anda ingin melanjutkan pembelian barang " + pilihanBarang.getMerekBarang() + " (Y/N) ? ");
+                                String lanjut = scanner.next();
+                                if (lanjut.equalsIgnoreCase("Y")) {
+                                    redo2 = false;
+                                }
+                                else {
+                                    redo2 = true;
+                                }
                             }
                             else {
                                 redo2 = true;
+                                pilihanBarang.setStock(stockUpdate);
+
+                                System.out.println("-----------------------------------------------");
+                                System.out.println("Berhasil membeli barang sebesar " + tambahanStock + " dus.");
+                                System.out.println("Sukses mengupdate stock " + pilihanBarang.getMerekBarang() + " menjadi " + pilihanBarang.getStock() + " dus.");
+                                System.out.println("===============================================");
                             }
-                        }
-                        else {
-                            redo2 = true;
-                            pilihanBarang.setStock(stockUpdate);
 
-                            System.out.println("-----------------------------------------------");
-                            System.out.println("Berhasil membeli barang sebesar " + tambahanStock + " dus.");
-                            System.out.println("Sukses mengupdate stock " + pilihanBarang.getMerekBarang() + " menjadi " + pilihanBarang.getStock() + " dus.");
-                            System.out.println("===============================================");
                         }
-
+                    }
+                    else {
+                        redo1 = false;
+                        System.out.println("Pilihan tidak ada. Mohon untuk memilih kembali.");
+                        System.out.println();
                     }
                 }
-                else {
+                catch (InputMismatchException e) {
                     redo1 = false;
+                    System.out.println("Input tidak valid. Mohon menginput dengan angka.");
                     System.out.println();
-                    System.out.println("Pilihan tidak ada. Mohon untuk memilih kembali.");
+                    scanner.nextLine();
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("Tahan layar untuk kembali ke menu utama.");
+        read.readLine();
+    }
+
+
+    public static void penjualanStock() throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+        int i;
+
+        System.out.println("===============================================");
+        if (listBarang.size() == 0) {
+            System.out.println("Mohon melakukan penginputan barang terlebih dahulu.");
+        }
+        else {
+            boolean redo1 = false;
+            boolean redo2 = false;
+            while (!redo1) {
+                redo1 = true;
+                System.out.println("List Barang:");
+                for (i = 0; i < listBarang.size(); i++) {
+                    Barang barang = listBarang.get(i);
+                    int displayedIndex = i + 1;
+                    System.out.println(displayedIndex + ". " + barang.getMerekBarang() + "\t: " + barang.getStock());
+                }
+                System.out.println("===============================================");
+                System.out.print("Pilih barang yang akan dijual : ");  
+                try {
+                    int pilihan = scanner.nextInt();
+                    scanner.nextLine();
+                    int index = pilihan - 1;
+                    if (index >= 0 && index < listBarang.size()) {
+                        redo1 = true;
+                        Barang pilihanBarang = listBarang.get(index);
+                        while (!redo2) {
+                            System.out.print("Berapa jumlah stock yang akan dijual untuk " + pilihanBarang.getMerekBarang() + " : ");
+                            int penguranganStock = scanner.nextInt();
+                            scanner.nextLine();
+                            if (penguranganStock <= pilihanBarang.getStock()) {
+                                redo2 = true;
+                                int stockSekarang = pilihanBarang.getStock();
+                                int stockUpdate = stockSekarang - penguranganStock;
+                                pilihanBarang.setStock(stockUpdate);
+
+                                System.out.println("-----------------------------------------------");
+                                System.out.println("Berhasil menjual barang sebesar " + penguranganStock + " dus.");
+                                System.out.println("Sukses mengupdate stock " + pilihanBarang.getMerekBarang() + " menjadi " + pilihanBarang.getStock() + " dus.");
+                                System.out.println("===============================================");
+                            }
+                            else {
+                                System.out.print("Barang stock tidak mencukupi. Apakah anda ingin melanjutkan penjualan barang " + pilihanBarang.getMerekBarang() + " (Y/N) ? ");
+                                String lanjut = scanner.next();
+                                if (lanjut.equalsIgnoreCase("Y")) {
+                                    redo2 = false;
+                                }
+                                else {
+                                    redo2 = true;
+                                    System.out.println("Tidak terjadi penjualan barang.");
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        redo1 = false;
+                        System.out.println("Pilihan tidak ada. Mohon untuk memilih kembali.");
+                        System.out.println();
+                    }
+                }
+                catch (InputMismatchException e) {
+                    redo1 = false;
+                    System.out.println("Input tidak valid. Mohon menginput dengan angka.");
                     System.out.println();
+                    scanner.nextLine();
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("Tahan layar untuk kembali ke menu utama.");
+        read.readLine();
+    }
+
+
+    public static void penghapusanBarang() throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+        Barang barang = new Barang();
+        
+        if (listBarang.size() == 0) {
+            System.out.println("Tidak tersedia barang, silahkan input barang terlebih dahulu.");
+        }
+        else {
+            boolean redo1 = false;
+            boolean redo2 = false;
+            
+            cetakListBarang();
+            while (!redo1) {
+                System.out.print("Pilih data barang yang akan dihapus : ");
+                try {
+                    int pilihan = scanner.nextInt();
+                    scanner.nextLine();
+                    int indeks = pilihan - 1;
+                    if (indeks >= 0 && indeks <= listBarang.size()) {
+                        Barang pilihanBarang = listBarang.get(indeks);
+                        System.out.print("Tekan Y untuk melanjutkan penghapusan data barang " + pilihanBarang.getMerekBarang() + " : ");
+                        String yakin = scanner.next();
+                        if (yakin.equalsIgnoreCase("Y")) {
+                            redo1 = true;
+                            listBarang.remove(indeks);
+                            System.out.println("Barang " + pilihanBarang.getMerekBarang() + " berhasil dihapus dari list.");
+                        }
+                        else {
+                            redo1 = true;
+                            System.out.println("Penghapusan barang " + pilihanBarang.getMerekBarang() + " dibatalkan.");
+                        }
+                    }
+                    else {
+                        redo1 = false;
+                        System.out.println("Pilihan tidak ada. Mohon untuk menginput kembali.");
+                        scanner.nextLine();
+                    }
+                }
+                catch (InputMismatchException e) {
+                    redo1 = false;
+                    System.out.println("Input tidak valid. Mohon menginput dengan angka.");
+                    System.out.println();
+                    scanner.nextLine();
                 }
             }
         }
