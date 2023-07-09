@@ -9,10 +9,7 @@ import java.util.Scanner;
 import javax.naming.NameAlreadyBoundException;
 import javax.sound.midi.Soundbank;
 
-import model.ArusStock;
 import model.Barang;
-import model.BarangKeluar;
-import model.BarangMasuk;
 import model.JenisMenu;
 import model.Kategori;
 import model.Rak;
@@ -585,13 +582,13 @@ public class App {
 
         // ArusStock
         // BarangMasuk
-        ArusStock ai1 = new BarangMasuk("IN01", 0);
-        ArusStock ai2 = new BarangMasuk("IN02", 0);
-        ArusStock ai3 = new BarangMasuk("IN03", 0);
-        // BarangKeluar
-        ArusStock ao1 = new BarangKeluar("OU01", 0);
-        ArusStock ao2 = new BarangKeluar("OU02", 0);
-        ArusStock ao3 = new BarangKeluar("OU03", 0);
+        // ArusStock ai1 = new BarangMasuk("IN01", 0);
+        // ArusStock ai2 = new BarangMasuk("IN02", 0);
+        // ArusStock ai3 = new BarangMasuk("IN03", 0);
+        // // BarangKeluar
+        // ArusStock ao1 = new BarangKeluar("OU01", 0);
+        // ArusStock ao2 = new BarangKeluar("OU02", 0);
+        // ArusStock ao3 = new BarangKeluar("OU03", 0);
 
         // Rak
         Rak r1 = new Rak("KO01", "Biru");
