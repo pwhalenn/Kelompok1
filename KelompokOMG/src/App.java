@@ -6,19 +6,22 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import javax.naming.NameAlreadyBoundException;
 import javax.sound.midi.Soundbank;
 
 import model.Barang;
 import model.JenisMenu;
 import model.Kategori;
+import model.LaporanStock;
+import model.Pesanan;
 import model.Rak;
 import model.User;
 
 public class App {
     
     public static ArrayList<Barang> listBarang = new ArrayList<Barang>();
-
+    public static ArrayList<LaporanStock> listBeli = new ArrayList<LaporanStock>();
+    public static ArrayList<LaporanStock> listJual = new ArrayList<LaporanStock>();
+    
     public static void UserMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -365,8 +368,12 @@ public class App {
                                 System.out.println("Berhasil membeli barang sebesar " + tambahanStock + " dus.");
                                 System.out.println("Sukses mengupdate stock " + pilihanBarang.getMerekBarang() + " menjadi " + pilihanBarang.getStock() + " dus.");
                                 System.out.println("===============================================");
-                            }
-
+                                LaporanStock laporanBeli = new LaporanStock();
+                                laporanBeli.setNamaBeli(pilihanBarang.getMerekBarang());
+                                laporanBeli.setBeliStock(tambahanStock);
+                                laporanBeli.masukStock();
+                                listBeli.add(laporanBeli);
+                            }   
                         }
                     }
                     else {
@@ -519,12 +526,24 @@ public class App {
     }
 
 
-    
-
     public static void arusStock() {
-        
-    }
-    
+        LaporanStock laporanStock = new LaporanStock();
+        if (listBeli.size() == 0) {
+            System.out.println("Belum ada pembelian atau pemasukan barang.");
+        }
+        else{
+            for (LaporanStock listBeli2 : listBeli) {
+                laporanStock.masukStock();
+            }
+        }
+        if (listJual.size() == 0) {
+            System.out.println("Belum ada penjualan atau pengeluaran barang.");
+        }
+        else {
+            laporanStock.keluarStock();
+        }  
+    }    
+
     public static void main(String[] args) throws Exception {
         init();
         inputDataTetap();
@@ -564,8 +583,8 @@ public class App {
                         penghapusanBarang();
                     }
                     case ARUS_STOCK -> {
-                        return;
-                    }
+                        arusStock();
+                    }                    
                     case LOGOUT -> {
                         login = false;
                     }
