@@ -439,6 +439,11 @@ public class App {
                                 System.out.println("Berhasil menjual barang sebesar " + penguranganStock + " dus.");
                                 System.out.println("Sukses mengupdate stock " + pilihanBarang.getMerekBarang() + " menjadi " + pilihanBarang.getStock() + " dus.");
                                 System.out.println("===============================================");
+                                LaporanStock laporanJual = new LaporanStock();
+                                laporanJual.setNamaJual(pilihanBarang.getMerekBarang());
+                                laporanJual.setJualStock(penguranganStock);
+                                laporanJual.keluarStock();
+                                listJual.add(laporanJual);
                             }
                             else {
                                 System.out.print("Barang stock tidak mencukupi. Apakah anda ingin melanjutkan penjualan barang " + pilihanBarang.getMerekBarang() + " (Y/N) ? ");
@@ -526,24 +531,38 @@ public class App {
     }
 
 
-    public static void arusStock() {
+    public static void arusStock() throws IOException {
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         LaporanStock laporanStock = new LaporanStock();
+
+        System.out.println("===============================================");  
         if (listBeli.size() == 0) {
             System.out.println("Belum ada pembelian atau pemasukan barang.");
         }
         else{
-            for (LaporanStock listBeli2 : listBeli) {
-                laporanStock.masukStock();
+            laporanStock.masukStock();
+            for (LaporanStock laporanBeli : listBeli) {
+                System.out.println(laporanBeli);
             }
         }
+
+        System.out.println("-----------------------------------------------");
+
         if (listJual.size() == 0) {
             System.out.println("Belum ada penjualan atau pengeluaran barang.");
         }
         else {
             laporanStock.keluarStock();
-        }  
-    }    
-
+            for (LaporanStock laporanJual : listJual) {
+                System.out.println(laporanJual);
+            } 
+        }
+        System.out.println("===============================================");  
+        System.out.println();
+        System.out.println("Tahan layar untuk kembali ke menu utama.");
+        read.readLine();
+    }
+    
     public static void main(String[] args) throws Exception {
         init();
         inputDataTetap();

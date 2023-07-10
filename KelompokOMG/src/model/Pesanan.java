@@ -76,12 +76,16 @@ public abstract class Pesanan {
 
     @Override
     public String toString() {
-        return "{" +
-            " idPesanan='" + getIdPesanan() + "'" +
-            ", namaBeli='" + getNamaBeli() + "'" +
-            ", namaJual='" + getNamaJual() + "'" +
-            ", beliStock='" + getBeliStock() + "'" +
-            ", jualStock='" + getJualStock() + "'" +
-            "}";
+        StringBuilder sb = new StringBuilder();
+    
+        if (getNamaBeli() != null && getBeliStock() != 0) {
+            sb.append("Pembelian stock barang ").append(getNamaBeli()).append(" sebesar ").append(getBeliStock()).append(" dus.");
+        }
+    
+        if (getNamaJual() != null && getJualStock() != 0) {
+            sb.append("Penjualan stock barang ").append(getNamaJual()).append(" sebesar ").append(getJualStock()).append(" dus.");
+        }
+    
+        return sb.toString();
     }
 }
