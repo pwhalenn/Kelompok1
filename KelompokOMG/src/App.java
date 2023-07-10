@@ -43,7 +43,6 @@ public class App {
                 }
             }
             catch (InputMismatchException e) {
-                System.out.println();
                 System.out.println("Input tidak valid. Mohon menginput dengan angka.\n");
                 scanner.nextLine();
             }
@@ -88,13 +87,11 @@ public class App {
                         return JenisMenu.LOGOUT;
                     }
                     default -> {
-                        System.out.println();
                         System.out.println("Pilihan tidak tersedia. Mohon pilih kembali.\n");
                     }
                 }
             }
             else {
-                System.out.println();
                 System.out.println("Input tidak valid. Mohon menginput dengan angka.\n");
                 scanner.nextLine();
             }
@@ -151,7 +148,6 @@ public class App {
                 System.out.println("Hi " + user.getNamaUser() + "(" + user.getIdUser() + ")" + ", apa yang ingin anda lakukan?");
             }
             else {
-                System.out.println();
                 System.out.println("Akun tidak ditemukan. Mohon isi kembali.\n");
             }
         }
@@ -218,7 +214,6 @@ public class App {
                 }
             }
             catch (InputMismatchException e) {
-                System.out.println();
                 System.out.println("Input tidak valid. Mohon menginput dengan angka.\n");
                 scanner.nextLine();
             }
@@ -269,13 +264,13 @@ public class App {
                     }
                     default -> {
                         redo = false;
-                        System.out.println("Pilihan tidak ada. Mohon untuk input kembali.");
+                        System.out.println("Pilihan tidak ada. Mohon untuk input kembali.\n");
                     }
                 }
             }
             catch (InputMismatchException e) {
                 redo = false;
-                System.out.println("Input tidak valid. Mohon menginput dengan angka.");
+                System.out.println("Input tidak valid. Mohon menginput dengan angka.\n");
                 scanner.nextLine();
             }
         }
@@ -497,7 +492,7 @@ public class App {
                     int pilihan = scanner.nextInt();
                     scanner.nextLine();
                     int indeks = pilihan - 1;
-                    if (indeks >= 0 && indeks <= listBarang.size()) {
+                    if (indeks >= 0 && indeks < listBarang.size()) {
                         Barang pilihanBarang = listBarang.get(indeks);
                         System.out.print("Tekan Y untuk melanjutkan penghapusan data barang " + pilihanBarang.getMerekBarang() + " : ");
                         String yakin = scanner.next();
@@ -513,8 +508,7 @@ public class App {
                     }
                     else {
                         redo1 = false;
-                        System.out.println("Pilihan tidak ada. Mohon untuk menginput kembali.");
-                        scanner.nextLine();
+                        System.out.println("Pilihan tidak ada. Mohon untuk menginput kembali.\n");
                     }
                 }
                 catch (InputMismatchException e) {
