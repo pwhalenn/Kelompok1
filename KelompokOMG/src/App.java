@@ -22,7 +22,7 @@ public class App {
     public static ArrayList<LaporanStock> listBeli = new ArrayList<LaporanStock>();
     public static ArrayList<LaporanStock> listJual = new ArrayList<LaporanStock>();
     
-    public static void UserMenu() {
+    public static void userMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("==================Oh My Stock==================");
@@ -50,7 +50,7 @@ public class App {
         }
     }
 
-    public static JenisMenu MainMenu() {
+    public static JenisMenu mainMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("======================MENU=====================");
@@ -101,7 +101,7 @@ public class App {
         }
     }
 
-    public static void LoginForm(User user) {
+    public static void loginForm(User user) {
         Scanner scanner = new Scanner(System.in);
         Console console = System.console();
         boolean akses = false;
@@ -553,15 +553,15 @@ public class App {
         boolean login = false;
 
         while (true) {
-            UserMenu();
+            userMenu();
 
             if (!login) {
-                LoginForm(user);
+                loginForm(user);
                 login = true;
             }
 
             while (login) {
-                JenisMenu jenisMenu = MainMenu();
+                JenisMenu jenisMenu = mainMenu();
                 switch (jenisMenu) {
                     case INFORMASI_BARANG -> {
                         cetakListBarang();
@@ -600,7 +600,7 @@ public class App {
         User u3 = new User("A981", "Adonis", "7739");
 
         // Rak
-        Rak r1 = new Rak("KO01", "Biru");
+        Rak r1 =  new Rak("KO01", "Biru");
         Rak r2 = new Rak("KO02", "Hitam");
         Rak r3 = new Rak("KO03", "Putih");
 

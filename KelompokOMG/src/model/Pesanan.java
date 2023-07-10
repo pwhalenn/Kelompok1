@@ -1,7 +1,7 @@
 package model;
 
 /*
-Kelas abstrak yang memuati pesanan pembelian dan penjualan.
+Kelas abstrak yang memuati pesanan pembelian dan penjualan. (superclass)
 
 Memiliki atribut:
 idPesanan bersifat string

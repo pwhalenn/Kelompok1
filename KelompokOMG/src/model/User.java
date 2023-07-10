@@ -1,5 +1,14 @@
 package model;
 
+/*
+Kelas untuk mengetahui siapa yang melakukan semua aktifitas penginputan dan pengeditan.
+
+Memiliki atribut:
+idUser bersifat string
+namaUser bersifat string
+pin bersifat string
+*/
+
 public class User {
 
     private String idUser;
