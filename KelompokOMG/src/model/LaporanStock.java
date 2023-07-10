@@ -1,5 +1,13 @@
 package model;
 
+/*
+Kelas subclass
+
+Memiliki metode:
+masukStock()
+keluarStock()
+*/
+
 public class LaporanStock extends Pesanan implements IArusStock {
     Barang barang = new Barang();
     @Override

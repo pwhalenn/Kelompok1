@@ -1,11 +1,14 @@
 package model;
+
 /*
-Kelas untuk mengetahui stock barang masuk dan keluar.
+Kelas abstrak yang memuati pesanan pembelian dan penjualan.
 
 Memiliki atribut:
 idPesanan bersifat string
-barang merupakan kelas (agregrasi)
-idUser bersifat string (asosiasi)
+namaBeli bersifat string
+namaJual bersifat string
+beliStock bersifat int
+jualStock bersifat int
 */
 
 public abstract class Pesanan {
@@ -15,20 +18,18 @@ public abstract class Pesanan {
     private String namaJual;
     private int beliStock;
     private int jualStock;
-    private Barang barang;
 
 
     public Pesanan() {
     }
     
 
-    public Pesanan(String idPesanan, String namaBeli, String namaJual, int beliStock, int jualStock, Barang barang) {
+    public Pesanan(String idPesanan, String namaBeli, String namaJual, int beliStock, int jualStock) {
         this.idPesanan = idPesanan;
         this.namaBeli = namaBeli;
         this.namaJual = namaJual;
         this.beliStock = beliStock;
         this.jualStock = jualStock;
-        this.barang = barang;
     }
 
 
@@ -72,14 +73,6 @@ public abstract class Pesanan {
         this.jualStock = jualStock;
     }
 
-    public Barang getBarang() {
-        return this.barang;
-    }
-
-    public void setBarang(Barang barang) {
-        this.barang = barang;
-    }
-
 
     @Override
     public String toString() {
@@ -89,7 +82,6 @@ public abstract class Pesanan {
             ", namaJual='" + getNamaJual() + "'" +
             ", beliStock='" + getBeliStock() + "'" +
             ", jualStock='" + getJualStock() + "'" +
-            ", barang='" + getBarang() + "'" +
             "}";
     }
 }

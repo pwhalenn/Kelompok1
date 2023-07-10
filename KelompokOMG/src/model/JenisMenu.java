@@ -3,7 +3,7 @@ package model;
 public enum JenisMenu {
     LOGIN,
     INFORMASI_BARANG,
-    INPUT_STOCK,
+    INPUT_BARANG,
     PEMBELIAN_STOCK,
     PENJUALAN_STOCK,
     PENGHAPUSAN_BARANG,

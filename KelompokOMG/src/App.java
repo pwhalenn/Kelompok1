@@ -70,7 +70,7 @@ public class App {
                         return JenisMenu.INFORMASI_BARANG;
                     }
                     case 2 -> {
-                        return JenisMenu.INPUT_STOCK;
+                        return JenisMenu.INPUT_BARANG;
                     }
                     case 3 -> {
                         return JenisMenu.PEMBELIAN_STOCK;
@@ -181,7 +181,7 @@ public class App {
     }
 
 
-    public static void inputStock(Barang barang) throws IOException {
+    public static void inputBarang(Barang barang) throws IOException {
         Scanner scanner = new Scanner(System.in);
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         Rak rak = new Rak();
@@ -570,8 +570,8 @@ public class App {
                         System.out.println("Tahan layar untuk kembali ke menu utama.");
                         read.readLine();
                     }
-                    case INPUT_STOCK -> {
-                        inputStock(barang);
+                    case INPUT_BARANG -> {
+                        inputBarang(barang);
                     }
                     case PEMBELIAN_STOCK -> {
                         pembelianStock();
@@ -598,16 +598,6 @@ public class App {
         User u1 = new User("R314", "Reisacom", "8472");
         User u2 = new User("K407", "Kaoru", "7454");
         User u3 = new User("A981", "Adonis", "7739");
-
-        // ArusStock
-        // BarangMasuk
-        // ArusStock ai1 = new BarangMasuk("IN01", 0);
-        // ArusStock ai2 = new BarangMasuk("IN02", 0);
-        // ArusStock ai3 = new BarangMasuk("IN03", 0);
-        // // BarangKeluar
-        // ArusStock ao1 = new BarangKeluar("OU01", 0);
-        // ArusStock ao2 = new BarangKeluar("OU02", 0);
-        // ArusStock ao3 = new BarangKeluar("OU03", 0);
 
         // Rak
         Rak r1 = new Rak("KO01", "Biru");

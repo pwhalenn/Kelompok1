@@ -6,14 +6,12 @@ Kelas untuk mengetahui lokasi barang.
 Memiliki atribut:
 idRak bersifat string
 ruangan bersifat string
-idUser bersifat string (asosiasi)
 */
 
 public class Rak {
 
     private String idRak;
     private String ruangan;
-    // private String idUser;
 
     
     public Rak() {

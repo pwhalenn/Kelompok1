@@ -7,7 +7,6 @@ idBarang bersifat string
 stock bersifat int
 merek bersifat string
 hargaBarang bersifat string
-iduser bersifat string (asosiasi)
 */
 
 public class Barang {
@@ -17,7 +16,6 @@ public class Barang {
     private String merekBarang;
     private String hargaBarang;
     private Kategori kategori;
-    // private String idUser;
 
 
     public Barang() {

@@ -8,7 +8,6 @@ NB: Nantinya kategori akan menjadi penentu pengalokasi barang.
 Memiliki atribut:
 idKategori bersifat string
 namaKategori bersifat string
-barang merupakan kelas (agregrasi)
 rak merupakan kelas (agregrasi)
 */
 
