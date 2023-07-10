@@ -162,9 +162,9 @@ public class App {
         Rak r3 = new Rak("KO03", "Putih");
 
         // Kategori
-        Kategori k1 = new Kategori("KAT01", "bumbu", r1);
-        Kategori k2 = new Kategori("KAT02", "minuman", r2);
-        Kategori k3 = new Kategori("KAT03", "makanan", r3);
+        Kategori k1 = new Kategori("KAT01", "Bumbu", r1);
+        Kategori k2 = new Kategori("KAT02", "Minuman", r2);
+        Kategori k3 = new Kategori("KAT03", "Makanan", r3);
 
         // Barang
         // Barang b1 = new Barang("PA01", 50, "dolphin", "110.000", k1);
@@ -234,7 +234,7 @@ public class App {
                 switch (pilihanKategori) {
                     case 1 -> {
                         Rak r1 = new Rak("KO01", "Biru");
-                        Kategori k1 = new Kategori("KAT01", "bumbu", r1);
+                        Kategori k1 = new Kategori("KAT01", "Bumbu", r1);
 
                         rak.setIdRak(r1.getIdRak());
                         rak.setRuangan(r1.getRuangan());
@@ -244,7 +244,7 @@ public class App {
                     }
                     case 2 -> {
                         Rak r2 = new Rak("KO02", "Hitam");
-                        Kategori k2 = new Kategori("KAT02", "minuman", r2);
+                        Kategori k2 = new Kategori("KAT02", "Minuman", r2);
 
                         rak.setIdRak(r2.getIdRak());
                         rak.setRuangan(r2.getRuangan());
@@ -254,7 +254,7 @@ public class App {
                     }
                     case 3 -> {
                         Rak r3 = new Rak("KO03", "Putih");
-                        Kategori k3 = new Kategori("KAT03", "makanan", r3);
+                        Kategori k3 = new Kategori("KAT03", "Makanan", r3);
 
                         rak.setIdRak(r3.getIdRak());
                         rak.setRuangan(r3.getRuangan());
@@ -618,9 +618,9 @@ public class App {
         Rak r3 = new Rak("KO03", "Putih");
 
         // Kategori
-        Kategori k1 = new Kategori("KAT01", "bumbu", r1);
-        Kategori k2 = new Kategori("KAT02", "minuman", r2);
-        Kategori k3 = new Kategori("KAT03", "makanan", r3);
+        Kategori k1 = new Kategori("KAT01", "Bumbu", r1);
+        Kategori k2 = new Kategori("KAT02", "Minuman", r2);
+        Kategori k3 = new Kategori("KAT03", "Makanan", r3);
 
         // Barang
         Barang b1 = new Barang("PA01", 50, "dolphin", "Rp. 110.000", k1);
